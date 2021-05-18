@@ -35,7 +35,7 @@ const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
 
     // Setting the Search Value to the input value and Icon
     const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(event.target.value.trim().toLowerCase());
+        setSearchValue(event.target.value.toLowerCase());
         setSearchIcon(true);
 
         if (event.target.value.length === 0) {

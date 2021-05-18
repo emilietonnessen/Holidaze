@@ -17,7 +17,7 @@ import { Establishment } from '../../../constants/interfaces';
 import File from "../../UI/Form/File";
 import * as regex from '../../../constants/regex';
 import AdvancedOptions from "./AdvancedOptions";
-import RadioFeatured from "../../UI/Form/RadioFeatured";
+import RadioBoolean from "../../UI/Form/RadioBoolean";
 import EstablishmentForm from "../EstablishmentForm";
 
 interface Schema extends Asserts<typeof schema> {}
@@ -107,7 +107,6 @@ const EditForm: React.FC = () => {
     }
 
 
-
     // Set the Matching Establishment
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMatchEstablishment(event.target.value);
@@ -168,7 +167,8 @@ const EditForm: React.FC = () => {
     //console.log("[url]", url);
     //console.log("[Match Establishment]", matchEstablishment);
 	//console.log("[Establishments]", establishments);
-    //console.log("[Selected Establishment]", selectedEstablishment);
+    //if (selectedEstablishment) console.log("[Selected Establishment Featured]", selectedEstablishment.featured);
+    
     //console.log("[Errors]", errors);
     //if (selectedEstablishment) console.log("[Thumbnail Url]", selectedEstablishment.thumbnail.url);
     //console.log(thumbnailValue);
@@ -202,6 +202,7 @@ const EditForm: React.FC = () => {
                     register={register}
                     selectedEstablishment={selectedEstablishment}
                     errors={errors}
+                    featured={selectedEstablishment ? selectedEstablishment.featured : undefined}
                     changeThumbnailValue={changeThumbnailValue} 
                     thumbnailValue={thumbnailValue} 
                     thumbnailValueError={thumbnailValueError}

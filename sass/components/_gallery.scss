@@ -11,11 +11,16 @@
     } 
 
     @include respond(mobile-lg) {
-        padding: .3rem;
-        gap: .3rem;
+        padding: .5rem;
+        gap: .5rem;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(14, 12vw);
-    } 
+    }
+    
+    @include respond(mobile) {
+        padding: .3rem;
+        gap: .3rem;
+    }
 
     &__item {
 

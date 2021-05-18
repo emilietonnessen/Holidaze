@@ -2,11 +2,11 @@ import { EstablishmentFormProps } from '../../constants/interfaces';
 import Error from '../UI/Form/Error';
 import File from '../UI/Form/File';
 import Input from '../UI/Form/Input';
-import RadioFeatured from '../UI/Form/RadioFeatured';
+import RadioBoolean from '../UI/Form/RadioBoolean';
 import Textarea from '../UI/Form/Textarea';
 
 const EstablishmentForm: React.FC<EstablishmentFormProps> = ({register, selectedEstablishment, errors,
-changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, imageOneValue,imageOneValueError,changeImageTwoValue, imageTwoValue,imageTwoValueError}) => (
+changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, imageOneValue,imageOneValueError,changeImageTwoValue, imageTwoValue,imageTwoValueError, featured}) => (
     <>
         {/* Thumbnail: */}
         <File 
@@ -158,14 +158,16 @@ changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, 
             defaultValue={selectedEstablishment ? selectedEstablishment.reviews : ""} />
 
         {/* Featured */}
-        <RadioFeatured 
+        <RadioBoolean 
             label="Featured"
             name="featured"
             register={register}
             cssClass="establishment-form__group--featured"
             error={errors.featured && <Error>{errors.featured.message}</Error>}
-            defaultValue={selectedEstablishment ? selectedEstablishment.featured : null} />
+            defaultValue={selectedEstablishment ? selectedEstablishment.featured : undefined} />
 
+            
+        { /* console.log("featured", featured) */}
         {/* Description */}
         <Textarea
             register={register}

@@ -28,7 +28,7 @@ const Select: React.FC<SelectProps> = ({ name, children, label, register, error,
         setValue(event.target.value)
     }
 
-    console.log("[value]", value);
+    //console.log("[value]", value);
 
     return (
         <div className={`form__group  ` + cssClass}>

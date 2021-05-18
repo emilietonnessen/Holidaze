@@ -12,6 +12,7 @@ import { ENQUIRY_URL } from "../../constants/api";
 import { SubmitButton } from '../UI/Button';
 import { bookingFormSchema } from "../../constants/schemas";
 import { BookingFormProps } from "../../constants/interfaces.js";
+import axios from "axios";
 
 
 // TypeScript for Yup and Yup validation
@@ -42,7 +43,7 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
         console.log("[Data]", data);
 
 		try {
-			const response = await http.post(ENQUIRY_URL, data);
+			const response = await axios.post(ENQUIRY_URL, data);
 
             // Console log the data saved in the api
 			console.log("[Response]", response.data);

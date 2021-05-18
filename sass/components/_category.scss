@@ -1,16 +1,18 @@
 .category {
     &__scroll {
+
+
         &::-webkit-scrollbar {
             display: none;
         }
 
         @include respond(tab-land) {
             height: 100%;
-            width: calc(100vw - 8rem);
+            //width: calc(100vw - 8rem);
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-            padding: 4rem 2rem;
+            padding: 4rem 0;
         }
 
         @include respond(mobile) {

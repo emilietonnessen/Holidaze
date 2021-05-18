@@ -200,6 +200,10 @@
 
             & textarea {
                 height: 96%;
+
+                @include respond(mobile) {
+                    height: 10rem;
+                }
             }
         }
 
@@ -214,6 +218,10 @@
 
             & textarea {
                 height: 97%;
+
+                @include respond(mobile) {
+                    height: 10rem;
+                }
             } 
         }
 

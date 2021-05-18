@@ -18,8 +18,12 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic})
     return (
         <div className="booking-card" onClick={newMessageHandler}>
 
-            <div className="booking-card__details">
+            <div className="booking-card__header">
+                <h3 className="booking-card__title">{topic}</h3>
                 {newMessage ? <span className="booking-card__new">New!</span> : null}
+            </div>
+
+            <div className="booking-card__details">
                 <p className="booking-card__constants">From:</p>
                 <p className="booking-card__values">{name}</p>
 

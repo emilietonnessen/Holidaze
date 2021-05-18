@@ -145,6 +145,7 @@ export interface EstablishmentFormProps {
     register: () => void;
     selectedEstablishment?: Establishment;
     errors: any;
+    featured?: any;
 
     changeThumbnailValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
     thumbnailValue: GalleryProps;

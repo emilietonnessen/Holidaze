@@ -11,6 +11,7 @@ import Textarea from "../UI/Form/Textarea";
 import { SubmitButton } from "../UI/Button";
 import { contactFormSchema } from "../../constants/schemas";
 import { ContactMessage } from "../../constants/interfaces";
+import axios from "axios";
 
 interface Schema extends Asserts<typeof schema> {}
 
@@ -30,7 +31,7 @@ const ContactForm: React.FC = () => {
 		setServerError(null);
 		
 		try {
-			const response = await http.post(CONTACT_URL, data);
+			const response = await axios.post(CONTACT_URL, data);
 
             // Open Successful Feedback Modal
             window.location.href="#feedback-success"

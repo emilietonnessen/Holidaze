@@ -17,6 +17,8 @@ const home: React.FC<HomeProps> = ({establishments}) => {
         JSON.stringify(esta.featured).match('true')
     ));
 
+    console.log(establishments);
+
     // Creating the filtered establishments into cards
     const featuredEstablishments: JSX.Element[] = filteredEstablishments.map(esta => (
         <EstablishmentCard 

@@ -90,9 +90,12 @@
         display: grid;
         grid-template-columns: repeat(2, max-content);
 
+
+        //display: none; // <-- Testing out bugfix
+
         @include respond(mobile-lg) {
             @include centerElement;
-            display: block;
+            //display: block;
             height: 50%;
             width: 50%;
             z-index: 1500;
@@ -101,6 +104,8 @@
 
         @include respond(mobile) {
             width: 90%;
+            display: none; // <-- Testing out bugfix
+            //width: 0;
         }
     }
 
@@ -297,6 +302,10 @@
         background-color: transparent;
     }
 
+    &__checkbox:checked ~ & > &__list{
+        display: block;
+    }
+
     &__checkbox:checked + &__button &__icon::before {
         top: 0;
         transform: rotate(135deg);
@@ -308,8 +317,9 @@
     }
 }
 
+
+
 .active {
-    //background-color: $color-primary;
     color: $color-primary;
     font-weight: 400;
     transition: all .4s;
