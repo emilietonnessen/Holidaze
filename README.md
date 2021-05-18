@@ -8,7 +8,7 @@ Download all the files and install by using the terminal
 ```node
 npm install
 ``` 
-
+<br/>
 Run the project on localhost 3000 
 ```node
 npm run dev
