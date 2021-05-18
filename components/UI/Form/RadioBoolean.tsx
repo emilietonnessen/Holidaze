@@ -96,7 +96,7 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
                         className="form__radio "
                         checked={defaultValue ? true : trueIsChecked}
                         value="true" />
-                    <label htmlFor="radio-true" className="form__radio-label"  >Yes</label>
+                    <label htmlFor="radio-true" className="form__radio-label" onClick={trueChangeHandler} >Yes</label>
                 </div>
 
                {/* False Option: */}
@@ -110,7 +110,7 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
                         className="form__radio "
                         checked={defaultValue === false ? true : falseIsChecked}
                         value="false" />
-                    <label htmlFor="radio-false" className="form__radio-label"   >No</label>
+                    <label htmlFor="radio-false" className="form__radio-label"   onClick={falseChangeHandler}>No</label>
                </div>
                     
             {/* Error Message: */}
