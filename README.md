@@ -3,4 +3,6 @@ Holidaze is a fictional company which displays a number of different establishme
 
 ## How to use
 Download all the files and install by using the terminal
-```npm run install``` 
+```bash
+npm run install
+``` 
