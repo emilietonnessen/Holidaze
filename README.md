@@ -13,3 +13,5 @@ Run the project on localhost 3000
 ```node
 npm run dev
 ```
+## Admin Access
+To access the username and password for the login and admin section please send an email to *emilie@tonnessen.com* 
