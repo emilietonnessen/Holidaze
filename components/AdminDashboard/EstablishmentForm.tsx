@@ -166,7 +166,7 @@ changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, 
             error={errors.featured && <Error>{errors.featured.message}</Error>}
             defaultValue={selectedEstablishment ? selectedEstablishment.featured : undefined} />
 
-            
+
         { /* console.log("featured", featured) */}
         {/* Description */}
         <Textarea

@@ -15,60 +15,67 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
     // If defaultValue returns false - then trueIsCheck should be false, and falseIsChecked should be true
 
     // Setting the state whether they are checked or not based on the default value
-    const [trueIsChecked, setTrueIsChecked] = useState<boolean>(defaultValue === true ? true : false); 
-    const [falseIsChecked, setFalseIsChecked] = useState<boolean>(defaultValue === false ? true : false); 
+    const [trueIsChecked, setTrueIsChecked] = useState<any>(defaultValue === true ? true : false); 
+    const [falseIsChecked, setFalseIsChecked] = useState<any>(defaultValue === false ? true : false); 
 
     const trueChangeHandler = () => {      
         setTrueIsChecked(true);
         setFalseIsChecked(false);
+        defaultValue = true;
     }
 
     const falseChangeHandler = () => {  
         setTrueIsChecked(false);
         setFalseIsChecked(true);
-    }
+        defaultValue = false;
+    } 
 
 
     // Testing out with variables instead of state
-    /* let trueIsChecked: boolean = false;
-    let falseIsChecked: boolean = false; */
+    /* let trueIsChecked;
+    let falseIsChecked; 
 
 
-    /* if (defaultValue === false) {
+    if (defaultValue === true) {
+        trueIsChecked = true;
+        falseIsChecked = false;
+    }  
+    
+    if (defaultValue === false) {
         falseIsChecked = true;
         trueIsChecked = false;
-    }  */
+    }  
 
-     /* if (defaultValue === null) {
+     if (defaultValue === undefined) {
         trueIsChecked = false;
-        falseIsChecked = false;
-    }  */
+        falseIsChecked = true;
+    }  
 
-    /* const trueChangeHandler = () => {
+    const trueChangeHandler = () => {
         trueIsChecked = true;
         falseIsChecked = false; 
-    } */
+    } 
 
-    /* const falseChangeHandler = () => {
+    const falseChangeHandler = () => {
         falseIsChecked = true;
         trueIsChecked = false; 
         //console.log("NO");
-    } */
+    }  */
 
     
 
     // Console Logs and checks
     console.log("[Radio: Default Value]", defaultValue);
-    //console.log("[True is Checked]", trueIsChecked);
-    //console.log("[False is Checked]", falseIsChecked);
+    console.log("[True is Checked]", trueIsChecked);
+    console.log("[False is Checked]", falseIsChecked);
 
-    if (trueIsChecked) console.log("'Yes' is checked")
+    /* if (trueIsChecked) console.log("'Yes' is checked")
     if (falseIsChecked) console.log("'No' is checked");
     if (trueIsChecked === false && falseIsChecked === false) console.log("none is checked!");
 
     if (defaultValue === true) console.log("default value is true!");
     if (defaultValue === false) console.log("default value is false!");
-    if (defaultValue === undefined) console.log("default value is undefined!");
+    if (defaultValue === undefined) console.log("default value is undefined!"); */
 
     
 
@@ -87,13 +94,13 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
                         type="radio" 
                         id="radio-true" 
                         className="form__radio "
-                        checked={trueIsChecked}
+                        checked={defaultValue ? true : trueIsChecked}
                         value="true" />
-                    <label htmlFor="radio-true" className="form__radio-label" onClick={trueChangeHandler}>Yes</label>
+                    <label htmlFor="radio-true" className="form__radio-label"  >Yes</label>
                 </div>
 
                {/* False Option: */}
-               <div className="form__radio-group" onClick={falseChangeHandler}>
+               <div className="form__radio-group"  onClick={falseChangeHandler} >
                     <input 
                         ref={register} 
                         name={name} 
@@ -101,9 +108,9 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
                         type="radio" 
                         id="radio-false" 
                         className="form__radio "
-                        checked={falseIsChecked}
+                        checked={defaultValue === false ? true : falseIsChecked}
                         value="false" />
-                    <label htmlFor="radio-false" className="form__radio-label" onClick={falseChangeHandler}>No</label>
+                    <label htmlFor="radio-false" className="form__radio-label"   >No</label>
                </div>
                     
             {/* Error Message: */}
