@@ -22,7 +22,8 @@
 
         @include respond(mobile-lg) {
             & .search {
-                width: 100%;
+                transform: scaleX(1.025);
+                //width: 100%;
             }
         }
 
@@ -33,7 +34,23 @@
         }
 
         & .search__input {
-            width: 100%;
+            width: 95%;
+            margin: 0 2.25%;
+            
+            &:focus-visible {
+                width: 100%;
+                margin: 0 0;
+                //transform: scale(1.025);
+            }
+        }
+
+        & .search__button {
+            margin-left: -5rem;
+            transition: all .3s;
+
+            &:focus-visible {
+                margin-left: 0rem;
+            }
         }
     }
 

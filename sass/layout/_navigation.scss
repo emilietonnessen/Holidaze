@@ -25,7 +25,7 @@
 
 
 
-    &:focus  {
+    &:focus-visible  {
         outline: none;
         border: 1px solid black;
     }
@@ -223,6 +223,7 @@
         outline: 1px solid transparent;
         display: flex;
         align-items: center;
+        border: 1px solid transparent;
 
         @include respond(tab-port) {
             font-size: 1.6rem;
@@ -254,10 +255,15 @@
             }
         }
 
+        // Default focus
         &:focus {
-            //background-color: $color-primary-dark;
             color: $color-primary;
-            outline: 1px solid $color-black;
+        }
+
+        // Focus on keyboard moment
+        &:focus-visible {
+            outline: none;
+            border: 1px solid $color-black;
         }
 
         &--home {

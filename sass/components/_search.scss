@@ -17,11 +17,11 @@
     }
 
     &__input {
-        border: 1px solid transparent;
+        border: none;
         outline: none;
         border-radius: 2rem;
         padding: 1rem 1.5rem;
-        width: 100%;
+        width: 95%;
         font-family: inherit;
         font-size: 1.4rem;
         color: $color-black;
@@ -33,9 +33,10 @@
             color: $color-grey-dark-1;
         }
 
+        // :focus-visible not working correctly on inputs.
         &:focus {
-            border: 1px solid $color-black;
-            transform: scaleX(1.025);
+            //transform: scaleX(1.025);
+            width: 100%;
         }
 
         &--white {
@@ -46,15 +47,16 @@
             background-color: $color-grey-light-1;
         }
 
-        @include respond(lap) {
+        /* @include respond(lap) {
             width: 100%;
         }
 
         @include respond(tab-land) {
             width: 110%;
-        }
+        } */
 
         @include respond(mobile-lg) {
+            width: 100%;
             padding: .7rem 1.4rem;
             font-size: 1.3rem;
         }
@@ -71,6 +73,7 @@
         border-radius: 100%;
         z-index: 999;
         position: relative;
+        padding-top: 1px;
 
         & > svg {
             width: 1.5rem;
@@ -81,10 +84,10 @@
             transform: scale(1.2);
         }
 
-        &:focus {
+        &:focus-visible {
             border: 1px solid black;
-            transform: scale(1.2);
-        }
+            //transform: scale(1.2);
+        } 
     }
 }
 
@@ -101,6 +104,7 @@
     padding: 3rem;
     border-radius: 2rem;
     box-shadow: 0 .5rem 1.5rem rgba($color-black, .08);
+    transition: all .3s;
 
     // If the search results gets to long - active scroll
     overflow-x: hidden;
@@ -122,7 +126,7 @@
     transition: all .3s;
 
     @include respond(mobile) {
-        //column-gap: 2rem;
+        row-gap: 1rem;
         grid-template-columns: 1fr;
         width: 100%;
     }
@@ -149,6 +153,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        row-gap: .2rem;
+
+        @include respond(mobile) {
+            //flex-direction: row;
+        }
     }
 
     &__hotel-name {
@@ -156,13 +165,20 @@
         font-weight: 400;
     }
 
-    &__stars svg{
-        fill: red;
-        width: 2rem;
-        height: 2rem;
+    &__stars {
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+    
+        & svg {
+            width: 2rem;
+            height: 2rem;
+            grid-auto-flow: .5rem;
 
-        &:not(:last-child) {
-            margin-right: .5rem;
+            @include respond(mobile) {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
     }
 }
