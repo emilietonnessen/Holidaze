@@ -14,4 +14,4 @@ Run the project on localhost 3000
 npm run dev
 ```
 ## Admin Access
-To access the username and password for the login and admin section please send an email to *emilie@tonnessen.com* 
+To access the username and password for the login and admin section please send an email to emilie@tonnessen.com and request for admin access and state the purpose for the access.
