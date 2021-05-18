@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import * as interfaces from '../../../constants/interfaces';
 import { ESTABLISHMENTS_URL } from '../../../constants/api';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
-import useAxios from '../../../hooks/useAxios';
+
  
 const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
 
@@ -17,14 +18,13 @@ const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
     // Variables
     let esta: interfaces.Establishment[] = establishments;
     let searchDisplay: boolean = false;
-    const http = useAxios();
 
 
     // Fetching all the Establishment from the API
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await http.get(ESTABLISHMENTS_URL);
+                const response = await axios.get(ESTABLISHMENTS_URL);
                 setEstablishments(response.data);
             } catch (error) {
                 console.log(error)
