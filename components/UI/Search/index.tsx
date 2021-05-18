@@ -64,7 +64,7 @@ const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
 
     // Map through search Results
     const filteredSearchResults = esta.map(est => (
-        <SearchResult key={est.id} name={est.name} thumbnail={est.thumbnail.url} stars={est.stars} slug={est.slug} />
+        <SearchResult key={est.id} name={est.name} thumbnail={est.thumbnail} stars={est.stars} slug={est.slug} />
     ));
 
     

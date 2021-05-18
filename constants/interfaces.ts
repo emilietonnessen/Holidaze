@@ -116,7 +116,7 @@ export interface SearchBarProps {
 
 export interface SearchResultProps {
     name: string;
-    thumbnail: string;
+    thumbnail: GalleryProps;
     stars: number;
     slug: any;
 }
