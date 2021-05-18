@@ -1,0 +1,85 @@
+.admin {
+    background-color: #eee;
+    height: 100%;
+    border-top: 1px solid $color-grey-light-2;
+}
+
+.admin-navigation {
+    grid-template-columns: 1fr;
+    justify-items: end;
+    align-items: center;
+    gap: 0;
+    //box-shadow: $boxshadow-default;
+    //border-bottom: 1px solid $color-grey-light-1;
+
+    & button {
+        display: inline-block;
+        max-width: 40rem;
+    }
+}
+
+.admin-dashboard {
+    grid-column: 2 / 3;
+    grid-template-rows: 1 / 2;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+
+    padding: 5rem 0;
+    align-items: flex-start;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        & > * {
+            background-color: #fff;
+            box-shadow: $boxshadow-default;
+        }
+
+        @include respond(desk) {
+            gap: 3.5rem;
+        }
+    }
+
+    @include respond(desk) {
+        gap: 3.5rem;
+    }
+
+    @include respond(tab-land) {
+        grid-template-columns: minmax(min-content, 35rem) auto;
+        gap: 3rem;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: auto;
+        gap: 3rem;
+    }
+
+    @include respond(tab-port) {
+        grid-template-rows: repeat(4, max-content);
+        gap: 3rem;
+    }
+}
+
+/* .booking-notifications {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.contact-notifications {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.edit-establishments {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.add-establishments {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+} */

@@ -1,0 +1,41 @@
+.hero {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.category {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.review {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
+
+.featured {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 5rem;
+
+    @include respond(lap-lg) {
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    }
+
+    @include respond(mobile-lg) {
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    }
+
+    & > a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.gallery {
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+}

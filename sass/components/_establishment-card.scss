@@ -1,0 +1,109 @@
+.establishment-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 1rem;
+    color: $color-black;
+    text-decoration: none;
+    backface-visibility: hidden;
+    position: relative;
+
+    @include respond(mobile-lg) {
+        grid-template-rows: max-content 5rem max-content;
+    }
+
+    &:hover > &__img {
+        transform: scale(1.07);
+    }
+
+    &__img {
+        justify-self: flex-end;
+        display: block;
+        width: 95%;
+        position: relative;
+        z-index: 10;
+        transition: all .3s;
+
+        @include respond(mobile-lg) {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        justify-self: start;
+        display: inline-block;
+        background-color: $color-grey-light-1;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        margin-top: -4rem;
+        position: relative;
+        z-index: 400;
+
+        @include respond(mobile-lg) {
+            font-size: 1.7rem;
+            padding: 1rem 2rem;
+            //margin-top: -3.5rem;
+            //margin-left: 5rem;
+            
+            height: 4.7rem;
+            position: absolute;
+            bottom: 2.35rem;
+            left: 50%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        justify-self: flex-end;
+
+        @include respond(mobile-lg) {
+            width: 100%;
+            align-self: flex-end;
+        }
+    }
+
+    &__stars {
+        display: flex;
+        column-gap: .5rem;
+
+        @include respond(mobile-lg) {
+            column-gap: .25rem;
+        }
+
+        & > svg {
+            width: 2rem;
+            height: 2rem;
+
+            @include respond(mobile-lg) {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+
+    &__reviews {
+        padding-left: .5rem;
+        font-size: 1.2rem;
+        align-self: flex-end;
+    }
+
+    &__price-box {
+        font-size: 1.2rem;
+    }
+
+    &__price {
+        font-size: 2rem;
+        font-weight: 700;
+        padding-left: .5rem;
+
+        @include respond(mobile-lg) {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+}

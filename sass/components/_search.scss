@@ -1,0 +1,168 @@
+.search {
+    width: 100%;
+    position: relative;
+    justify-self: center;
+
+    @include respond(mobile-lg) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        width: 80%;
+        justify-self: start;
+    }
+
+    &__bar {
+        width: 100%;
+        display: flex;
+    }
+
+    &__input {
+        border: 1px solid transparent;
+        outline: none;
+        border-radius: 2rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-family: inherit;
+        font-size: 1.4rem;
+        color: $color-black;
+        transition: all .3s;
+
+        &::placeholder {
+            font-family: inherit;
+            font-size: inherit;
+            color: $color-grey-dark-1;
+        }
+
+        &:focus {
+            border: 1px solid $color-black;
+            transform: scaleX(1.025);
+        }
+
+        &--white {
+            background-color: rgba($color-white, .9);
+        }
+
+        &--grey {
+            background-color: $color-grey-light-1;
+        }
+
+        @include respond(lap) {
+            width: 100%;
+        }
+
+        @include respond(tab-land) {
+            width: 110%;
+        }
+
+        @include respond(mobile-lg) {
+            padding: .7rem 1.4rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    &__button {
+        margin-left: -4rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .3s;
+        padding: 0 1rem;
+        border-radius: 100%;
+        z-index: 999;
+        position: relative;
+
+        & > svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &:focus {
+            border: 1px solid black;
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+
+.search-results {
+    position: absolute;
+    z-index: 10000;
+    top: 5rem;
+
+    min-width: 100%;
+    background-color: rgba($color-white, .85); 
+    backdrop-filter: blur(5px);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 .5rem 1.5rem rgba($color-black, .08);
+
+    // If the search results gets to long - active scroll
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 70vh;
+
+    @include respond(mobile) {
+        padding: 1.5rem;
+    }
+}
+
+
+.search-result {
+    display: grid;
+    grid-template-columns: 15rem auto;
+    width: max-content;
+    column-gap: 2rem;
+    cursor: pointer;
+    transition: all .3s;
+
+    @include respond(mobile) {
+        //column-gap: 2rem;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.06);
+    }
+
+    &__link {
+        color: $color-black;
+        text-decoration: none;
+        display: block;
+
+        &:not(:last-child) {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $color-grey-light-2;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__hotel-name {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    &__stars svg{
+        fill: red;
+        width: 2rem;
+        height: 2rem;
+
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+    }
+}

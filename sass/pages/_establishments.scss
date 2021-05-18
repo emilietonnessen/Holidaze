@@ -1,0 +1,30 @@
+.filter {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.establishment-results {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 5rem;
+
+    @include respond(lap-lg) {
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        column-gap: 2rem;
+        row-gap: 4rem;
+    }
+
+    
+
+    & > a {
+        color: inherit;
+        text-decoration: none;
+    }
+}

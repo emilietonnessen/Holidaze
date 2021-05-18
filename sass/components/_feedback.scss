@@ -1,0 +1,70 @@
+.feedback {
+    padding: 10rem 5rem;
+    max-width: 50rem;
+    text-align: center;
+
+    @include respond(mobile) {
+        padding: 5rem 1.5rem;
+        max-width: 90vw;
+    }
+
+    &__title {
+        font-size: 4rem;
+        font-family: $font-family-heading;
+        font-weight: 300;
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: $color-primary;
+
+        @include respond(mobile) {
+            font-size: 3rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.8rem;
+
+        @include respond(mobile) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+.feedback {
+
+    // Error
+    &--error {
+        max-width: 50rem;
+        background-color: rgba($color-error, .3);
+        border: 1px solid $color-error;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        display: inline-block;
+        transition: all .2s;
+    }
+
+    &__title {
+        color: $color-error;
+    }
+
+    &__text--error {
+        color: $color-black;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary-light;
+        transition: all .2s;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+
+    // Success
+    &--success {
+        background-color: rgba($color-success, .3);
+        border: 1px solid $color-success;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        display: inline-block;
+    }
+}

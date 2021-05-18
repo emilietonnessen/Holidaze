@@ -1,0 +1,229 @@
+.booking-enquiry {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    grid-template-rows: max-content;
+
+    @include respond(tab-land) {
+        max-width: 90vw;
+        max-height: 90vh;
+
+        overflow: auto;
+    }
+
+    @include respond(mobile-lg) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+    }
+
+    & > * {
+        padding: 3rem;
+
+        @include respond(mobile) {
+            padding: 1.5rem;
+        }
+    }
+}
+
+.booking-info {
+    background-color: $color-grey-light-1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem;
+
+    @include respond(tab-land) {
+        padding: 5rem;
+    }
+    
+    @include respond(mobile-lg) {
+        display: none;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 15px 1fr;
+        column-gap: 1rem;
+        row-gap: 0;
+    }
+
+    &__icon {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 4;
+
+        padding-top: .5rem;
+        width: 1.5rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+    }
+}
+
+.booking-form {
+    padding: 6rem 3rem;
+    position: relative;
+
+    @include respond(tab-land) {
+        padding: 3rem;
+    }
+
+    @include respond(mobile) {
+        padding: 3rem 1.5rem;
+        max-width: 90vw;
+        max-height: 95vh;
+
+        overflow-y: auto;
+    }
+
+    &__fieldset {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(20rem, 27rem));
+        grid-template-rows: repeat(7, max-content);
+        column-gap: 2rem;
+        row-gap: 2rem;
+
+        @include respond(tab-land) {
+            row-gap: 1.5rem;
+        }
+
+        @include respond(mobile) {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            width: 30rem;
+        }
+    }
+
+
+    &__title {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+
+        font-size: 4rem;
+        font-family: $font-family-heading;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+
+        @include respond(mobile) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__group {
+        &--room {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+        }
+
+        &--first-name {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+        }
+
+        &--last-name {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+        }
+
+        &--email {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+            }
+        }
+
+        &--phone {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+            }
+        }
+
+        &--start-date {
+            grid-column: 1 / 2;
+            grid-row: 5 / 6;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 6 / 7;
+            }
+        }
+
+        &--end-date {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 7 / 8;
+            }
+        }
+
+        &--message {
+            grid-column: 1 / 3;
+            grid-row: 6 / 7;
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 8 / 9;
+
+                & > textarea {
+                    height: 10rem;
+                }
+            }
+        }
+
+        &--submit {
+            grid-column: 1 / 3;
+            grid-row: 7 / 8;
+
+            margin-top: 2rem;
+
+            @include respond(tab-land) {
+                margin-top: 1rem;
+            }
+
+            @include respond(mobile) {
+                grid-column: 1 / 2;
+                grid-row: 9 / 10;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

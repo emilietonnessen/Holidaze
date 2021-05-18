@@ -1,0 +1,36 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile {
+        @media only screen and (max-width: $mobile) { @content; }
+    }
+
+    @if $breakpoint == mobile-lg {
+        @media only screen and (max-width: $mobile-lg) { @content; }
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: $tab-port) { @content; }
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: $tab-land) { @content; }
+    }
+
+    @if $breakpoint == lap {
+        @media only screen and (max-width: $lap) { @content; }
+    }
+
+    @if $breakpoint == lap-lg {
+        @media only screen and (max-width: $lap-lg) { @content; }
+    }
+
+    @if $breakpoint == desk {
+        @media only screen and (max-width: $desk) { @content; }
+    }
+}
+
+@mixin centerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 

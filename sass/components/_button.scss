@@ -1,0 +1,142 @@
+.btn {
+
+    &,
+    & a,
+    & a:link,
+    & a:visited {
+        color: inherit;
+        text-decoration: none;
+        border-radius: 0;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all .3s;
+        box-shadow: $boxshadow-default;
+        display: block;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: $boxshadow-default;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary;
+            box-shadow: $boxshadow-hover;
+            transform: translateY(-.5rem);
+        }
+
+        &:active {
+            transform: translateY(.5rem); 
+            box-shadow: $boxshadow-active;
+        }
+    }
+
+    &--light-grey {
+        background-color: $color-grey-light-2;
+        color: $color-black;
+        box-shadow: $boxshadow-default;
+
+        &:hover,
+        &:focus {
+            background-color: $color-grey-light-1;
+            box-shadow: $boxshadow-hover;
+            transform: translateY(-.5rem);
+        }
+
+        &:active {
+            transform: translateY(.5rem); 
+            box-shadow: $boxshadow-active;
+        }
+    }
+
+    &--dark-grey {
+        background-color: $color-grey-dark-1;
+        color: $color-white;
+        box-shadow: $boxshadow-default;
+
+        &:hover,
+        &:focus {
+            background-color: lighten($color-grey-dark-1, 10);
+            box-shadow: $boxshadow-hover;
+            transform: translateY(-.5rem);
+        }
+
+        &:active {
+            transform: translateY(.5rem); 
+            box-shadow: $boxshadow-active;
+        }
+    }
+
+    &--danger {
+        background-color: $color-error;
+        color: $color-white;
+        font-weight: 600;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-error, 10);
+            box-shadow: $boxshadow-hover;
+            transform: translateY(-.5rem);
+        }
+
+        &:active {
+            transform: translateY(.5rem); 
+            box-shadow: $boxshadow-active;
+        }
+    }
+
+    // Sizes ------------------------------------------------
+    &--cta {
+        font-size: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        padding: 1rem 5rem;
+
+        @include respond(desk) {
+            font-size: 2.5rem;
+            padding: 1rem 4rem;
+        }
+
+        @include respond(mobile) {
+            font-size: 2rem;
+            padding: 1rem 3rem;
+        }
+    } 
+
+    &--lg {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        padding: 1rem 3rem;
+
+        @include respond(desk) {
+            font-size: 2.25rem;
+            padding: 1rem 2.5rem;
+        }
+    } 
+
+    
+    &--md {
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        padding: 1rem 2rem;
+
+        @include respond(mobile) {
+            font-size: 1.6rem;
+            padding: .8rem 1.5rem;
+        }
+    } 
+
+    &--sm {
+        font-size: 1.6rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        padding: 1rem 1.5rem;
+    } 
+    
+}

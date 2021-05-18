@@ -1,0 +1,39 @@
+.filter {
+    display: flex;
+    gap: 2rem;
+
+    @include respond(mobile) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__btn {
+        border: 1px solid $color-black;
+        border-radius: 0;
+        outline: none;
+        color: $color-black;
+        background-color: $color-white;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: all .3s;
+
+        @include respond(mobile) {
+            font-size: 1.4rem;
+            padding: 1rem 1rem;
+        }
+
+        &:hover,
+        &:active {
+            transform: translateY(-.8rem);
+        }
+
+        &--active {
+            background-color: $color-primary;
+            color: $color-white;
+            border: 1px solid transparent;
+        }
+    }
+}

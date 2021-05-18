@@ -1,0 +1,43 @@
+.review-card {
+    padding: 3rem; ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+    &__description {
+        line-height: 1.6;
+        
+    }
+
+    &__user-box {
+        display: grid;
+        grid-template-columns: max-content 1fr max-content;
+        column-gap: 1.5rem;
+        align-items: center;
+    }
+
+    &__user-photo {
+        display: flex;
+        align-items: center;
+
+        & > div {
+            border-radius: 50%;
+        }
+    }
+
+    &__user-name {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    &__date {
+        font-weight: 300;
+        font-size: 1.4rem;
+    }
+
+    &__rating {
+        color: $color-primary;
+        font-size: 3rem;
+    }
+}

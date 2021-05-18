@@ -1,0 +1,40 @@
+// Colors
+$color-black: #141414;
+$color-white: #FFFFFF;
+
+$color-primary: #ff1447;
+$color-primary-light: lighten($color-primary, 10);
+$color-primary-dark: darken($color-primary, 14);
+
+$color-grey-light-1: #EEE;
+$color-grey-light-2: #D5D5D5;
+$color-grey-light-3: #ccc;
+
+$color-grey-dark-1: #4a4a4a;
+
+$color-error: red;
+$color-warning: orange;
+$color-success: green;
+
+
+
+// Fonts
+$font-family-body: montserrat, sans-serif;
+$font-family-heading: ivypresto-headline, serif;
+
+$font-size-default: 1.6rem;
+
+// Breakpoints
+$desk: 125em;         // 2000px
+$lap-lg: 100em;       // 1600px
+$lap: 87.5em;         // 1400px
+$tab-land: 75em;      // 1200px
+$tab-port: 62.5em;    // 1000px
+$mobile-lg: 50em;     //  800px
+$mobile: 37.5em;      //  600px
+
+
+// Box Shadow:
+$boxshadow-default: 0rem .5rem 1rem rgba($color-black, .05);
+$boxshadow-hover: 0rem .5rem 2rem rgba($color-black, .15);
+$boxshadow-active: 0rem .5rem .5rem rgba($color-black, .3); 

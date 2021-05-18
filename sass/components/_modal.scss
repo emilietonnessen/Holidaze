@@ -1,0 +1,92 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 99999;
+    transition: all .3s;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+
+    &__content {
+        @include centerElement;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s;
+        position: relative;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-primary;
+            font-size: 6.5rem;
+            display: inline-block;
+            line-height: 1;
+            text-decoration: none;
+            position: absolute;
+            top: -1rem;
+            right: .5rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        &:hover {
+            color: $color-primary-light;
+        }
+    }
+
+    // Functionality 
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modal-success {
+    & > .modal__content {
+        padding: 5rem;
+    }
+}
+
+.modal-error {
+
+
+    & > .modal__content {
+        padding: 5rem;
+        min-height: 30rem;
+        max-width: 50rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title{
+        font-family: $font-family-heading;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 4rem;
+        color: $color-error;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+
+    &__message {
+        text-align: center;
+    }
+    
+}

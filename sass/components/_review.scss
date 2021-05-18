@@ -1,0 +1,153 @@
+.review {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond(tab-land) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @include respond(mobile) {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+
+    &__gallery {
+        background-image: url('../../public/assets/review-lg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        position: relative;
+        
+        @include respond(tab-land) {
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__family-img{
+        position: absolute;
+        width: 30%;
+        top: 50%;
+        right: -25%;
+        z-index: 100;
+        transition: all .3s;
+        transform: translate(-50%, -50%);
+
+        @include respond(lap-lg) {
+            right: -20%;
+        }
+
+        @include respond(lap) {
+            top: 60%;
+            right: -10%;
+            width: 40%;
+        }
+
+        @include respond(tab-land) {
+            top: 0%;
+            right: -5%;
+            width: 30%;
+        }
+
+        @include respond(tab-port) {
+            top: -20%;
+            right: -8%;
+            width: 25%;
+        }
+
+        @include respond(mobile-lg) {
+            top: 28%;
+            right: -15%;
+            width: 40%;
+        }
+
+        @include respond(mobile) {
+            top: 55%;
+            right: 13%;
+            width: 55%;
+        }
+    }
+
+    &__content {
+        background-color: $color-grey-light-1;
+        position: relative;
+
+        @include respond(tab-land) {
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include respond(tab-land) {
+            top: 50%;
+            left: 30%;
+            max-width: 50rem; 
+        }
+
+        @include respond(tab-port) {
+            top: 50%;
+            left: 5rem;
+            transform: translate(0, -50%);
+            max-width: 50rem; 
+        }
+
+        @include respond(mobile) {
+            position: relative;
+            padding: 5rem 2rem;
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    &__tag {
+        color: $color-primary-light;
+        font-weight: 600;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: .5rem;
+
+        @include respond(lap) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__title {
+        font-size: 4.5rem;
+        font-family: $font-family-heading;
+        font-weight: 300;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+
+        @include respond(lap) {
+            font-size: 4rem;
+        }
+
+        @include respond(mobile-lg) {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            white-space: break-spaces;
+        }
+    }
+
+    &__paragraph {
+        font-style: italic;
+        font-weight: 200;
+        font-size: 1.7rem;
+
+        @include respond(lap) {
+            font-size: 1.6rem;
+        }
+
+        @include respond(mobile) {
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+.form {
+
+    // Fieldset -------------------------------------
+    &__fieldset {
+        border: none;
+        outline: none;
+    }
+
+
+
+    // Label ----------------------------------------
+    &__label {
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1;
+        margin-bottom: .5rem;
+        font-weight: 400;
+    }
+
+
+
+    // Common styles --------------------------------
+    &__input,
+    &__textarea {
+        width: 100%;
+        background-color: $color-grey-light-1;
+        border: none;
+        outline: none;
+        padding: 1rem;
+        font-family: $font-family-body;
+
+        &::placeholder {
+            color: rgba($color-grey-dark-1, .7);
+            font-family: $font-family-body;
+            font-size: 1.4rem;
+
+            @include respond(desk){
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+
+    // Input -------------------------------------
+    &__input {
+        @include respond(desk){
+            height: 3rem;
+            padding: 0 1rem;
+        }
+    }
+
+
+
+    // Textarea ----------------------------------------
+    &__textarea {
+        height: 20rem;
+    }
+
+
+
+    // Radio Input ---------------------------------------
+    &__radio-group {
+        display: flex;
+        align-items: center;
+    }
+
+    &__radio {
+        margin-right: .3rem;
+        
+        &:not(:first-child) {
+            margin-left: 2rem;
+        }
+    }
+
+    &__radio-label {
+        font-size: 1.5rem;
+    }
+
+
+    // File upload
+    &__file-upload {
+        background-color: $color-grey-light-2;
+        display: inline-block;
+        width: unset;
+        cursor: pointer;
+        padding: .5rem 1rem;
+        color: black;
+        transition: all .3s;
+        font-size: 1.2rem;
+
+        & input[type="file"] {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $color-grey-light-1;
+            //transform: translateY(-3px);
+        }
+
+        &:active {
+            background-color: lighten($color-grey-dark-1, 8); 
+            //transform: translateY(3px);
+        }
+    }
+
+    &__file-chosen {
+        font-size: 1.3rem;
+        margin-left: .5rem;
+    }
+
+
+    // Error ---------------------------------------------
+    &__error {
+        color: $color-error;
+        font-weight: 400;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        margin-top: .2rem;
+    }
+
+    &__error-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: .5rem;
+    }
+
+    &__input--error,
+    &__textarea--error {
+        border-bottom: 1px solid $color-error;
+        background-color: lighten($color-error, 45);
+        color: $color-error;
+
+        &::placeholder {
+            color: rgba($color-error, .75);
+        }
+    }
+
+    &__feedback {
+        &--error {
+            transition: all .3s;
+            background-color: rgba($color-error, .5);
+            border: 1px solid $color-error;
+            padding: 1.5rem
+        }
+    }
+}
