@@ -22,7 +22,7 @@
 
     @include respond(mobile) {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(max-content, 1fr));
     }
 
     &__btn {
@@ -48,7 +48,7 @@
             background-color: $color-white;
             border: 1px solid  $color-primary;
             color:  $color-primary;
-            font-weight: 500;
+            //00;
         }
 
         &--active {
@@ -60,7 +60,6 @@
                 background-color: $color-primary-dark;
                 border: 1px solid  $color-primary-dark;
                 color:  $color-white;
-                font-weight: 500;
             }
 
            
@@ -68,8 +67,14 @@
                 background-color: $color-primary-light;
                 border: 1px solid  $color-primary-light;
                 color:  $color-white;
+            } 
+
+            &:focus {
+                background-color: $color-primary;
+                border: 1px solid  $color-primary;
+                color:  $color-white;
                 font-weight: 500;
-            }
+            } 
         }
     }
 }
