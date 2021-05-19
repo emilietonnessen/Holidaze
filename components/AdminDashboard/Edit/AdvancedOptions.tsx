@@ -6,6 +6,7 @@ import useAxios from '../../../hooks/useAxios';
 import Accordion from '../../UI/Accordion';
 import { SimpleButton } from '../../UI/Button';
 import Error from '../../UI/Form/Error';
+import Feedback from '../../UI/Feedback';
 
 
 
@@ -18,7 +19,7 @@ const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url}) => {
     const deleteEstablishment = async () => {
         console.log("delete", url);
 
-        const confirmDelete = window.confirm("Delete this post?");
+        const confirmDelete = window.confirm("Delete this establishment?");
 
 		if (confirmDelete) {
 			try {
@@ -33,7 +34,7 @@ const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url}) => {
     return (
         <div className="establishment-form__group--advanced">
             <Accordion title="Advanced Options" closed={true}>
-                {error ? <Error>{error}</Error> : null}
+                {error ? <Feedback theme="error">{error}</Feedback> : null}
                 <SimpleButton theme="danger" size="sm" onClick={deleteEstablishment}>
                     delete
                 </SimpleButton>

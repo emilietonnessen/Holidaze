@@ -79,6 +79,10 @@
         color: $color-black;
         border: none;
 
+        @include respond(lap-lg) {
+            font-size: 1.7rem;
+        }
+        
         @include respond(mobile) {
             font-size: 1.6rem;
         }

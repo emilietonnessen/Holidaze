@@ -5,9 +5,13 @@
     grid-template-rows: repeat(7, 5vw);
     gap: 1.5rem;
 
+    @include respond(lap-lg) {
+        padding: 1rem;
+        gap: .5rem;
+    }
+    
     @include respond(tab-land) {
         padding: .8rem;
-        gap: .8rem;
     } 
 
     @include respond(mobile-lg) {

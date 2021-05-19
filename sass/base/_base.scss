@@ -8,17 +8,12 @@ body,
 // Scrollbar -----------------------------
 /* width */
 ::-webkit-scrollbar {
-    width: 1rem;
-    height: 1rem;
-
-    @include respond(mobile) {
-        width: .5rem;
-    }
+    width: .5rem;
+    height: .5rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    //background: $color-grey-light-1;
     background: transparent;
 }
 

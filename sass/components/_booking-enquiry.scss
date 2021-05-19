@@ -3,11 +3,11 @@
     grid-template-columns: 1fr 1.3fr;
     grid-template-rows: max-content;
 
-    @include respond(tab-land) {
-        max-width: 90vw;
-        max-height: 90vh;
+    /* max-width: 95vw;
+    max-height: 95vh; */
 
-        overflow: auto;
+    @include respond(lap-lg) {
+        grid-template-columns: max-content minmax(min-content, 50rem);
     }
 
     @include respond(mobile-lg) {
@@ -90,6 +90,13 @@
 .booking-form {
     padding: 6rem 3rem;
     position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
+
+    @include respond(lap-lg) {
+        padding: 3rem;
+    }
 
     @include respond(tab-land) {
         padding: 3rem;
@@ -97,9 +104,6 @@
 
     @include respond(mobile) {
         padding: 3rem 1.5rem;
-        max-width: 90vw;
-        max-height: 98vh;
-        overflow-y: auto;
     }
 
     &__fieldset {
@@ -213,13 +217,13 @@
             grid-column: 1 / 3;
             grid-row: 6 / 7;
 
+            & > textarea {
+                height: 10rem;
+            }
+
             @include respond(mobile) {
                 grid-column: 1 / 2;
                 grid-row: 8 / 9;
-
-                & > textarea {
-                    height: 10rem;
-                }
             }
         }
 

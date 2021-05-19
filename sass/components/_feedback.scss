@@ -1,4 +1,4 @@
-.feedback {
+ .modal-feedback {
     padding: 10rem 5rem;
     max-width: 50rem;
     text-align: center;
@@ -28,43 +28,34 @@
             font-size: 1.5rem;
         }
     }
-}
+} 
 
 
 .feedback {
+    display: inline-block;
+    margin: 2rem 0;
+    padding: 1rem 2rem;    
+    transition: all .2s;
+    color: $color-black;
 
-    // Error
-    &--error {
-        max-width: 50rem;
-        background-color: rgba($color-error, .3);
-        border: 1px solid $color-error;
-        margin: 2rem 0;
-        padding: 1rem 2rem;
-        display: inline-block;
-        transition: all .2s;
-    }
 
-    &__title {
-        color: $color-error;
-    }
-
-    &__text--error {
-        color: $color-black;
-        text-decoration: none;
-        border-bottom: 1px solid $color-primary-light;
-        transition: all .2s;
-
-        &:hover {
-            border-bottom: 1px solid transparent;
-        }
-    }
-
-    // Success
+    // Success ------------------------------------------
     &--success {
         background-color: rgba($color-success, .3);
         border: 1px solid $color-success;
-        margin: 2rem 0;
-        padding: 1rem 2rem;
-        display: inline-block;
+    }
+
+
+    // Warning ------------------------------------------
+    &--warning {
+        background-color: rgba($color-warning, .3);
+        border: 1px solid $color-warning;
+    }
+
+
+    // Error --------------------------------------------
+    &--error {
+        background-color: rgba($color-error, .3);
+        border: 1px solid $color-error;
     }
 }

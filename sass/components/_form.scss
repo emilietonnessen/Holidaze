@@ -21,7 +21,8 @@
 
     // Common styles --------------------------------
     &__input,
-    &__textarea {
+    &__textarea,
+    &__select {
         width: 100%;
         background-color: $color-grey-light-1;
         border: none;
@@ -29,6 +30,7 @@
         outline: none;
         padding: 1rem;
         font-family: $font-family-body;
+        
 
         &::placeholder {
             color: rgba($color-grey-dark-1, .7);
@@ -45,6 +47,8 @@
 
     // Input -------------------------------------
     &__input {
+        -webkit-appearance: none;
+
         @include respond(desk){
             height: 3rem;
             padding: 0 1rem;
@@ -56,26 +60,67 @@
     // Textarea ----------------------------------------
     &__textarea {
         height: 20rem;
+        -webkit-appearance: none;
     }
+
+
+    // Select -------------------------------------------
+    &__select {
+        @include respond(lap-lg) {
+            height: 3rem;
+            padding: 0 1rem;
+        }
+    }
+
 
 
 
     // Radio Input ---------------------------------------
     &__radio-group {
-        display: flex;
-        align-items: center;
+        width: 40%;
+        display: inline-block;
     }
 
-    &__radio {
-        margin-right: .3rem;
-        
-        &:not(:first-child) {
-            margin-left: 2rem;
-        }
+    &__radio-input {
+        display: none;
     }
 
     &__radio-label {
         font-size: 1.5rem;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__radio-button {
+        height: 1.4rem;
+        width: 1.4rem;
+        border: 1px solid $color-grey-dark-2;
+        //background-color: $color-grey-light-3;
+        border-radius: 50%;
+        display: inline-block; 
+        position: relative;
+        margin-right: .5rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: .7rem;
+            width: .7rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            background-color: $color-grey-dark-1;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
     }
 
 
@@ -131,7 +176,8 @@
     }
 
     &__input--error,
-    &__textarea--error {
+    &__textarea--error,
+    &__select--error {
         border-bottom: 1px solid $color-error;
         background-color: lighten($color-error, 45);
         color: $color-error;

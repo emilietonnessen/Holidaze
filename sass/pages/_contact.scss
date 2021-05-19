@@ -1,6 +1,10 @@
 .contact {
     background-color: transparent;
     position: relative;
+
+    @include respond(lap-lg) {
+        height: 110vh;
+    }
 }
 
 .contact-background {

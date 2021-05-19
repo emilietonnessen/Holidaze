@@ -96,16 +96,7 @@ const login: React.FC = () => {
                                 type="password"
                                 error={errors.password && <span className="form__error"><i className="fas fa-exclamation-circle"></i> <Error>{errors.password.message}</Error></span>}
                                 placeholder="********" />
-
-                            {/* <div className="login__essentials">
-                                <div className="login__remember">
-                                    <input type="checkbox" name="remember" id="remember"/>
-                                    <label htmlFor="checkbox">Remember me</label>
-                                </div>
-                                <a className="login__forgot" href="#forgot">
-                                    Forgot Password?
-                                </a>
-                            </div> */}
+                                
                         </div>
 
                         <div className="login__button">
@@ -118,8 +109,6 @@ const login: React.FC = () => {
                 </form>
 
             </div>
-
-            <ModalError link="#login" errorMessage="Please try again!" errorTitle="An error occured" />
         </OuterLayout>  
     );
 }

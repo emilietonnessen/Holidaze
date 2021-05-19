@@ -6,8 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @include respond(mobile) {
-        font-size: 1.3rem;
-    }
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
 }

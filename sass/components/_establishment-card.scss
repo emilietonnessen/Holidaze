@@ -23,8 +23,19 @@
         position: relative;
         z-index: 10;
         transition: all .3s;
+        padding-bottom: 60%;
+        overflow: hidden;
 
         @include respond(mobile-lg) {
+            width: 100%;
+        }
+
+        & > div {
+            overflow: hidden;
+            position: absolute !important; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
         }
     }

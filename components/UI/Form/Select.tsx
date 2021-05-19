@@ -21,7 +21,7 @@ const Select: React.FC<SelectProps> = ({ name, children, label, register, error,
     if (error === undefined) {
         cssError = ''
     } else {
-        cssError = 'form__input--error';
+        cssError = 'form__select--error';
     }
 
     const onChangeHandler = (event: any) => {
@@ -38,7 +38,7 @@ const Select: React.FC<SelectProps> = ({ name, children, label, register, error,
                 onChange={onChange ? onChange: onChangeHandler}
                 name={name} 
                 id={name} 
-                className={"form__input " + cssError }
+                className={"form__select " + cssError }
                 placeholder="Choose a Room" 
                 ref={register}
                 value={value ? value : defaultValue} >
