@@ -5,9 +5,8 @@ const RadioBoolean: React.FC<RadioProps> = ({name, label, register, error, cssCl
 
     let cssError: string = '';
 
-    //error === undefined ? cssError = '' : 'form__radio--error'
-     if (error === undefined) {cssError = '';} 
-    else {cssError = 'form__radio-group--error';} 
+    if (error === undefined) {cssError = '';} 
+    else {cssError = 'form__radio-group--error';}  
 
     // defaultValue should either return as boolean value or 'undefined'. If the value returns undefined, none shall be checked. 
     // If defaultValue returns true - then trueIsChecked should be true, and falseIsChecked should be false

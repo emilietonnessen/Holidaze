@@ -27,6 +27,8 @@ const ContactNotifications: React.FC = () => {
     const contactMessages: JSX.Element[]= enquiries.map(enq => {
         return (
             <ContactCard
+                id={enq.id}
+                read={enq.read}
                 key={enq.id}
                 name={enq.name}
                 topic={enq.topic}

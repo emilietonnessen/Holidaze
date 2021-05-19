@@ -43,13 +43,6 @@ export interface GalleryProps {
     name: string;
 }
 
-export interface ContactMessage {
-    id: number;
-    name: string;
-    email: string;
-    topic: string;
-    message: string;
-}
 
 
 export interface SearchProps {
@@ -233,6 +226,7 @@ export interface Booking {
     updated_at: string;
     published_at: string;
     establishment: string;
+    read: boolean;
 }
 
 export interface BookingCardProps {
@@ -245,16 +239,28 @@ export interface BookingCardProps {
     endDate: string;
     room: string;
     message: string;
+    read: boolean;
+    id: number;
+    onClick?: any;
 }
 
-interface ContactMessages {
+export interface ContactMessage {
     id: number;
     name: string;
     message: string;
     email: string;
     topic: string;
+    read: boolean;
 }
 
+export interface ContactCardProps {
+    name: string;
+    email: string;
+    message: string;
+    topic: string;
+    id: number;
+    read: boolean;
+}
 
 // ICONS: ------------------------------------------------
 export interface IconProps {

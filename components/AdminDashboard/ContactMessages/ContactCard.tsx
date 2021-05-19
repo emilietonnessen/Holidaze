@@ -1,26 +1,39 @@
 import { useState } from "react";
 
-interface ContactCardProps {
-    name: string;
-    email: string;
-    message: string;
-    topic: string;
-}
+import { CONTACT_URL } from "../../../constants/api";
+import useAxios from "../../../hooks/useAxios";
+import {ContactCardProps} from '../../../constants/interfaces';
 
-const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic}) => {
-    const [newMessage, setNewMessage] = useState(true);
 
-    const newMessageHandler = () => {
-        // Not good method - needs to change 
-        setNewMessage(false)
+const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, id, read}) => {
+    const [newMessage, setNewMessage] = useState(read);
+    let url = `${CONTACT_URL}/${id}`;
+    const http = useAxios();
+
+
+    async function readMessageHandler() {
+        if (read === false) {
+            try {
+                const response = await http.get(url);
+                const data = response.data;
+
+                data.read = true;
+
+                const updateResponse = await http.put(url, data);
+                setNewMessage(true);
+            } 
+            catch (error) {
+                console.log(error);
+            } 
+        }
     }
 
     return (
-        <div className="booking-card" onClick={newMessageHandler}>
+        <div className="booking-card" onClick={readMessageHandler}>
 
             <div className="booking-card__header">
                 <h3 className="booking-card__title">{topic}</h3>
-                {newMessage ? <span className="booking-card__new">New!</span> : null}
+                {!newMessage ? <span className="booking-card__new">New!</span> : null}
             </div>
 
             <div className="booking-card__details">

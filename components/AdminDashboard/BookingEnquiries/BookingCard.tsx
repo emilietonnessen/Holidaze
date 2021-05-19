@@ -1,21 +1,39 @@
 import { useState } from "react";
+import { ENQUIRY_URL } from "../../../constants/api";
 import { BookingCardProps } from "../../../constants/interfaces";
+import useAxios from "../../../hooks/useAxios";
 
 
-const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message}) => {
-    const [newMessage, setNewMessage] = useState(true);
+const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id, onClick}) => {
+    const [newMessage, setNewMessage] = useState(read);
+    let url = `${ENQUIRY_URL}/${id}`;
+    const http = useAxios();
 
-    const newMessageHandler = () => {
-        // Not good method - needs to change 
-        setNewMessage(false)
+
+    async function readMessageHandler() {
+        if (read === false) {
+            try {
+                const response = await http.get(url);
+                const data = response.data;
+
+                data.read = true;
+
+                const updateResponse = await http.put(url, data);
+                setNewMessage(true);
+            } 
+            catch (error) {
+                console.log(error);
+            } 
+        }
     }
 
+
     return (
-        <div className="booking-card" onClick={newMessageHandler}>
+        <div className="booking-card" onClick={readMessageHandler} >
             
             <div className="booking-card__header">
                 <h3 className="booking-card__title">{establishment}</h3>
-                {newMessage ? <span className="booking-card__new">New!</span> : null}
+                {!newMessage ? <span className="booking-card__new">New!</span> : null}
             </div>
 
             <div className="booking-card__details">
@@ -43,12 +61,3 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
 }
 
 export default BookingCard;
-
-
-/* 
-
-    NEED TO DO LIST:
-    
-    [] - Find another way with the "new" function 
-
-*/
