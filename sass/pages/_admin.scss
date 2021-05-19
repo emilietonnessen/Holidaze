@@ -9,8 +9,6 @@
     justify-items: end;
     align-items: center;
     gap: 0;
-    //box-shadow: $boxshadow-default;
-    //border-bottom: 1px solid $color-grey-light-1;
 
     & button {
         display: inline-block;
@@ -24,7 +22,6 @@
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 5rem; // <-- for older browser versions
     gap: 5rem; 
 
     padding: 5rem 0;
@@ -32,12 +29,10 @@
 
 
     @include respond(desk) {
-        grid-gap: 3.5rem; // <-- for older browser versions
         gap: 3.5rem; 
     }
 
     @include respond(tab-land) {
-        grid-gap: 3rem; // <-- for older browser versions
         gap: 3rem; 
         grid-template-columns: minmax(min-content, 35rem) auto;
     }
@@ -49,69 +44,36 @@
 
 
     &__group {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
 
-        // For the older versions
-        & > *:not(:last-child) {
-            margin-bottom: 5rem;
+        @include respond(desk) {
+            gap: 3.5rem; 
+        }
 
-            @include respond(desk) {
-               margin-bottom: 3.5rem;
+        @include respond(tab-land) {
+            gap: 3rem; 
+        }
+
+        &:first-child {
+            @include respond(tab-port) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: flex-start;
             }
 
-            @include respond(tab-land) {
-                margin-bottom: 3rem;
+            @include respond(mobile-lg) {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
             }
         }
-        
-        // For the 'newer' versions
-        @supports (gap: 5rem) or (grid-gap: 5rem) {
-            grid-gap: 5rem; // <-- for older browser versions
-            gap: 5rem; 
-
-            @include respond(desk) {
-                grid-gap: 3.5rem; // <-- for older browser versions
-                gap: 3.5rem; 
-            }
-
-            @include respond(tab-land) {
-                grid-gap: 3rem; // <-- for older browser versions
-                gap: 3rem; 
-            }
-
-            & > *:not(:last-child) {
-                margin-bottom: 0;
-            }
-        } 
 
         & > * {
             background-color: #fff;
             box-shadow: $boxshadow-default;
         }
-
         
-    }
-
-    
+    }   
 }
-
-/* .booking-notifications {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.contact-notifications {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.edit-establishments {
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
-}
-
-.add-establishments {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-} */

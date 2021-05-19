@@ -58,6 +58,10 @@
         flex-wrap: wrap;
         align-items: center;
 
+        @include respond(tab-port) {
+            padding: 3rem 0rem;
+        }
+
         @include respond(mobile) {
             grid-column: 1 / 2;
             grid-row: 3 / 4;
@@ -70,7 +74,7 @@
             flex: 0 0 33%;
             line-height: 2;
 
-            @include respond(mobile-lg) {
+            @include respond(tab-port) {
                 flex: 0 0 50%;
             }
 
@@ -111,6 +115,10 @@
         justify-self: center;
         align-self: center;
 
+        @include respond(mobile-lg) {
+            min-width: 12rem;
+        }
+
         @include respond(mobile) {
             align-self: flex-end;
         }
@@ -122,6 +130,10 @@
 
             &:not(:last-child) {
                 margin-right: -1.5rem !important;
+
+                @include respond(mobile-lg) {
+                    margin-right: -2rem !important;
+                }
             }
         }
     }

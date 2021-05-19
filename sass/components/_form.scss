@@ -25,6 +25,7 @@
         width: 100%;
         background-color: $color-grey-light-1;
         border: none;
+        border-radius: 0;
         outline: none;
         padding: 1rem;
         font-family: $font-family-body;
@@ -81,6 +82,8 @@
     // File upload
     &__file-upload {
         background-color: $color-grey-light-2;
+        border-radius: 0;
+        border: none;
         display: inline-block;
         width: unset;
         cursor: pointer;

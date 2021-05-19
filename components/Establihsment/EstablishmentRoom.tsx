@@ -20,10 +20,6 @@ const EstablishmentRoom: React.FC<RoomProps> = ({lowestPrice}) => (
 					<li className="room__list-item">Queensized Bed</li>
 				</ul>
 			</div>
-
-			<div className="room__button">
-				<ModalButton theme="primary" size="md" name="booking">book</ModalButton>
-			</div>
 		</div>
 
 
@@ -41,10 +37,6 @@ const EstablishmentRoom: React.FC<RoomProps> = ({lowestPrice}) => (
 					<li className="room__list-item">Queensized Bed, 1 single Bed</li>
 				</ul>
 			</div>
-
-			<div className="room__button">
-				<ModalButton theme="primary" size="md" name="booking">book</ModalButton>
-			</div>
 		</div>
 
 
@@ -61,10 +53,6 @@ const EstablishmentRoom: React.FC<RoomProps> = ({lowestPrice}) => (
 					<li className="room__list-item">Three Persons, three children</li>
 					<li className="room__list-item">Multiple bed combinations</li>
 				</ul>
-			</div>
-
-			<div className="room__button">
-				<ModalButton theme="primary" size="md" name="booking">book</ModalButton>
 			</div>
 		</div>
 	</div>
