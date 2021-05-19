@@ -11,6 +11,7 @@
     }
 
     @include respond(mobile-lg) {
+        max-height: 98vh;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, max-content);
     }
@@ -83,8 +84,7 @@
     @include respond(mobile) {
         padding: 3rem 1.5rem;
         max-width: 90vw;
-        max-height: 95vh;
-
+        max-height: 98vh;
         overflow-y: auto;
     }
 

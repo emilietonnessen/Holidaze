@@ -16,6 +16,10 @@
         @include respond(mobile) {
             width: 90vw;
         }
+
+        & > a {
+            text-decoration: none;
+        }
     }
 
     &__brand {

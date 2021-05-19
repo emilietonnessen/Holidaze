@@ -20,19 +20,6 @@
         z-index: 999;
         min-width: 45rem;
 
-        @include respond(mobile-lg) {
-            & .search {
-                transform: scaleX(1.025);
-                //width: 100%;
-            }
-        }
-
-        @include respond(mobile) {
-            min-width: unset;
-            width: 80%;
-           
-        }
-
         & .search__input {
             width: 95%;
             margin: 0 2.25%;
@@ -48,10 +35,28 @@
             margin-left: -5rem;
             transition: all .3s;
 
+            @include respond(mobile-lg) {
+                margin-left: -4.3rem;
+            }
+
             &:focus-visible {
                 margin-left: 0rem;
             }
         }
+
+        @include respond(mobile-lg) {
+            & .search {
+                transform: scaleX(1.025);
+                width: 100%;
+            }
+        }
+
+        @include respond(mobile) {
+            min-width: unset;
+            width: 80%;
+        }
+
+        
     }
 
     &__cta {

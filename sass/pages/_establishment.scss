@@ -191,7 +191,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 0;
-        row-gap: 1.5rem;
+        row-gap: 3rem;
         padding: 1.5rem;
     }
 
@@ -228,6 +228,7 @@
 
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
+            
         }
 
 
@@ -237,6 +238,7 @@
 
             grid-template-columns: 1fr;
             grid-template-rows: repeat(3, 1fr);
+            row-gap: 3rem;
         }
     
 
@@ -267,6 +269,7 @@
             grid-row: 3 / 4;
 
             grid-template-columns: 1fr;
+            row-gap: 3rem;
         }
 
         & > * {
