@@ -80,11 +80,12 @@ export interface FileProps {
 
 export interface RadioProps {
     register: () => void;
+    radioID: string;
     name: string;
     label: string;
     error: JSX.Element | undefined;
     cssClass: string;
-    defaultValue?: boolean | undefined | null;
+    defaultValue?: boolean | undefined;
 }
 
 export interface HomeProps {
@@ -145,7 +146,7 @@ export interface EstablishmentFormProps {
     register: () => void;
     selectedEstablishment?: Establishment;
     errors: any;
-    featured?: any;
+    radioID: string;
 
     changeThumbnailValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
     thumbnailValue: GalleryProps;

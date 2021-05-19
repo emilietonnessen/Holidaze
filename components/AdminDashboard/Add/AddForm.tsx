@@ -140,6 +140,7 @@ const AddForm: React.FC = () => {
                 <EstablishmentForm 
                     register={register}
                     errors={errors}
+                    radioID="add"
                     changeThumbnailValue={changeThumbnailValue} 
                     thumbnailValue={thumbnailValue} 
                     thumbnailValueError={thumbnailValueError}

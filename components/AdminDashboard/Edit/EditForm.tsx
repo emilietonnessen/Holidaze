@@ -202,7 +202,7 @@ const EditForm: React.FC = () => {
                     register={register}
                     selectedEstablishment={selectedEstablishment}
                     errors={errors}
-                    //featured={selectedEstablishment ? selectedEstablishment.featured : undefined}
+                    radioID="edit"
                     changeThumbnailValue={changeThumbnailValue} 
                     thumbnailValue={thumbnailValue} 
                     thumbnailValueError={thumbnailValueError}

@@ -5,8 +5,20 @@ import Input from '../UI/Form/Input';
 import RadioBoolean from '../UI/Form/RadioBoolean';
 import Textarea from '../UI/Form/Textarea';
 
-const EstablishmentForm: React.FC<EstablishmentFormProps> = ({register, selectedEstablishment, errors,
-changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, imageOneValue,imageOneValueError,changeImageTwoValue, imageTwoValue,imageTwoValueError, featured}) => (
+const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
+    register, 
+    selectedEstablishment, 
+    radioID,
+    errors,
+    changeThumbnailValue, 
+    thumbnailValue, 
+    thumbnailValueError, 
+    changeImageOneValue, 
+    imageOneValue,
+    imageOneValueError,
+    changeImageTwoValue, 
+    imageTwoValue,
+    imageTwoValueError }) => (
     <>
         {/* Thumbnail: */}
         <File 
@@ -160,6 +172,7 @@ changeThumbnailValue, thumbnailValue, thumbnailValueError, changeImageOneValue, 
         {/* Featured */}
         <RadioBoolean 
             label="Featured"
+            radioID={radioID}
             name="featured"
             register={register}
             cssClass="establishment-form__group--featured"
