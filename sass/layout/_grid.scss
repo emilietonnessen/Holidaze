@@ -114,6 +114,10 @@
     justify-self: center;
     justify-content: center;
 
+    @include respond(tab-port) {
+        grid-template-rows: 50vh max-content 80rem repeat(2, max-content);
+    }
+    
     @include respond(mobile-lg) {
         row-gap: 10rem;
     }

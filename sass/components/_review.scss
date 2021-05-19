@@ -7,6 +7,7 @@
         grid-template-rows: 1fr 1fr;
     }
 
+
     @include respond(mobile) {
         grid-template-columns: 1fr;
         grid-template-rows: max-content 1fr;
@@ -22,6 +23,8 @@
         @include respond(tab-land) {
             grid-row: 2 / 3;
         }
+
+        
     }
 
     &__family-img{

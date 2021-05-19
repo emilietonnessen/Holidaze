@@ -86,26 +86,20 @@
     &__list {
         list-style: none;
         height: 100%;
-
         display: grid;
         grid-template-columns: repeat(2, max-content);
 
-
-        //display: none; // <-- Testing out bugfix
-
         @include respond(mobile-lg) {
             @include centerElement;
-            //display: block;
             height: 50%;
             width: 50%;
             z-index: 1500;
             transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: none;
         }
 
         @include respond(mobile) {
             width: 90%;
-            display: none; // <-- Testing out bugfix
-            //width: 0;
         }
     }
 

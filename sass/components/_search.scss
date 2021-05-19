@@ -7,8 +7,14 @@
         grid-column: 1 / 2;
         grid-row: 1 / 2;
 
-        width: 80%;
+        width: 40%;
+        //margin: 0 auto;
         justify-self: start;
+    }
+
+    @include respond(mobile) {
+        margin: 0;
+        width: 80%;
     }
 
     &__bar {
@@ -47,6 +53,11 @@
             background-color: transparent;
             border-bottom: 1px solid $color-grey-dark-2;
             border-radius: 0;
+
+            /* @include respond(mobile-lg) {
+                width: 70% !important;
+                margin-left: auto;
+            } */
         }
 
         /* @include respond(lap) {
@@ -99,14 +110,20 @@
     position: absolute;
     z-index: 10000;
     top: 5rem;
-
     min-width: 100%;
-    background-color: rgba($color-white, .85); 
-    backdrop-filter: blur(5px);
     padding: 3rem;
     border-radius: 2rem;
     box-shadow: 0 .5rem 1.5rem rgba($color-black, .08);
     transition: all .3s;
+
+    // If the browser does not support backdrop-filter this will be shown:
+    background-color: rgba($color-white, .96); 
+
+    @supports (backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px)) {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba($color-white, .85); 
+    }
 
     // If the search results gets to long - active scroll
     overflow-x: hidden;
