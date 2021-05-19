@@ -1,9 +1,7 @@
 .filter {
     display: grid;
     grid-template-columns: repeat(4, max-content);
-    /* gap: 2rem;
-    grid-gap: 2rem;
- */
+
     &__btn:not(:last-child) {
         margin-right: 2rem;
 
@@ -12,7 +10,7 @@
         }
     }
 
-   /*  @supports (gap: 2rem) or (grid-gap: 2rem) {
+   @supports (gap: 2rem) or (grid-gap: 2rem) {
         gap: 2rem;
         grid-gap: 2rem;
 
@@ -20,7 +18,7 @@
             margin-right: 0;
             margin-bottom: 0;
         }
-    } */
+    } 
 
     @include respond(mobile) {
         display: grid;
