@@ -70,6 +70,10 @@
             flex: 0 0 33%;
             line-height: 2;
 
+            @include respond(mobile-lg) {
+                flex: 0 0 50%;
+            }
+
             & > svg {
                 padding-right: 1rem;
                 height: 2.2rem;

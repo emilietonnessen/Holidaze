@@ -55,12 +55,31 @@
 
     &__box {
         display: flex;
-        gap: 1rem;
         align-items: center;
 
-        @include respond(mobile) {
-            gap: .5rem
+        // Old versions
+        & > *:not(:last-child) {
+            margin-right: 1rem;
+
+            @include respond(mobile) {
+                margin-right: .5rem
+            }
         }
+
+        // New versions
+        @supports (gap: 1rem) or (grid-gap: 1rem) {
+            gap: 1rem;
+
+            @include respond(mobile) {
+                gap: .5rem
+            }
+
+            & > *:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+
+        
     }
 
     &__title {

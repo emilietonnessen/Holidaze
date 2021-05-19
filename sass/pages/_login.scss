@@ -9,8 +9,8 @@
 
         @include centerElement;
         color: $color-white;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         row-gap: 3rem;
 
         @include respond(mobile) {
@@ -24,9 +24,22 @@
 
     &__brand {
         display: flex;
-        column-gap: 1rem;
         align-items: flex-end;
         text-decoration: none;
+
+        // Old versions
+        & > *:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        // New versions
+        @supports (gap: 1rem) or (grid-gap: 1rem) {
+            gap: 1rem;
+
+            & > *:not(:last-child) {
+                margin-right: 0;
+            }
+        }
     }
 
     &__logo {
@@ -55,10 +68,23 @@
     &__essentials {
         margin-top: .8rem;
         display: flex;
-        column-gap: 3rem;
         justify-content: space-between;
         font-size: 1.4rem;
         font-weight: 300;
+
+        // Old versions
+        & > *:not(:last-child) {
+            margin-right: 3rem;
+        }
+
+        // New versions
+        @supports (column-gap: 3rem) or (grid-column-gap: 3rem) {
+            column-gap: 3rem;
+
+            & > *:not(:last-child) {
+                margin-right: 0;
+            }
+        }
     }
 
     &__forgot {
@@ -70,9 +96,5 @@
         &:hover {
             border-bottom: 1px solid $color-white;
         }
-    }
-
-    &__button {
-
     }
 }

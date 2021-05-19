@@ -69,11 +69,30 @@
 
     &__stars {
         display: flex;
-        column-gap: .5rem;
 
-        @include respond(mobile-lg) {
-            column-gap: .25rem;
+        // Old iOS versions
+        & > *:not(:last-child) {
+            margin-right: .5rem;
+            
+            @include respond(mobile-lg) {
+                margin-right: .25rem;
+            }
         }
+        
+        // New iOS versions
+        @supports (column-gap: .5rem) {
+            column-gap: .5rem;
+
+            @include respond(mobile-lg) {
+                column-gap: .25rem;
+            }
+
+            & > *:not(:last-child) {
+                margin-right: 0rem;
+            }
+        }
+
+      
 
         & > svg {
             width: 2rem;

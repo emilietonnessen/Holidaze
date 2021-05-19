@@ -20,7 +20,20 @@
     &__fieldset {
         display: flex;
         flex-direction: column;
-        row-gap: 2rem;
+
+        // Old iOS versions
+        & > *:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        
+        // New iOS versions
+        @supports (row-gap: 2rem) {
+            row-gap: 2rem;
+
+            & > *:not(:last-child) {
+                margin-bottom: 0rem;
+            }
+        }
     }
 
     & .btn {

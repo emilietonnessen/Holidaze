@@ -9,11 +9,28 @@
 
     &__box {
         display: flex;
-        gap: 2rem;
         font-size: 1.4rem;
+
+        // For the older versions
+        & > *:not(:last-child) {
+            margin-right: 2rem;
+        }
+        
+        // For the 'newer' versions
+        @supports (gap: 2rem) or (grid-gap: 2rem) {
+            grid-gap: 2rem; // <-- for older browser versions
+            gap: 2rem; 
+
+            & > *:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+
+        
 
         @include respond(mobile) {
             font-size: 1.2rem;
+            grid-gap: .8rem; // <-- for older browser versions
             gap: .8rem;
         }
 

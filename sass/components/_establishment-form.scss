@@ -16,7 +16,6 @@
             grid-template-rows: repeat(11, max-content);
         }
 
-
         @include respond(mobile) {
             display: flex;
             flex-direction: column;

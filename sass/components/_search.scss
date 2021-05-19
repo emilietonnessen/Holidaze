@@ -172,10 +172,19 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        row-gap: .2rem;
 
-        @include respond(mobile) {
-            //flex-direction: row;
+        // Old iOS versions
+        & > *:not(:last-child) {
+            margin-bottom: .2rem;
+        }
+        
+        // New iOS versions
+        @supports (row-gap: .2rem) {
+            row-gap: .2rem;
+
+            & > *:not(:last-child) {
+                margin-bottom: 0rem;
+            }
         }
     }
 
@@ -186,8 +195,21 @@
 
     &__stars {
         display: flex;
-        gap: .3rem;
         align-items: center;
+
+        // Old iOS versions
+        & > *:not(:last-child) {
+            margin-right: .3rem;
+        }
+        
+        // New iOS versions
+        @supports (gap: .3rem) {
+            gap: .3rem;
+
+            & > *:not(:last-child) {
+                margin-right: 0rem;
+            }
+        }
     
         & svg {
             width: 2rem;

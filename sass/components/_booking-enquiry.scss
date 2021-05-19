@@ -44,7 +44,21 @@
     &__content {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+
+        // Old iOS versions
+        & > *:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+        
+        // New iOS versions
+        @supports (gap: 3rem) {
+            gap: 3rem;
+
+            & > *:not(:last-child) {
+                margin-bottom: 0rem;
+            }
+        }
+        
     }
 
     &__box {

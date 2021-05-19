@@ -24,44 +24,76 @@
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5rem;
+    grid-gap: 5rem; // <-- for older browser versions
+    gap: 5rem; 
 
     padding: 5rem 0;
     align-items: flex-start;
 
+
+    @include respond(desk) {
+        grid-gap: 3.5rem; // <-- for older browser versions
+        gap: 3.5rem; 
+    }
+
+    @include respond(tab-land) {
+        grid-gap: 3rem; // <-- for older browser versions
+        gap: 3rem; 
+        grid-template-columns: minmax(min-content, 35rem) auto;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, max-content);
+    }
+
+
     &__group {
         display: flex;
         flex-direction: column;
-        gap: 5rem;
+
+        // For the older versions
+        & > *:not(:last-child) {
+            margin-bottom: 5rem;
+
+            @include respond(desk) {
+               margin-bottom: 3.5rem;
+            }
+
+            @include respond(tab-land) {
+                margin-bottom: 3rem;
+            }
+        }
+        
+        // For the 'newer' versions
+        @supports (gap: 5rem) or (grid-gap: 5rem) {
+            grid-gap: 5rem; // <-- for older browser versions
+            gap: 5rem; 
+
+            @include respond(desk) {
+                grid-gap: 3.5rem; // <-- for older browser versions
+                gap: 3.5rem; 
+            }
+
+            @include respond(tab-land) {
+                grid-gap: 3rem; // <-- for older browser versions
+                gap: 3rem; 
+            }
+
+            & > *:not(:last-child) {
+                margin-bottom: 0;
+            }
+        } 
 
         & > * {
             background-color: #fff;
             box-shadow: $boxshadow-default;
         }
 
-        @include respond(desk) {
-            gap: 3.5rem;
-        }
+        
     }
 
-    @include respond(desk) {
-        gap: 3.5rem;
-    }
-
-    @include respond(tab-land) {
-        grid-template-columns: minmax(min-content, 35rem) auto;
-        gap: 3rem;
-    }
-
-    @include respond(tab-port) {
-        grid-template-columns: auto;
-        gap: 3rem;
-    }
-
-    @include respond(tab-port) {
-        grid-template-rows: repeat(4, max-content);
-        gap: 3rem;
-    }
+    
 }
 
 /* .booking-notifications {
