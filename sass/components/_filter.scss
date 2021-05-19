@@ -1,6 +1,7 @@
 .filter {
     display: flex;
     gap: 2rem;
+    grid-gap: 2rem;
 
     @include respond(mobile) {
         display: grid;
