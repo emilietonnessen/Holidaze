@@ -19,7 +19,7 @@ import * as regex from '../../../constants/regex';
 import AdvancedOptions from "./AdvancedOptions";
 import RadioBoolean from "../../UI/Form/RadioBoolean";
 import EstablishmentForm from "../EstablishmentForm";
-import Feedback from "../../UI/Feedback.jsx";
+import Feedback from "../../UI/Feedback";
 
 interface Schema extends Asserts<typeof schema> {}
 
