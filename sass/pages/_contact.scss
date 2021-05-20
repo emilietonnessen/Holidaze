@@ -3,7 +3,7 @@
     position: relative;
 
     @include respond(lap-lg) {
-        height: 110vh;
+        min-height: 110vh;
     }
 }
 
@@ -29,6 +29,10 @@
         margin: 0;
         height: 100%;
     } 
+
+    @include respond(mobile) {
+        clip-path: unset;
+    }
 }
 
 .contact-container {

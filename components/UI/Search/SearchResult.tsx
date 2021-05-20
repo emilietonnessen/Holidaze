@@ -37,11 +37,14 @@ const SearchResult: React.FC<SearchResultProps> = ({ name, thumbnail, stars, slu
             <a className="search-result__link" onClick={onClick}>
                 <div className="search-result">
 
-                    <Image 
-                        className="search-result__image" 
-                        src={thumbnail.url} alt="button" 
-                        width={thumbnail.width} 
-                        height={thumbnail.height}  />
+                    <div className="search-result__image">
+                        <Image 
+                            className="search-result__image" 
+                            src={thumbnail.url} alt="button" 
+                            width={thumbnail.width} 
+                            height={thumbnail.height}  />
+                    </div>
+                    
 
                     <div className="search-result__box">
                         <h6 className="search-result__hotel-name">{name}</h6>
