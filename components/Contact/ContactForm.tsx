@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
             {/* Title: */}
             <h3 className="contact-form__title">Send us a message</h3>
 
-            {serverError && <Feedback theme="error">{serverError}</Feedback>}
+            
 
             <fieldset className="form__fieldset contact-form__fieldset">
                 {/* Full Name: */}
@@ -91,6 +91,8 @@ const ContactForm: React.FC = () => {
                     {submitting ? "sending.." : "send"}
                 </SubmitButton>
             </fieldset>
+
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
         </form>
     );
 }

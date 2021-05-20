@@ -17,6 +17,7 @@
     &__description {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        word-break: break-all;
 
         @include respond(mobile) {
            grid-column: 1 / 2;
@@ -53,6 +54,7 @@
         padding: 3rem;
         border-bottom: 1px solid $color-grey-light-2;
         list-style: none;
+        word-break: break-all;
         
         display: flex;
         flex-wrap: wrap;

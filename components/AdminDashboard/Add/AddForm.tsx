@@ -132,9 +132,7 @@ const AddForm: React.FC = () => {
     return (
         <form className="establishment-form" onSubmit={handleSubmit(onSubmit)}>
 
-            {/* Feedback: */}
-            {serverError && <Feedback theme="error">{serverError}</Feedback>}
-            {added && <Feedback theme="success">The Establishment was successfully added!</Feedback>}
+            
 
             <fieldset disabled={submitting} className="form__fieldset establishment-form__fieldset">
 
@@ -172,7 +170,14 @@ const AddForm: React.FC = () => {
                     </SubmitButton>
                 </div>
 
+                
+
             </fieldset>
+
+            {/* Feedback: */}
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
+            {added && <Feedback theme="success">The Establishment was successfully added!</Feedback>}
+
         </form>
     );
 }

@@ -122,6 +122,11 @@
             font-size: 2.25rem;
             padding: 1rem 2.5rem;
         }
+
+        @include respond(mobile-lg) {
+            font-size: 1.8rem;
+            padding: .7rem 2rem;
+        }
     } 
 
     

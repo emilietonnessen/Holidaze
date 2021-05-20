@@ -66,7 +66,7 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
             {/* Title: */}
             <h3 className="booking-form__title">Book now!</h3>
 
-            {serverError && <Feedback theme="error">{serverError}</Feedback>}
+            
 
             <fieldset className="form__fieldset booking-form__fieldset">
                 {/* Choose a room: */}
@@ -162,6 +162,8 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
                     </SubmitButton> 
                 </div>
             </fieldset>
+
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
         </form>
     );
 }

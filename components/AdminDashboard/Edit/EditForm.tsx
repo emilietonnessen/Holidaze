@@ -185,9 +185,7 @@ const EditForm: React.FC = () => {
             </Select>
 
 
-            {/* Feedback on the Update */}
-            {updated && <Feedback theme="success">The Establishment was successfully updated!</Feedback>}
-            {updateError && <Feedback theme="error">{updateError}</Feedback>}
+            
 
 
             {/* Form: */}
@@ -229,8 +227,13 @@ const EditForm: React.FC = () => {
                     </SubmitButton>
                 </div> 
 
+                
+
             </fieldset>
 
+            {/* Feedback on the Update */}
+            {updated && <Feedback theme="success">The Establishment was successfully updated!</Feedback>}
+            {updateError && <Feedback theme="error">{updateError}</Feedback>}
         </form>
 
         {/* Advanced Options */}
