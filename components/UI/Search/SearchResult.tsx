@@ -1,20 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Star } from '../Icons';
+import * as icons from '../Icons';
 import {SearchResultProps} from '../../../constants/interfaces';
-import { primary } from "../../../constants/colors";
+import { primary, greyLightThree } from "../../../constants/colors";
 
 
-const SearchResult: React.FC<SearchResultProps> = ({ name, thumbnail, stars, slug }) => {
+const SearchResult: React.FC<SearchResultProps> = ({ name, thumbnail, stars, slug, onClick }) => {
 
     // Calculate the amount of stars that shall be displayed
 	const amountOfStars: number = stars;
-    const calculatedStars: JSX.Element[] = [...Array(amountOfStars)].map((e, i) => <Star key={i} color={primary} />);
+    const calculatedStars: JSX.Element[] = [...Array(amountOfStars)].map((e, i) => <icons.Star key={i} color={primary} />);
+
+    const oneGreyStar = <icons.Star color={greyLightThree} />;
+
+    const twoGreyStar = <>
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+    </>;
+
+    const threeGreyStar = <>
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+    </>;
+
+    const fourGreyStar = <>
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+        <icons.Star color={greyLightThree} />
+    </>;
 
     return (
-        <Link href={`/establishment/${slug}`}>
-            <a className="search-result__link">
+        <Link href={`/establishment/${slug}`} >
+            <a className="search-result__link" onClick={onClick}>
                 <div className="search-result">
 
                     <Image 
@@ -27,6 +47,10 @@ const SearchResult: React.FC<SearchResultProps> = ({ name, thumbnail, stars, slu
                         <h6 className="search-result__hotel-name">{name}</h6>
                         <div className="search-result__stars">
                             {calculatedStars}
+                            {stars === 4 ? oneGreyStar :
+                            stars === 3 ? twoGreyStar :
+                            stars === 2 ? threeGreyStar :
+                            stars === 1 ? fourGreyStar : null }
                         </div>
                     </div>
                 </div>
