@@ -51,7 +51,7 @@ export default home;
 
 
 // API Call with GraphQL and Apollo Client
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     /* const { loading, error, data } = useQuery(GRAPHQL_URL, {
         fetchPolicy: "network-only"
