@@ -6,18 +6,12 @@ import { useEffect, useState } from "react";
 
 import useAxios from "../../../hooks/useAxios.js";
 import { ESTABLISHMENTS_URL } from "../../../constants/api";
-import Accordion from "../../UI/Accordion";
 import Select from "../../UI/Form/Select";
-import Input from "../../UI/Form/Input";
-import Textarea from "../../UI/Form/Textarea";
 import { SubmitButton } from "../../UI/Button";
 import Error from "../../UI/Form/Error";
 import { editEstablishmentSchema } from '../../../constants/schemas';
 import { Establishment } from '../../../constants/interfaces';
-import File from "../../UI/Form/File";
-import * as regex from '../../../constants/regex';
 import AdvancedOptions from "./AdvancedOptions";
-import RadioBoolean from "../../UI/Form/RadioBoolean";
 import EstablishmentForm from "../EstablishmentForm";
 import Feedback from "../../UI/Feedback";
 
