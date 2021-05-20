@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, gql, useQuery } from '@apollo/client';
 import { GRAPHQL_URL } from "../constants/api";
 import { META_HOME, TITLE_HOME } from '../constants/meta';
 import { HomeProps, EstablishmentCardProps } from '../constants/interfaces';
@@ -52,15 +52,21 @@ export default home;
 
 // API Call with GraphQL and Apollo Client
 export async function getStaticProps() {
+
+    /* const { loading, error, data } = useQuery(GRAPHQL_URL, {
+        fetchPolicy: "network-only"
+    }); */
     
     // Creating a new Apollo Client with the GraphQL API
     const client = new ApolloClient({
         uri: GRAPHQL_URL,
         cache: new InMemoryCache
+        
     });
 
     // Destructing the data endpoints into the "data" variable
     const { data } = await client.query({
+        fetchPolicy: "network-only",
         query: gql `query  {
             establishments {
                 id
