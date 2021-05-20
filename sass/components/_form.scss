@@ -7,7 +7,6 @@
     }
 
 
-
     // Label ----------------------------------------
     &__label {
         display: block;
@@ -63,10 +62,16 @@
         -webkit-appearance: none;
     }
 
+    &__group--textarea {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr max-content;
+    }
+
 
     // Select -------------------------------------------
     &__select {
-        @include respond(lap-lg) {
+        @include respond(desk){
             height: 3rem;
             padding: 0 1rem;
         }

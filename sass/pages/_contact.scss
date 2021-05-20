@@ -22,25 +22,28 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 30% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 40% 100%, 0 100%);
 
-    @include respond(desk) {
+    @include respond(lap-lg) {
         grid-column: 1 / 4;
         margin: 0;
         height: 100%;
-    }
+    } 
 }
 
 .contact-container {
     grid-column: 2 / 3;
     
     z-index: 100;
-    height: calc(100% - 20rem);
-    width: 100rem;
+    //height: calc(100% - 20rem);
+    height: 100%;
+    width: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    //background-color: rgba(#f10000, .5);
 
     @include respond(lap-lg) {
         width: 80%;
@@ -94,8 +97,8 @@
     grid-row: 1 / 3;
 
     position: absolute;
-    top: -6rem;
-    left: 14rem;
+    top: 5rem;
+    left: 0;
 
     @include respond(lap-lg) {
         top: 5rem;
@@ -118,7 +121,7 @@
 
     position: absolute;
     bottom: 15rem;
-    right: -5rem;
+    right: 0rem;
 
     @include respond(lap-lg) {
         bottom: 5rem;

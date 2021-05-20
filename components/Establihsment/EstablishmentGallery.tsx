@@ -3,7 +3,7 @@ import * as interfaces from '../../constants/interfaces';
 
 const EstablishmentGallery: React.FC<interfaces.EstablishmentGalleryProps> = ({thumbnail, imageOne, imageTwo}) => (
     <section className="establishment-gallery">
-		<div className="establishment-gallery__overflow">
+		{/* <div className="establishment-gallery__overflow"> */}
 			
 			<div className="establishment-gallery__box">
 				<Image 
@@ -35,7 +35,7 @@ const EstablishmentGallery: React.FC<interfaces.EstablishmentGalleryProps> = ({t
 					height={imageTwo.height}  /> 
 			</div>
 		
-		</div>
+		{/* </div> */}
 	</section>
 );
 

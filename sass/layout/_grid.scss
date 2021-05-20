@@ -109,17 +109,17 @@
 
 // Homepage ----------------------------------------------------
 .home {
-    grid-template-rows: 50vh max-content 70rem repeat(2, max-content);
+    grid-template-rows: 70rem max-content 90rem repeat(2, max-content);
     row-gap: 20rem;
     justify-self: center;
     justify-content: center;
 
-    @include respond (lap-lg) {
-        grid-template-rows: 45rem max-content 70rem repeat(2, max-content);
+    @include respond (desk) {
+        grid-template-rows: 65rem max-content 70rem repeat(2, max-content);
     }
 
-    @include respond(tab-port) {
-        grid-template-rows: 50vh max-content 80rem repeat(2, max-content);
+    @include respond (lap-lg) {
+        grid-template-rows: 50rem max-content 70rem repeat(2, max-content);
     }
     
     @include respond(mobile-lg) {
@@ -147,6 +147,10 @@
 .establishment {
     grid-template-rows: max-content 8rem 1fr max-content;
 
+    @include respond(desk) {
+        grid-template-rows: max-content 8rem 1fr max-content;
+    }
+    
     @include respond(mobile) {
         grid-template-rows: max-content 6rem repeat(2, max-content);
     }

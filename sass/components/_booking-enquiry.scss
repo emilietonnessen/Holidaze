@@ -218,7 +218,11 @@
             grid-row: 6 / 7;
 
             & > textarea {
-                height: 10rem;
+                height: 15rem;
+
+                @include respond(lap-lg) {
+                    height: 10rem;
+                }
             }
 
             @include respond(mobile) {

@@ -198,7 +198,7 @@
             }
 
             & textarea {
-                height: 96%;
+                height: 100%;
 
                 @include respond(mobile) {
                     height: 10rem;
@@ -216,7 +216,7 @@
             }
 
             & textarea {
-                height: 97%;
+                height: 100%;
 
                 @include respond(mobile) {
                     height: 10rem;

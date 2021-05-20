@@ -32,11 +32,6 @@
         @include respond(tab-land) {
             grid-template-columns: repeat(3, 35rem);
         }
-
-        @include respond(mobile) {
-            grid-template-columns: repeat(3, 25rem);
-            gap: 2rem;
-        }
     }
 
     &__link {
@@ -56,7 +51,11 @@
 
         &:hover,
         &:focus {
-            transform: scale(1.05);
+            transform: scale(1.025);
+
+            @include respond(mobile-lg) {
+                transform: scale(1);
+            }
         }
 
         &:active {
@@ -65,12 +64,12 @@
     }
 
     &__box div {
-        width: 100%;
+        width: 100%;     
     }
 
     &__image {
         border-radius: 3rem;
-        width: 100%;
+        width: 100%; 
     }
 
     &__title {
@@ -87,4 +86,5 @@
             font-size: 1.6rem;
         }
     }
+
 }
