@@ -113,6 +113,7 @@ export interface SearchResultProps {
     thumbnail: GalleryProps;
     stars: number;
     slug: any;
+    onClick: any;
 }
 
 export interface EstablishmentsProps {
