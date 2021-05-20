@@ -19,6 +19,7 @@ import * as regex from '../../../constants/regex';
 import AdvancedOptions from "./AdvancedOptions";
 import RadioBoolean from "../../UI/Form/RadioBoolean";
 import EstablishmentForm from "../EstablishmentForm";
+import Feedback from "../../UI/Feedback.jsx";
 
 interface Schema extends Asserts<typeof schema> {}
 
@@ -191,8 +192,8 @@ const EditForm: React.FC = () => {
 
 
             {/* Feedback on the Update */}
-            {updated && <div className="feedback--success">The Establishment was successfully updated!</div>}
-            {updateError && <div className="feedback--error">{updateError}</div>}
+            {updated && <Feedback theme="success">The Establishment was successfully updated!</Feedback>}
+            {updateError && <Feedback theme="error">{updateError}</Feedback>}
 
 
             {/* Form: */}

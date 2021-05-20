@@ -11,6 +11,7 @@ import EstablishmentForm from "../EstablishmentForm";
 import { Establishment } from "../../../constants/interfaces";
 import Select from "../../UI/Form/Select";
 import Error from "../../UI/Form/Error";
+import Feedback from "../../UI/Feedback";
 
 
 
@@ -132,8 +133,8 @@ const AddForm: React.FC = () => {
         <form className="establishment-form" onSubmit={handleSubmit(onSubmit)}>
 
             {/* Feedback: */}
-            {serverError && <div className="feedback--error">{serverError}</div>}
-            {added && <div className="feedback--success">The Establishment was successfully added!</div>}
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
+            {added && <Feedback theme="success">The Establishment was successfully added!</Feedback>}
 
             <fieldset disabled={submitting} className="form__fieldset establishment-form__fieldset">
 

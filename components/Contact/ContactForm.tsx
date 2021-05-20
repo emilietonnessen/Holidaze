@@ -12,6 +12,7 @@ import { SubmitButton } from "../UI/Button";
 import { contactFormSchema } from "../../constants/schemas";
 import { ContactMessage } from "../../constants/interfaces";
 import axios from "axios";
+import Feedback from "../UI/Feedback";
 
 interface Schema extends Asserts<typeof schema> {}
 
@@ -48,7 +49,7 @@ const ContactForm: React.FC = () => {
             {/* Title: */}
             <h3 className="contact-form__title">Send us a message</h3>
 
-            {serverError && <div className="feedback--error">{serverError}</div>}
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
 
             <fieldset className="form__fieldset contact-form__fieldset">
                 {/* Full Name: */}

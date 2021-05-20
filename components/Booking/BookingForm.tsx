@@ -3,6 +3,8 @@ import { Asserts } from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+import axios from "axios";
+
 
 import useAxios from "../../hooks/useAxios.js";
 import Input from "../UI/Form/Input";
@@ -12,7 +14,7 @@ import { ENQUIRY_URL } from "../../constants/api";
 import { SubmitButton } from '../UI/Button';
 import { bookingFormSchema } from "../../constants/schemas";
 import { BookingFormProps } from "../../constants/interfaces.js";
-import axios from "axios";
+import Feedback from "../UI/Feedback";
 
 
 // TypeScript for Yup and Yup validation
@@ -64,7 +66,7 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
             {/* Title: */}
             <h3 className="booking-form__title">Book now!</h3>
 
-            {serverError && <div className="feedback--error">{serverError}</div>}
+            {serverError && <Feedback theme="error">{serverError}</Feedback>}
 
             <fieldset className="form__fieldset booking-form__fieldset">
                 {/* Choose a room: */}
