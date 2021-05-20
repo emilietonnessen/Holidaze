@@ -106,7 +106,7 @@ export default establishments;
 
 
 // API Call with GraphQL and Apollo Client
-export async function getStaticProps() {
+export async function getServerSideProps() {
     
     // Creating a new Apollo Client
     const client = new ApolloClient({

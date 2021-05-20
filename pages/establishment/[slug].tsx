@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Params } from 'next/dist/next-server/server/router';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 
 import { ESTABLISHMENTS_URL, GRAPHQL_URL } from "../../constants/api";
 import Layout from '../../components/Layout';
@@ -64,7 +64,7 @@ export default establishmentDetails;
 
 
 // Get the slug from the API
-export const getStaticPaths: () => Promise<{ paths: { params: { slug: string; }; }[]; fallback: boolean; } | undefined> = async () => {
+export const getServerSidePaths: () => Promise<{ paths: { params: { slug: string; }; }[]; fallback: boolean; } | undefined> = async () => {
 	try {
 		const response: AxiosResponse<any> = await axios.get(ESTABLISHMENTS_URL);
         const establishments: any[] = response.data;
@@ -88,7 +88,7 @@ export const getStaticPaths: () => Promise<{ paths: { params: { slug: string; };
 
 
 // Based on the acquired slug - the graphQL will pick up the necessary endpoints
-export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }: Params) => {
 	let slug: string | string[] | undefined;
     
 	// Going around a TS error that didn't liked that the value could be "undefined"

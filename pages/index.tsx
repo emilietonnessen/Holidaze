@@ -66,7 +66,6 @@ export async function getServerSideProps() {
 
     // Destructing the data endpoints into the "data" variable
     const { data } = await client.query({
-        fetchPolicy: "network-only",
         query: gql `query  {
             establishments {
                 id
