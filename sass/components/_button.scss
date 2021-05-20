@@ -15,7 +15,8 @@
         cursor: pointer;
         transition: all .3s;
         box-shadow: $boxshadow-default;
-        display: block;
+        display: inline-block;
+        justify-self: flex-start;
     }
 
     &:hover {

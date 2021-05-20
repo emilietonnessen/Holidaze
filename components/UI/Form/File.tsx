@@ -21,7 +21,6 @@ const File: React.FC<FileProps> = ({ name, label, fileError, cssClass, onChange,
                     type="file" 
                     name={name} 
                     id={name} 
-                    //</div>className={"form__file-upload " + cssError} 
                     onChange={onChange} 
                     ref={register} />
                     upload image

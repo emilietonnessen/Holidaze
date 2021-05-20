@@ -1,4 +1,4 @@
-import Button from "../UI/Button";
+import {ButtonLink} from "../UI/Button";
 import Search from "../UI/Search";
 
 const Hero: React.FC = () => (
@@ -9,9 +9,9 @@ const Hero: React.FC = () => (
         </div>
             
         <div className="hero__cta">
-            <Button link="/establishments" theme="primary" size="cta">
+            <ButtonLink link="/establishments" theme="primary" size="cta">
                 explore
-            </Button>
+            </ButtonLink>
         </div>
             
     </header>

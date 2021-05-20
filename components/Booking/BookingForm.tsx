@@ -1,20 +1,20 @@
 import * as yup from "yup";
+import axios from "axios";
 import { Asserts } from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import axios from "axios";
 
-
+import Feedback from "../UI/Feedback";
 import useAxios from "../../hooks/useAxios.js";
 import Input from "../UI/Form/Input";
 import Select from "../UI/Form/Select";
 import Textarea from "../UI/Form/Textarea";
 import { ENQUIRY_URL } from "../../constants/api";
-import { SubmitButton } from '../UI/Button';
+import { Button } from '../UI/Button';
 import { bookingFormSchema } from "../../constants/schemas";
 import { BookingFormProps } from "../../constants/interfaces.js";
-import Feedback from "../UI/Feedback";
+
 
 
 // TypeScript for Yup and Yup validation
@@ -156,11 +156,10 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
 
 
                 {/* Submit: */}
-                <div className="form__group booking-form__group--submit">
-                    <SubmitButton theme="primary" size="md">
-                        {submitting ? "booking..." : "book now"}
-                    </SubmitButton> 
-                </div>
+                <Button theme="primary" size="md" type="submit" classes="booking-form__group--submit">
+                    {submitting ? "booking..." : "book now"}
+                </Button> 
+                
             </fieldset>
 
             {serverError && <Feedback theme="error">{serverError}</Feedback>}

@@ -1,9 +1,7 @@
 import Head from 'next/head';
+import { NextHeadProps } from '../../constants/interfaces';
 
-interface NextHeadProps {
-    title: string;
-    description: string;
-}
+
 
 const NextHead: React.FC<NextHeadProps> = ({ title, description }) => {
     return (

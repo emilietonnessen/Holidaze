@@ -1,10 +1,11 @@
 import { useState } from "react";
+
+import useAxios from "../../../hooks/useAxios";
 import { ENQUIRY_URL } from "../../../constants/api";
 import { BookingCardProps } from "../../../constants/interfaces";
-import useAxios from "../../../hooks/useAxios";
 
 
-const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id, onClick}) => {
+const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id}) => {
     const [newMessage, setNewMessage] = useState(read);
     let url = `${ENQUIRY_URL}/${id}`;
     const http = useAxios();

@@ -1,8 +1,7 @@
-import { EstablishmentInfoProps } from '../../constants/interfaces';
 import EstablishmentDetails from './EstablishmentDetails';
 import EstablishmentReview from './EstablishmentReview';
 import EstablishmentRoom from './EstablishmentRoom';
-
+import { EstablishmentInfoProps } from '../../constants/interfaces';
 
 
 const EstablishmentInfo: React.FC<EstablishmentInfoProps> = ({ coordinates, description, amenities, lowestPrice }) => {
@@ -25,12 +24,3 @@ const EstablishmentInfo: React.FC<EstablishmentInfoProps> = ({ coordinates, desc
 }
 
 export default EstablishmentInfo;
-
-
-/* 
-
-    TO DO LIST
-
-    [X] - Move the interface to interface.tsx
-
-*/

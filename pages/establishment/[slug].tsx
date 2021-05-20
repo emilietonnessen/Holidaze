@@ -1,9 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { Params } from 'next/dist/next-server/server/router';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 
-import { ESTABLISHMENTS_URL, GRAPHQL_URL } from "../../constants/api";
 import Layout from '../../components/Layout';
 import Booking from '../../components/Booking';
 import BookingFeedbackSuccess from '../../components/Booking/BookingFeedback';
@@ -12,6 +11,7 @@ import EstablishmentHeader from '../../components/Establihsment/EstablishmentHea
 import EstablishmentInfo from '../../components/Establihsment/EstablishmentInfo';
 import EstablishmentCTA from '../../components/Establihsment/EstablishmentCTA';
 import * as interfaces from '../../constants/interfaces';
+import { ESTABLISHMENTS_URL, GRAPHQL_URL } from "../../constants/api";
 
 
 const establishmentDetails: React.FC<interfaces.EstablishmentDetailsProps> = ({est}) => {

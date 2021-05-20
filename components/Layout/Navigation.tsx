@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Search from '../UI/Search';
 
-interface NavigationProps {
-    active: string;
-}
+import Search from '../UI/Search';
+import { NavigationProps } from '../../constants/interfaces';
+
+
 
 const Navigation: React.FC<NavigationProps> = ({active}) => {
     return (

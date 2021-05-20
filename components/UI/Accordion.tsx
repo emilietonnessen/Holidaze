@@ -1,11 +1,7 @@
 import { useState } from "react";
+import { AccordionProps } from "../../constants/interfaces";
 import { Chevron } from "../UI/Icons";
 
-interface AccordionProps {
-    title: string;
-    children: React.ReactNode;
-    closed?: boolean;
-}
 
 const Accordion: React.FC<AccordionProps> = ({ title, children, closed }) => {
     const [isActive, setActive] = useState(false);

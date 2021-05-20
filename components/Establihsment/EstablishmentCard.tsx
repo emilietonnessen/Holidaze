@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link";
 
+import * as icons from '../UI/Icons';
 import { greyDarkOne, greyLightThree } from "../../constants/colors";
 import { EstablishmentCardProps } from "../../constants/interfaces";
-import * as icons from '../UI/Icons';
+
 
 
 const EstablishmentCard: React.FC<EstablishmentCardProps> = ({thumbnail, name, reviews, stars, lowestPrice, slug }) => {

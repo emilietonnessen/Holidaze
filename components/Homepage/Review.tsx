@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Button from '../UI/Button';
+import {ButtonLink} from '../UI/Button';
 
 const Review: React.FC = () => {
     return (
@@ -17,9 +17,9 @@ const Review: React.FC = () => {
                     <p className="paragraph review__paragraph">
                         This is a gorgeous place to stay, fantastic location, and views to die for! Great amenities and very clean, would definitely go back soon.
                     </p>
-                    <Button link="/establishments" theme="primary" size="lg">
+                    <ButtonLink link="/establishments" theme="primary" size="lg">
                         book now
-                    </Button>
+                    </ButtonLink>
                 </div>
             </div>
         </section>

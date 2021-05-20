@@ -1,6 +1,7 @@
+import * as icons from '../UI/Icons';
 import { primary } from "../../constants/colors";
 import { BookingInfoProps } from "../../constants/interfaces";
-import * as icons from '../UI/Icons';
+
 
 
 const BookingInfo: React.FC<BookingInfoProps> = ({street, zipCode, city, phone, email}) => (

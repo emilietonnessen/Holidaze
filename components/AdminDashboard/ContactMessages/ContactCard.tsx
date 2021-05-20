@@ -1,16 +1,19 @@
 import { useState } from "react";
 
-import { CONTACT_URL } from "../../../constants/api";
 import useAxios from "../../../hooks/useAxios";
+import { CONTACT_URL } from "../../../constants/api";
 import {ContactCardProps} from '../../../constants/interfaces';
 
 
 const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, id, read}) => {
+
+    // State & Variables
     const [newMessage, setNewMessage] = useState(read);
-    let url = `${CONTACT_URL}/${id}`;
     const http = useAxios();
+    let url = `${CONTACT_URL}/${id}`;
+    
 
-
+    // "new" message handler
     async function readMessageHandler() {
         if (read === false) {
             try {
@@ -51,7 +54,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
                 {message}
             </p>
         </div>
-    )
+    );
 }
 
 export default ContactCard;

@@ -1,7 +1,8 @@
-import { ApolloClient, InMemoryCache, gql, useQuery } from '@apollo/client';
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { GRAPHQL_URL } from "../constants/api";
 import { META_HOME, TITLE_HOME } from '../constants/meta';
 import { HomeProps, EstablishmentCardProps } from '../constants/interfaces';
+
 import Layout from "../components/Layout";
 import Hero from "../components/Homepage/Hero";
 import Category from "../components/Homepage/Category";

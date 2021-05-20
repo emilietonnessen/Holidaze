@@ -227,7 +227,8 @@
         &--submit {
             grid-column: 1 / 7;
             grid-row: 9 / 10;
-            padding-top: 3rem;
+            margin-top: 3rem;
+            justify-self: flex-start;
 
             @include respond(tab-land) {
                 grid-column: 1 / 5;

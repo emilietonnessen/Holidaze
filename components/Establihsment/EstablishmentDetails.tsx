@@ -1,7 +1,9 @@
-import Image from "next/image"
+import Image from "next/image";
+
+import * as icons from '../UI/Icons';
 import { primary } from "../../constants/colors";
 import { EstablishmentInfoProps } from "../../constants/interfaces";
-import * as icons from '../UI/Icons';
+
 
 
 const EstablishmentDetails: React.FC<EstablishmentInfoProps> = ({description, coordinates, amenities}) => {

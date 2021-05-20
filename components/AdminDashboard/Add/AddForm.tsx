@@ -4,20 +4,21 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 
 import { ESTABLISHMENTS_URL } from "../../../constants/api";
-import { SubmitButton } from "../../UI/Button";
+import { Button } from "../../UI/Button";
 import {addEstablishmentSchema} from '../../../constants/schemas';
+import { Establishment } from "../../../constants/interfaces";
 import AuthContext from "../../../context/AuthContext";
 import EstablishmentForm from "../EstablishmentForm";
-import { Establishment } from "../../../constants/interfaces";
 import Select from "../../UI/Form/Select";
 import Error from "../../UI/Form/Error";
 import Feedback from "../../UI/Feedback";
 
 
-
+// Yup validation
 interface Schema extends yup.Asserts<typeof schema> {}
-
 const schema = yup.object().shape(addEstablishmentSchema);
+
+
 
 const AddForm: React.FC = () => {
 
@@ -25,9 +26,13 @@ const AddForm: React.FC = () => {
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
+
+
     
     // Variables
     const [auth] = useContext<any>(AuthContext);
+
+
 
     // State
     const [submitting, setSubmitting] = useState<boolean>(false);
@@ -43,7 +48,8 @@ const AddForm: React.FC = () => {
 
     
 
-    // Image Value Handlers
+
+    // Checking and setting the image value of Thumbnail
     const changeThumbnailValue = async (event: React.ChangeEvent<HTMLInputElement>) => {
         setThumbnailValueError(false);
 
@@ -57,6 +63,7 @@ const AddForm: React.FC = () => {
         }
     }
 
+    // Checking and setting the image value of Image One
     const changeImageOneValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setImageOneValueError(false);
 
@@ -70,6 +77,7 @@ const AddForm: React.FC = () => {
         }
     }
     
+    // Checking and setting the image value of Image Two
     const changeImageTwoValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setImageTwoValueError(false);
 
@@ -83,6 +91,8 @@ const AddForm: React.FC = () => {
         }
     }
     
+
+
 
     // Onsubmit
     async function onSubmit(data: Establishment) {
@@ -125,17 +135,14 @@ const AddForm: React.FC = () => {
         }
     }
 
-    // Console Logs
-    //console.log("[Auth Key]", auth.jwt);
-    //console.log("[thumbnailValue]", thumbnailValue);
+
+
 
     return (
         <form className="establishment-form" onSubmit={handleSubmit(onSubmit)}>
-
-            
-
             <fieldset disabled={submitting} className="form__fieldset establishment-form__fieldset">
 
+                {/* Form: */}
                 <EstablishmentForm 
                     register={register}
                     errors={errors}
@@ -164,12 +171,9 @@ const AddForm: React.FC = () => {
                 </Select>
 
                 {/* Submit Button */}    
-                <div className="establishment-form__group--submit">
-                    <SubmitButton theme="primary" size="sm">
-                        {submitting ? "adding..." : "add establishment"}
-                    </SubmitButton>
-                </div>
-
+                <Button theme="primary" size="sm" type="submit" classes="establishment-form__group--submit">
+                    {submitting ? "adding..." : "add establishment"}
+                </Button>
                 
 
             </fieldset>

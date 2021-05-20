@@ -1,13 +1,9 @@
 import AdminNavigation from './AdminNavigation';
 import Main from './Main';
 import NextHead from './NextHead';
+import { AdminLayoutProps } from '../../constants/interfaces';
 
-interface AdminLayoutProps {
-    title: string;
-    description: string;
-    children: React.ReactNode;
-    page: string;
-}
+
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ title, description, children, page }) => (
     <>

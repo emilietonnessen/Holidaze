@@ -1,9 +1,11 @@
-import { EstablishmentFormProps } from '../../constants/interfaces';
 import Error from '../UI/Form/Error';
 import File from '../UI/Form/File';
 import Input from '../UI/Form/Input';
 import RadioBoolean from '../UI/Form/RadioBoolean';
 import Textarea from '../UI/Form/Textarea';
+import { EstablishmentFormProps } from '../../constants/interfaces';
+
+
 
 const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
     register, 

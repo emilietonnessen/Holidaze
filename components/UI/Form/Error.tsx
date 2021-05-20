@@ -1,9 +1,6 @@
 import * as icons from '../Icons';
 import * as color from '../../../constants/colors';
-
-interface ErrorProps {
-    children: React.ReactNode;
-}
+import { ErrorProps } from '../../../constants/interfaces';
 
 const Error: React.FC<ErrorProps> = ({ children }) => (
     <div className="form__error">

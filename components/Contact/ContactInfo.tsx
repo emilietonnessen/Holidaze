@@ -1,15 +1,13 @@
+import { primary } from '../../constants/colors';
 import * as icons from '../UI/Icons';
 
 const ContactInfo: React.FC = () => {
-
-    const primaryColor = "#ff1447";
-
     return (
         <div className="contact-info">
             <div className="contact-info__info-box">
                 <div className="contact-info__box">
                     <div className="contact-info__icon">
-                        <icons.Location color={primaryColor} />
+                        <icons.Location color={primary} />
                     </div>
                     
                     <h6 className="contact-info__title">Address</h6>
@@ -21,7 +19,7 @@ const ContactInfo: React.FC = () => {
                 </div>
                 <div className="contact-info__box">
                     <div className="contact-info__icon">
-                        <icons.Phone color={primaryColor} />
+                        <icons.Phone color={primary} />
                     </div>
                     <h6 className="contact-info__title">Phone</h6>
                     <p className="contact-info__text">
@@ -30,7 +28,7 @@ const ContactInfo: React.FC = () => {
                 </div>
                 <div className="contact-info__box">
                     <div className="contact-info__icon">
-                        <icons.Envelope color={primaryColor} />
+                        <icons.Envelope color={primary} />
                     </div>
                     <h6 className="contact-info__title">Email</h6>
                     <p className="contact-info__text">

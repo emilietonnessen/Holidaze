@@ -5,19 +5,23 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
 
 import useAxios from "../../../hooks/useAxios.js";
-import { ESTABLISHMENTS_URL } from "../../../constants/api";
 import Select from "../../UI/Form/Select";
-import { SubmitButton } from "../../UI/Button";
 import Error from "../../UI/Form/Error";
-import { editEstablishmentSchema } from '../../../constants/schemas';
-import { Establishment } from '../../../constants/interfaces';
 import AdvancedOptions from "./AdvancedOptions";
 import EstablishmentForm from "../EstablishmentForm";
 import Feedback from "../../UI/Feedback";
+import { ESTABLISHMENTS_URL } from "../../../constants/api";
+import { editEstablishmentSchema } from '../../../constants/schemas';
+import { Establishment } from '../../../constants/interfaces';
+import { Button } from "../../UI/Button";
 
+
+// yup validation
 interface Schema extends Asserts<typeof schema> {}
-
 const schema = yup.object().shape(editEstablishmentSchema);
+
+
+
 
 const EditForm: React.FC = () => {
 
@@ -42,11 +46,13 @@ const EditForm: React.FC = () => {
     const [imageTwoValueError, setImageTwoValueError] = useState<any>(null);
 
 
+
     // Variables
     const http = useAxios();
     let establishmentOptions;
     let selectedEstablishment: any;
     let url: string = "";
+
 
 
     // Set all the Establishments from the API
@@ -61,7 +67,9 @@ const EditForm: React.FC = () => {
         }; fetchData(); 
     }, []);
 
-// Image values
+
+
+    // Checking and setting the image value of Thumbnail
     const changeThumbnailValue = async (event: React.ChangeEvent<HTMLInputElement>) => {
         setThumbnailValueError(false);
 
@@ -75,6 +83,7 @@ const EditForm: React.FC = () => {
         }
     }
 
+    // Checking and setting the image value of Image One
     const changeImageOneValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setImageOneValueError(false);
 
@@ -88,6 +97,7 @@ const EditForm: React.FC = () => {
         }
     }
     
+    // Checking and setting the image value of Image Two
     const changeImageTwoValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setImageTwoValueError(false);
 
@@ -102,22 +112,19 @@ const EditForm: React.FC = () => {
     }
 
 
+
     // Set the Matching Establishment
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMatchEstablishment(event.target.value);
     }
 
 
-
     // Set the selected establishment to match the search
     if (establishments != undefined && matchEstablishment != null && establishments.length > 0) {
         selectedEstablishment = establishments.filter(esta => esta.name.match(matchEstablishment)); 
     };
-
     if (selectedEstablishment != undefined && selectedEstablishment.length === 1) selectedEstablishment = selectedEstablishment[0];
-    
     if (selectedEstablishment != undefined ) url = ESTABLISHMENTS_URL + "/" + selectedEstablishment.id;
-
 
     
 
@@ -128,7 +135,6 @@ const EditForm: React.FC = () => {
         ));
     }
     
- 
 
     // OnSubmit
     async function onSubmit(data: any) {
@@ -157,87 +163,69 @@ const EditForm: React.FC = () => {
     }
 
 
-
-    // Console Logging
-    //console.log("[url]", url);
-    //console.log("[Match Establishment]", matchEstablishment);
-	//console.log("[Establishments]", establishments);
-    //if (selectedEstablishment) console.log("[Selected Establishment Featured]", selectedEstablishment.featured);
-    
-    //console.log("[Errors]", errors);
-    //if (selectedEstablishment) console.log("[Thumbnail Url]", selectedEstablishment.thumbnail.url);
-    //console.log(thumbnailValue);
-
     return (
         <>
-        <form  onSubmit={handleSubmit(onSubmit)} className="establishment-form">
+            <form  onSubmit={handleSubmit(onSubmit)} className="establishment-form">
 
-            {/* Select an Establishment */}
-            <Select 
-                onChange={changeHandler}
-                name="establishment" 
-                cssClass="establishment-form__group--establishment"
-                label="Choose an establishment" 
-                register={register} 
-                error={errors.establishment && <Error>{errors.establishment.message}</Error>} >
-
-                {establishmentOptions}
-            </Select>
-
-
-            
-
-
-            {/* Form: */}
-            <fieldset disabled={updatingEstablishment} className="form__fieldset establishment-form__fieldset">
-
-                <EstablishmentForm 
-                    register={register}
-                    selectedEstablishment={selectedEstablishment}
-                    errors={errors}
-                    radioID="edit"
-                    changeThumbnailValue={changeThumbnailValue} 
-                    thumbnailValue={thumbnailValue} 
-                    thumbnailValueError={thumbnailValueError}
-                    changeImageOneValue={changeImageOneValue}
-                    imageOneValue={imageOneValue}
-                    imageOneValueError={imageOneValueError}
-                    changeImageTwoValue={changeImageTwoValue} 
-                    imageTwoValue={imageTwoValue}
-                    imageTwoValueError={imageTwoValueError} />
-                
-                {/* Category: */}
+                {/* Select an Establishment */}
                 <Select 
-                    name="category" 
-                    cssClass="establishment-form__group--category"
-                    label="Choose a Category"
+                    onChange={changeHandler}
+                    name="establishment" 
+                    cssClass="establishment-form__group--establishment"
+                    label="Choose an establishment" 
                     register={register} 
-                    error={errors.category && <Error>{errors.category.message}</Error>}
-                    defaultValue={selectedEstablishment ? selectedEstablishment.category : ""} >
-                                    
-                    <option value="Hotel">Hotel</option>
-                    <option value="BedAndBreakfast">Bed & Breakfast</option>
-                    <option value="Guesthouse">Guesthouse</option>
+                    error={errors.establishment && <Error>{errors.establishment.message}</Error>} >
+
+                    {establishmentOptions}
                 </Select>
 
-                {/* Submit Button */}    
-                <div className="establishment-form__group--submit">
-                    <SubmitButton theme="primary" size="sm">
-                        {updatingEstablishment ? "updating.." : "update establishment"}
-                    </SubmitButton>
-                </div> 
-
                 
+                <fieldset disabled={updatingEstablishment} className="form__fieldset establishment-form__fieldset">
 
-            </fieldset>
+                    <EstablishmentForm 
+                        register={register}
+                        selectedEstablishment={selectedEstablishment}
+                        errors={errors}
+                        radioID="edit"
+                        changeThumbnailValue={changeThumbnailValue} 
+                        thumbnailValue={thumbnailValue} 
+                        thumbnailValueError={thumbnailValueError}
+                        changeImageOneValue={changeImageOneValue}
+                        imageOneValue={imageOneValue}
+                        imageOneValueError={imageOneValueError}
+                        changeImageTwoValue={changeImageTwoValue} 
+                        imageTwoValue={imageTwoValue}
+                        imageTwoValueError={imageTwoValueError} />
+                    
+                    {/* Category: */}
+                    <Select 
+                        name="category" 
+                        cssClass="establishment-form__group--category"
+                        label="Choose a Category"
+                        register={register} 
+                        error={errors.category && <Error>{errors.category.message}</Error>}
+                        defaultValue={selectedEstablishment ? selectedEstablishment.category : ""} >
+                                        
+                        <option value="Hotel">Hotel</option>
+                        <option value="BedAndBreakfast">Bed & Breakfast</option>
+                        <option value="Guesthouse">Guesthouse</option>
+                    </Select>
 
-            {/* Feedback on the Update */}
-            {updated && <Feedback theme="success">The Establishment was successfully updated!</Feedback>}
-            {updateError && <Feedback theme="error">{updateError}</Feedback>}
-        </form>
+                    {/* Submit Button */}    
+                    <Button theme="primary" size="sm" type="submit" classes="establishment-form__group--submit">
+                        {updatingEstablishment ? "updating.." : "update establishment"}
+                    </Button>
 
-        {/* Advanced Options */}
-        <AdvancedOptions url={url} />
+                </fieldset>
+
+                {/* Feedback on the Update */}
+                {updated && <Feedback theme="success">The Establishment was successfully updated!</Feedback>}
+                {updateError && <Feedback theme="error">{updateError}</Feedback>}
+
+            </form>
+
+            {/* Advanced Options */}
+            <AdvancedOptions url={url} />
         </>
     );
 }

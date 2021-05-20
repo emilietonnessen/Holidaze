@@ -29,6 +29,83 @@ export interface Establishment {
 	imageTwo: GalleryProps;
 }
 
+export interface ModalProps {
+    children: React.ReactNode;
+    link: string;
+    id: string;
+    classes: string;
+}
+
+export interface FeedbackProps {
+    children: React.ReactNode;
+    theme: "error" | "success" | "warning";
+}
+
+export interface AccordionProps {
+    title: string;
+    children: React.ReactNode;
+    closed?: boolean;
+}
+
+export interface ErrorProps {
+    children: React.ReactNode;
+}
+
+export interface OuterLayoutProps {
+    title: string;
+    description: string;
+    children: React.ReactNode;
+}
+
+export interface NavigationProps {
+    active: string;
+}
+
+export interface NextHeadProps {
+    title: string;
+    description: string;
+}
+
+export interface LayoutProps {
+    children: React.ReactNode;
+    page: string;
+    title: string;
+    description: string;
+}
+
+export interface MainProps {
+    children: React.ReactNode;
+    page: string;
+}
+
+export interface ButtonProps {
+    children: React.ReactNode;
+    name?: string;
+    theme: 'primary' | 'light-grey' | 'dark-grey' | 'danger';
+    size: 'cta' | 'lg' | 'md' | 'sm';
+    type?: "button" | "submit" | "reset" | undefined;
+    onClick?: any;
+    classes?: string;
+}
+
+export interface AdminLayoutProps {
+    title: string;
+    description: string;
+    children: React.ReactNode;
+    page: string;
+}
+
+export interface ButtonLinkProps {
+    link: string;
+    children: React.ReactNode;
+    name?: string;
+    theme: 'primary' | 'light-grey' | 'dark-grey' | 'danger';
+    size: 'cta' | 'lg' | 'md' | 'sm';
+    type?: "button" | "submit" | "reset" | undefined;
+    onClick?: any;
+}
+
+
 export interface EstablishmentGalleryProps {
 	thumbnail: GalleryProps;
 	imageOne: GalleryProps;

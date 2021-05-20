@@ -8,10 +8,9 @@ import axios from "axios";
 import Link from "next/link";
 
 
-import {SubmitButton} from '../components/UI/Button';
+import { Button } from '../components/UI/Button';
 import { TITLE_LOGIN, META_LOGIN } from '../constants/meta';
 import { Logo } from '../components/UI/Icons';
-import { ModalError } from '../components/UI/Modal';
 import { AUTH_URL } from '../constants/api';
 import { loginSchema } from "../constants/schemas";
 import Input from '../components/UI/Form/Input';
@@ -99,11 +98,11 @@ const login: React.FC = () => {
                                 
                         </div>
 
-                        <div className="login__button">
-                            <SubmitButton  theme="primary" size="md">
+                        
+                            <Button  theme="primary" size="md" type="submit" classes="login__button">
                                 {submitting ? "loggin in..." : "login"}
-                            </SubmitButton>
-                        </div>
+                            </Button>
+                        
                     </fieldset>
                     
                 </form>

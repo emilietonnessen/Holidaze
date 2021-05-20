@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const EstablishmentReview: React.FC = () => (
     <div className="establishment-details__reviews">
@@ -35,6 +35,5 @@ const EstablishmentReview: React.FC = () => (
         </div>
 	</div>
 );
-
 
 export default EstablishmentReview;

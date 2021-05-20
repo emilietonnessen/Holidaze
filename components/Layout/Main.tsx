@@ -1,14 +1,10 @@
-interface MainProps {
-    children: React.ReactNode;
-    page: string;
-}
+import { MainProps } from "../../constants/interfaces";
 
-const Main: React.FC<MainProps> = ({children, page}) => {
-    return (
-        <main className={'main ' + page} id="main">
-            {children}
-        </main>
-    );
-}
+const Main: React.FC<MainProps> = ({children, page}) => (
+    <main className={'main ' + page} id="main">
+        {children}
+    </main>
+);
+
 
 export default Main;

@@ -1,18 +1,19 @@
 import * as yup from "yup";
+import axios from "axios";
 import { Asserts } from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 
-import { CONTACT_URL } from "../../constants/api";
+import Feedback from "../UI/Feedback";
 import useAxios from "../../hooks/useAxios.js";
 import Input from "../UI/Form/Input";
 import Textarea from "../UI/Form/Textarea";
-import { SubmitButton } from "../UI/Button";
+import { Button } from "../UI/Button";
 import { contactFormSchema } from "../../constants/schemas";
 import { ContactMessage } from "../../constants/interfaces";
-import axios from "axios";
-import Feedback from "../UI/Feedback";
+import { CONTACT_URL } from "../../constants/api";
+
 
 interface Schema extends Asserts<typeof schema> {}
 
@@ -87,9 +88,9 @@ const ContactForm: React.FC = () => {
                     error={errors.message && <span className="form__error"><i className="fas fa-exclamation-circle"></i> {errors.message.message}</span>}
                     placeholder="What can we help you with?" />
 
-                <SubmitButton theme="primary" size="md">
+                <Button theme="primary" size="md" type="submit">
                     {submitting ? "sending.." : "send"}
-                </SubmitButton>
+                </Button>
             </fieldset>
 
             {serverError && <Feedback theme="error">{serverError}</Feedback>}

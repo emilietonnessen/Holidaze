@@ -1,12 +1,12 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
 
-import { GRAPHQL_URL } from "../constants/api";
-import { META_ESTABLISHMENTS, TITLE_ESTABLISHMENTS } from '../constants/meta';
 import * as interfaces from '../constants/interfaces';
 import Layout from '../components/Layout';
 import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
 import Filter from '../components/Filter';
+import { GRAPHQL_URL } from "../constants/api";
+import { META_ESTABLISHMENTS, TITLE_ESTABLISHMENTS } from '../constants/meta';
 
 
 const establishments: React.FC<interfaces.EstablishmentsProps> = ({est}) => {

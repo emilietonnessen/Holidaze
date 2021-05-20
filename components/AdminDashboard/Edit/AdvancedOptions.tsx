@@ -1,21 +1,22 @@
 import { useState } from 'react';
 import { NextRouter, useRouter } from "next/router";
 
-import { AdvancedOptionsProps } from "../../../constants/interfaces";
 import useAxios from '../../../hooks/useAxios';
 import Accordion from '../../UI/Accordion';
-import { SimpleButton } from '../../UI/Button';
-import Error from '../../UI/Form/Error';
 import Feedback from '../../UI/Feedback';
-
+import { Button } from '../../UI/Button';
+import { AdvancedOptionsProps } from "../../../constants/interfaces";
 
 
 const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url}) => {
-    const [error, setError] = useState(null);
 
+    // State & Variables
+    const [error, setError] = useState(null);
     const http = useAxios();
     const router: NextRouter = useRouter();
 
+
+    // Delete the selected Establishment
     const deleteEstablishment = async () => {
         console.log("delete", url);
 
@@ -35,9 +36,10 @@ const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url}) => {
         <div className="establishment-form__group--advanced">
             <Accordion title="Advanced Options" closed={true}>
                 {error ? <Feedback theme="error">{error}</Feedback> : null}
-                <SimpleButton theme="danger" size="sm" onClick={deleteEstablishment}>
+
+                <Button theme="danger" size="sm" onClick={deleteEstablishment}>
                     delete
-                </SimpleButton>
+                </Button>
             </Accordion>
         </div>
     );

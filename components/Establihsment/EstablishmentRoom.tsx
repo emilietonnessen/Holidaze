@@ -1,7 +1,5 @@
 import Image from 'next/image';
-
 import { RoomProps } from '../../constants/interfaces';
-import { ModalButton } from '../UI/Button';
 
 
 const EstablishmentRoom: React.FC<RoomProps> = ({lowestPrice}) => (

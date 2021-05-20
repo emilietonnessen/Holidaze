@@ -1,11 +1,6 @@
-import { AuthProvider } from '../../context/AuthContext';
 import NextHead from './NextHead';
+import { OuterLayoutProps } from '../../constants/interfaces';
 
-interface OuterLayoutProps {
-    title: string;
-    description: string;
-    children: React.ReactNode;
-}
 
 const OuterLayout: React.FC<OuterLayoutProps> = ({ title, description, children }) =>  (
     <>
