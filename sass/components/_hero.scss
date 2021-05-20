@@ -13,12 +13,12 @@
     background-size: cover;
 
 
-    @include respond(tab-land) {
+    /* @include respond(tab-land) {
         background-image: url('../../public/assets/banner-md.jpg');
-    }
+    } */
 
     @include respond(mobile-lg) {
-        background-image: url('../../public/assets/banner-sm.jpg');
+        background-image: url('../../public/assets/banner-md.jpg');
     }
     
     &__search {

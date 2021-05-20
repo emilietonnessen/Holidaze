@@ -121,6 +121,10 @@
     @include respond (lap-lg) {
         grid-template-rows: 50rem max-content 70rem repeat(2, max-content);
     }
+
+    @include respond (tab-land) {
+        grid-template-rows: 50rem max-content 90rem repeat(2, max-content);
+    }
     
     @include respond(mobile-lg) {
         grid-template-rows: 37rem max-content 90rem repeat(2, max-content);

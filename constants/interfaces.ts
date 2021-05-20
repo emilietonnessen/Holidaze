@@ -35,6 +35,17 @@ export interface EstablishmentGalleryProps {
 	imageTwo: GalleryProps;
 }
 
+export interface SelectProps {
+    name: string;
+    children: React.ReactNode;
+    label: string;
+    register: () => void;
+    error: any;
+    onChange?: any;
+    defaultValue?: any;
+    cssClass?: string;
+}
+
 export interface GalleryProps {
     alternativeText: string;
     height: number;

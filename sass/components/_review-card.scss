@@ -11,6 +11,7 @@
 
     &__description {
         line-height: 1.6;
+        margin-bottom: 3rem;
         
         @include respond(mobile-lg) {
             margin-bottom: 2rem;
