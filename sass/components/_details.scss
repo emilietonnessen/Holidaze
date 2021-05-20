@@ -17,7 +17,8 @@
     &__description {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        word-break: break-all;
+        overflow-wrap: break-word;
+        hyphens: auto;
 
         @include respond(mobile) {
            grid-column: 1 / 2;
@@ -55,6 +56,7 @@
         border-bottom: 1px solid $color-grey-light-2;
         list-style: none;
         word-break: break-all;
+        hyphens: auto;
         
         display: flex;
         flex-wrap: wrap;
