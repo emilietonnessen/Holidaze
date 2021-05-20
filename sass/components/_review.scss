@@ -7,7 +7,6 @@
         grid-template-rows: 1fr 1fr;
     }
 
-
     @include respond(mobile) {
         grid-template-columns: 1fr;
         grid-template-rows: max-content 1fr;
@@ -19,12 +18,17 @@
         background-size: cover;
         background-position: right;
         position: relative;
+
+
         
         @include respond(tab-land) {
             grid-row: 2 / 3;
+            background-image: url('../../public/assets/review-md.jpg');
         }
 
-        
+        @include respond(mobile-lg) {
+            background-image: url('../../public/assets/review-sm.jpg');
+        }
     }
 
     &__family-img{
