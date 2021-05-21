@@ -27,8 +27,8 @@ const ContactNotifications: React.FC = () => {
     }, []);
 
 
-    // Map through the contact messages and make cards out of them
-    const ContactMessageCards: JSX.Element[]= contactMessages.map(enq => (
+    // Sort and Map through the contact messages and make cards out of them, display the new first
+    const ContactMessageCards: JSX.Element[]= contactMessages.sort(value => value.read ? 1 : -1).map(enq => (
         <ContactCard
             id={enq.id}
             read={enq.read}

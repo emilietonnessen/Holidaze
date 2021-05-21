@@ -3,14 +3,25 @@ import { useState } from "react";
 import useAxios from "../../../hooks/useAxios";
 import { ENQUIRY_URL } from "../../../constants/api";
 import { BookingCardProps } from "../../../constants/interfaces";
+import { Button } from "../../UI/Button";
+import Feedback from "../../UI/Feedback";
 
 
 const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id}) => {
-    const [newMessage, setNewMessage] = useState(read);
+
+    // State
+    const [newMessage, setNewMessage] = useState<boolean>(read);
+    const [deleting, setDeleting] = useState<boolean>(false)
+    const [deleteError, setDeleteError] = useState<string | null>(null);
+    const [deleteSuccess, setDeleteSuccess] = useState<boolean>(false);
+
+
+    // Variables
     let url = `${ENQUIRY_URL}/${id}`;
     const http = useAxios();
 
 
+    // Read new message handler
     async function readMessageHandler() {
         if (read === false) {
             try {
@@ -27,6 +38,31 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
             } 
         }
     }
+
+
+    // Delete Handler
+    const deleteBookingEnquiryHandler = async () => {
+        setDeleting(true);
+        setDeleteError(null);
+        setDeleteSuccess(false);
+
+        const confirmDelete = window.confirm("Delete the message from " + name + "?");
+
+        if (confirmDelete) {
+            try {
+				await http.delete(url);
+               
+                setDeleteSuccess(true);
+                //router.push("/admin");
+                window.location.reload(false);
+			} catch (error) {
+				setDeleteError(error.toString());
+			} finally {
+                setDeleting(false)
+            }
+        }
+    }
+    
 
 
     return (
@@ -57,6 +93,14 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
             <p className="booking-card__message">
                 {message}
             </p>
+
+            <Button theme="dark-grey" size="sm" onClick={deleteBookingEnquiryHandler}>
+                {deleting ? "deleting.." : "delete"}
+            </Button>
+
+            {/* Feedback: */}
+            {deleteError && <Feedback theme="error">{deleteError}</Feedback>}
+            {deleteSuccess && <Feedback theme="success">The Message was successfully deleted!</Feedback>}
         </div>
     );
 }

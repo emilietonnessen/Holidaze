@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { NextRouter, useRouter } from "next/router";
 
 import useAxios from "../../../hooks/useAxios";
 import { CONTACT_URL } from "../../../constants/api";
 import {ContactCardProps} from '../../../constants/interfaces';
+import { Button } from "../../UI/Button";
+import Feedback from "../../UI/Feedback";
 
 
 const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, id, read}) => {
 
-    // State & Variables
-    const [newMessage, setNewMessage] = useState(read);
+    // State
+    const [newMessage, setNewMessage] = useState<boolean>(read);
+    const [deleting, setDeleting] = useState<boolean>(false)
+    const [deleteError, setDeleteError] = useState<string | null>(null);
+    const [deleteSuccess, setDeleteSuccess] = useState<boolean>(false);
+
+
+    // Variables
+    const router: NextRouter = useRouter();
     const http = useAxios();
     let url = `${CONTACT_URL}/${id}`;
     
@@ -30,6 +40,32 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
             } 
         }
     }
+
+
+    // Delete Handler
+    const deleteContactMessageHandler = async () => {
+        setDeleting(true);
+        setDeleteError(null);
+        setDeleteSuccess(false);
+
+        const confirmDelete = window.confirm("Delete the message from " + name + "?");
+
+        if (confirmDelete) {
+            try {
+				await http.delete(url);
+               
+                setDeleteSuccess(true);
+                //router.push("/admin");
+                window.location.reload(false);
+			} catch (error) {
+				setDeleteError(error.toString());
+			} finally {
+                setDeleting(false)
+            }
+        }
+    }
+
+    
 
     return (
         <div className="booking-card" onClick={readMessageHandler}>
@@ -53,6 +89,15 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
             <p className="booking-card__message">
                 {message}
             </p>
+
+            <Button theme="dark-grey" size="sm" onClick={deleteContactMessageHandler}>
+                {deleting ? "deleting.." : "delete"}
+            </Button>
+
+            {/* Feedback: */}
+            {deleteError && <Feedback theme="error">{deleteError}</Feedback>}
+            {deleteSuccess && <Feedback theme="success">The Message was successfully deleted!</Feedback>}
+
         </div>
     );
 }

@@ -23,7 +23,7 @@ const BookingNotifications: React.FC = () => {
     }, []);
 
 
-    const bookingEnquiries: JSX.Element[]= enquiries.map(enq =>  (
+    const bookingEnquiries: JSX.Element[]= enquiries.sort(value => value.read ? 1 : -1).map(enq =>  (
         <BookingCard
             key={enq.id}
             id={enq.id}
