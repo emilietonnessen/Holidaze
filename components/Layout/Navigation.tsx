@@ -7,6 +7,7 @@ import { NavigationProps } from '../../constants/interfaces';
 
 
 const Navigation: React.FC<NavigationProps> = ({active}) => {
+    console.log(active);
     return (
         <nav className="navigation">
             <div className="logo">
@@ -18,7 +19,9 @@ const Navigation: React.FC<NavigationProps> = ({active}) => {
                 </Link>
             </div>
 
-            <Search theme="grey" />  
+            {active === "home" ? <div></div> : <Search theme="grey" />  }
+
+            
 
             <input type="checkbox" className="menu__checkbox" id="navi-toggle" />
             <label htmlFor="navi-toggle" className="menu__button">
