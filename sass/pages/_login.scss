@@ -27,18 +27,8 @@
         align-items: flex-end;
         text-decoration: none;
 
-        // Old versions
         & > *:not(:last-child) {
             margin-right: 1rem;
-        }
-
-        // New versions
-        @supports (gap: 1rem) or (grid-gap: 1rem) {
-            gap: 1rem;
-
-            & > *:not(:last-child) {
-                margin-right: 0;
-            }
         }
     }
 
@@ -72,18 +62,8 @@
         font-size: 1.4rem;
         font-weight: 300;
 
-        // Old versions
         & > *:not(:last-child) {
             margin-right: 3rem;
-        }
-
-        // New versions
-        @supports (column-gap: 3rem) or (grid-column-gap: 3rem) {
-            column-gap: 3rem;
-
-            & > *:not(:last-child) {
-                margin-right: 0;
-            }
         }
     }
 

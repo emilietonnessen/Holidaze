@@ -1,4 +1,4 @@
-// Colors
+// Colors -------------------------------------
 $color-black: #141414;
 $color-white: #FFFFFF;
 
@@ -20,13 +20,15 @@ $color-success: green;
 
 
 
-// Fonts
+// Fonts ------------------------------------
 $font-family-body: montserrat, sans-serif;
 $font-family-heading: ivypresto-headline, serif;
 
 $font-size-default: 1.6rem;
 
-// Breakpoints
+
+
+// Breakpoints ------------------------------
 $desk: 125em;         // 2000px
 $lap-lg: 100em;       // 1600px
 $lap: 87.5em;         // 1400px
@@ -36,7 +38,8 @@ $mobile-lg: 50em;     //  800px
 $mobile: 37.5em;      //  600px
 
 
-// Box Shadow:
+
+// Box Shadow: ---------------------------------
 $boxshadow-default: 0rem .5rem 1rem rgba($color-black, .05);
 $boxshadow-hover: 0rem .5rem 2rem rgba($color-black, .15);
 $boxshadow-active: 0rem .5rem .5rem rgba($color-black, .3); 

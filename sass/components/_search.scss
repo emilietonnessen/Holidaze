@@ -186,23 +186,10 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         justify-content: center;
-
-        // Old iOS versions
-        & > *:not(:last-child) {
-            margin-bottom: .2rem;
-        }
-        
-        // New iOS versions
-        @supports (row-gap: .2rem) {
-            row-gap: .2rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0rem;
-            }
-        }
+        row-gap: .2rem;
     }
 
     &__hotel-name {
@@ -211,22 +198,10 @@
     }
 
     &__stars {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(5, max-content);
         align-items: center;
-
-        // Old iOS versions
-        & > *:not(:last-child) {
-            margin-right: .3rem;
-        }
-        
-        // New iOS versions
-        @supports (gap: .3rem) {
-            gap: .3rem;
-
-            & > *:not(:last-child) {
-                margin-right: 0rem;
-            }
-        }
+        gap: .3rem;
     
         & svg {
             width: 2rem;

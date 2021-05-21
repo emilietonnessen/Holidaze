@@ -39,7 +39,6 @@
     grid-column: 2 / 3;
     
     z-index: 100;
-    //height: calc(100% - 20rem);
     height: 100%;
     width: 60%;
     position: absolute;
@@ -47,7 +46,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    //background-color: rgba(#f10000, .5);
 
     @include respond(lap-lg) {
         width: 80%;
@@ -76,23 +74,10 @@
         top: 0;
         left: 0;
 
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         padding: 5rem 0;
-
-        // Old versions
-        & > *:not(:last-child) {
-            margin-bottom: 5rem;
-        }
-
-        // New versions
-        @supports (row-gap: 5rem) or (grid-row-gap: 5rem) {
-            row-gap: 5rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0;
-            }
-        }
+        row-gap: 5rem;
     }
 }
 

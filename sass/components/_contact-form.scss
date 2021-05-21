@@ -18,22 +18,9 @@
     }
 
     &__fieldset {
-        display: flex;
-        flex-direction: column;
-
-        // Old iOS versions
-        & > *:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-        
-        // New iOS versions
-        @supports (row-gap: 2rem) {
-            row-gap: 2rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0rem;
-            }
-        }
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
     }
 
     & .btn {

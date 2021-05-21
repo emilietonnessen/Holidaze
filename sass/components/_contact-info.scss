@@ -9,22 +9,9 @@
         padding: 5rem;
         box-shadow: 1rem 1rem 2rem rgba(#000, .4);
 
-        display: flex;
-        flex-direction: column;
-
-        // Old iOS versions
-        & > *:not(:last-child) {
-            margin-bottom: 3rem;
-        }
-        
-        // New iOS versions
-        @supports (row-gap: 3rem) {
-            row-gap: 3rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0rem;
-            }
-        }
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
 
         @include respond(tab-land) {
             padding: 3rem;

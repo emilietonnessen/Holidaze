@@ -3,9 +3,6 @@
     grid-template-columns: 1fr 1.3fr;
     grid-template-rows: max-content;
 
-    /* max-width: 95vw;
-    max-height: 95vh; */
-
     @include respond(lap-lg) {
         grid-template-columns: max-content minmax(min-content, 50rem);
     }
@@ -42,23 +39,9 @@
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
-
-        // Old iOS versions
-        & > *:not(:last-child) {
-            margin-bottom: 3rem;
-        }
-        
-        // New iOS versions
-        @supports (gap: 3rem) {
-            gap: 3rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0rem;
-            }
-        }
-        
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     &__box {
