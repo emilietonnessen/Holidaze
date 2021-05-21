@@ -225,7 +225,7 @@ const EditForm: React.FC = () => {
             </form>
 
             {/* Advanced Options */}
-            <AdvancedOptions url={url} />
+            <AdvancedOptions url={url} name={selectedEstablishment ? selectedEstablishment.name : null} />
         </>
     );
 }

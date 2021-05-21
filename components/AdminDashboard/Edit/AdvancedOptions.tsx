@@ -8,37 +8,52 @@ import { Button } from '../../UI/Button';
 import { AdvancedOptionsProps } from "../../../constants/interfaces";
 
 
-const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url}) => {
+const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url, name}) => {
 
     // State & Variables
-    const [error, setError] = useState(null);
+    const [deleting, setDeleting] = useState<boolean>(false)
+    const [deleteError, setDeleteError] = useState<string | null>(null);
+    const [deleteSuccess, setDeleteSuccess] = useState<boolean>(false);
     const http = useAxios();
-    const router: NextRouter = useRouter();
 
 
     // Delete the selected Establishment
     const deleteEstablishment = async () => {
-        console.log("delete", url);
+        setDeleteError(null);
+        setDeleteSuccess(false);
+        setDeleting(true);
 
-        const confirmDelete = window.confirm("Delete this establishment?");
+        let confirmDelete;
+
+        if (name) {
+            confirmDelete = window.confirm("Delete " + name + "?");
+        } else {
+            setDeleteError("Choose an establishment");
+            setDeleting(false);
+        }
 
 		if (confirmDelete) {
 			try {
-				await http.delete(url);
-                router.push("/admin");
+			    await http.delete(url);
+                setDeleteSuccess(true);
 			} catch (error) {
-				setError(error.toString());
-			}
-		}
+				setDeleteError(error.toString());
+			} finally {
+                setDeleting(false);
+            }
+		} 
     }
 
+
+    
     return (
         <div className="establishment-form__group--advanced">
             <Accordion title="Advanced Options" closed={true}>
-                {error ? <Feedback theme="error">{error}</Feedback> : null}
+                {deleteError && <div><Feedback theme="error">{deleteError}</Feedback></div>} 
+                {deleteSuccess && <div><Feedback theme="success">{name} was successfully deleted!</Feedback></div>}
 
                 <Button theme="danger" size="sm" onClick={deleteEstablishment}>
-                    delete
+                    {deleting ? "deleting.." : "delete"}
                 </Button>
             </Accordion>
         </div>

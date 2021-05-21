@@ -221,6 +221,7 @@ export interface FilterProps {
 
 export interface AdvancedOptionsProps {
     url: string;
+    name: string | null;
 }
 
 
