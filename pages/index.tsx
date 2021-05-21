@@ -9,6 +9,7 @@ import Category from "../components/Homepage/Category";
 import Review from "../components/Homepage/Review";
 import Gallery from '../components/Homepage/Gallery';
 import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
+import { CategoryProvider } from '../context/CategoryContext';
 
 
 const home: React.FC<HomeProps> = ({establishments}) => {
@@ -18,7 +19,7 @@ const home: React.FC<HomeProps> = ({establishments}) => {
         JSON.stringify(esta.featured).match('true')
     ));
 
-    console.log("[establishments]", establishments);
+    //console.log("[establishments]", establishments);
 
     // Creating the filtered establishments into cards
     const featuredEstablishments: JSX.Element[] = filteredEstablishments.map(esta => (
@@ -37,11 +38,14 @@ const home: React.FC<HomeProps> = ({establishments}) => {
     return (
         <Layout page="home" title={TITLE_HOME} description={META_HOME}>
             <Hero />
-            <Category />
+            
+                <Category />
+            
             <Review />
             <section className="featured">
                 {featuredEstablishments}
             </section>
+            
             <Gallery />
         </Layout>
     );

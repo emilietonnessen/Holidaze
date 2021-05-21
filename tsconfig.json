@@ -72,7 +72,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_app.js", "next.config.js", "hooks/useLocalStorage.js", "hooks/useAxios.js", "context/AuthContext.js"  ],
+, "pages/_app.js", "next.config.js", "hooks/useLocalStorage.js", "hooks/useAxios.js", "context/AuthContext.js", "context/CategoryContext.js"  ],
   "exclude": [
     "node_modules"
   ]

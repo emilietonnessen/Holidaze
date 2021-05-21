@@ -80,7 +80,7 @@
 
     &__stars {
         display: grid;
-        grid-template-columns: repeat(5, max-content);
+        grid-template-columns: repeat(6, max-content);
         column-gap: .5rem;
 
         @include respond(mobile-lg) {
