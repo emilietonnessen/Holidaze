@@ -91,7 +91,7 @@
     padding: 6rem 3rem;
     position: relative;
     max-width: 95vw;
-    max-height: 95vh;
+    max-height: 90vh;
     overflow-y: auto;
 
     @include respond(lap-lg) {
@@ -103,7 +103,7 @@
     }
 
     @include respond(mobile) {
-        padding: 3rem 1.5rem;
+        padding: 5rem 1.5rem;
     }
 
     &__fieldset {

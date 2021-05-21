@@ -1,32 +1,12 @@
 .booking-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 
-    // Older iOS versions
-    & > *:not(:last-child) {
-        margin-bottom: 2rem;
-
-        @include respond(desk) {
-            margin-bottom: 1.5rem;
-        }
+    @include respond(desk) {
+        gap: 1.5rem;
     }
 
-    // New iOS version
-    @supports (gap: 2rem) {
-        gap: 2rem;
-
-        & > *:not(:last-child) {
-            margin-bottom: 0rem;
-        }
-
-        @include respond(desk) {
-            gap: 1.5rem;
-
-            & > *:not(:last-child) {
-                margin-bottom: 0rem;
-            }
-        }
-    }
 
     
 

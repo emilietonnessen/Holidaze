@@ -65,6 +65,13 @@
     // Textarea ----------------------------------------
     &__textarea {
         height: 20rem;
+        resize: vertical;
+        min-height: 10rem;
+        max-height: 35rem;
+        
+        /* @include respond(mobile-lg) {
+            resize: none;
+        } */
     }
 
     &__group--textarea {
@@ -83,7 +90,6 @@
     }
 
     &__select-box {
-        background-color: aquamarine;
         position: relative;
     }
 
