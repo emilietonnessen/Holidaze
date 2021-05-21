@@ -3,6 +3,7 @@ import Search from "../UI/Search";
 
 const Hero: React.FC = () => (
     <header className="hero">
+        <div className="hero__banner"></div>
             
         <div className="hero__search">
             <Search theme="white" />
