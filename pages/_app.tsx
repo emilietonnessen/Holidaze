@@ -3,7 +3,11 @@ import { AuthProvider } from '../context/AuthContext';
 import '../sass/style.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-    return <AuthProvider><Component {...pageProps} /></AuthProvider>
+    return (
+        <AuthProvider>
+            <Component {...pageProps} />
+        </AuthProvider>
+    );
 }
 
 export default MyApp;
