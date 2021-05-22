@@ -7,7 +7,7 @@ const SearchBar: React.FC<SearchBarProps> = ({theme, search, value, clearSearch,
         <input 
             type="text" 
             className={theme ?  `search__input search__input--${theme}` : 'search__input'} 
-            placeholder="Search.."
+            placeholder="Search between establishments.."
             onChange={search}
             value={value} />
 
