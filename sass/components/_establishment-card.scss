@@ -12,10 +12,26 @@
         grid-template-rows: max-content 5rem max-content;
     }
 
+
+    // Enlarge the image when hovering the card
     &:hover > &__img {
         transform: scale(1.07);
     }
 
+
+    // Target the link with 'tab'
+    &__link {
+        border: 1px solid transparent;
+
+        &:focus-visible {
+            outline: none;
+            border:  1px solid black;
+            border-radius: 0;
+        }
+    }
+
+
+    // Image -------------------------------------------
     &__img {
         justify-self: flex-end;
         display: block;
@@ -40,6 +56,9 @@
         }
     }
 
+
+
+    // Establishment Name --------------------------------
     &__name {
         justify-self: start;
         display: inline-block;
@@ -70,6 +89,8 @@
         }
     }
 
+
+    // Information Bar -------------------------------------
     &__info {
         display: flex;
         justify-content: space-between;
@@ -83,6 +104,7 @@
         }
     }
 
+    // Stars
     &__stars {
         display: grid;
         grid-template-columns: repeat(6, max-content);
@@ -103,6 +125,7 @@
         }
     }
 
+    // Number of Reviews
     &__reviews {
         padding-left: .5rem;
         font-size: 1.2rem;
@@ -113,6 +136,8 @@
         }
     }
 
+
+    // Price Box
     &__price-box {
         font-size: 1.2rem;
 

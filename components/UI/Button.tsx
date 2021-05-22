@@ -17,9 +17,9 @@ export const Button: React.FC<ButtonProps> = ({children, theme, size, type, onCl
 
 // Button Link --------------------------------------------------
 export const ButtonLink: React.FC<ButtonLinkProps> = ({link, children, theme, size}) => (
-    <button className={'btn ' + `btn--${theme} `}>
+    <button className="button">
         <Link href={link}>
-            <a className={`btn--${size}`}>
+            <a className={'btn ' + `btn--${theme} btn--${size}`}>
                 {children}
             </a>
         </Link>
@@ -33,8 +33,8 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({link, children, theme, si
 // Button Modal ---------------------------------------------------
 export const ButtonModal: React.FC<ButtonProps> = ({children, theme, size, type, name}) => {
     return (
-        <button className={'btn ' + `btn--${theme}`} type={type}>
-            <a href={`#${name}`} className={`btn--${size}`} data-target="#modal-booking">
+        <button className="button" type={type}>
+            <a href={`#${name}`} className={`btn btn--${theme} btn--${size}`} data-target="#modal-booking">
                 {children}
             </a>
         </button>

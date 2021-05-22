@@ -35,7 +35,7 @@ const EstablishmentCard: React.FC<EstablishmentCardProps> = ({thumbnail, name, r
 
     return (
         <Link href={`/establishment/${slug}`}>
-            <a>
+            <a className="establishment-card__link">
                 <div className="establishment-card">
                     <div className="establishment-card__img">
                         <Image 

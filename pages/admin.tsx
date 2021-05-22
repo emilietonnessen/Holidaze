@@ -6,9 +6,15 @@ import AdminLayout from "../components/Layout/AdminLayout";
 import AuthContext from "../context/AuthContext";
 import { META_ADMIN, TITLE_ADMIN } from "../constants/meta";
 
+
+
+
 const admin: React.FC = () => {
+
+    // State
     const [auth]: any = useContext(AuthContext);
     const router: NextRouter = useRouter();
+
 
     // Redirect the user if the user is not authenticated or if there is no auth in the local storage
     useEffect(() => {
@@ -27,6 +33,7 @@ const admin: React.FC = () => {
             localStorage.clear();
         }
     }, []);
+
 
     return (
         <AdminLayout title={TITLE_ADMIN} description={META_ADMIN} page="admin">

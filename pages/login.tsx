@@ -64,7 +64,7 @@ const login: React.FC = () => {
                 
                     <fieldset disabled={submitting} className="form__fieldset login__box">
                         <Link href="/">
-                            <a>
+                            <a className="login__brand-link">
                                 <div className="login__brand">
                                     <div className="login__logo-icon">
                                         <Logo color="#ff1447" />

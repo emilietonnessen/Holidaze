@@ -11,47 +11,50 @@
         grid-column: 1/2;
         grid-row: 1 / 2;
     }
-}
-
-.logo a {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    align-items: flex-end;
-    column-gap: .5rem;
     
-    color: $color-black;
-    text-decoration: none;
-    cursor: pointer;
+    
+    & a {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: flex-end;
+        column-gap: .5rem;
+        width: max-content;
+        
+        color: $color-black;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid transparent;
 
 
 
-    &:focus-visible  {
-        outline: none;
-        border: 1px solid black;
-    }
-
-    &:target  {
-        outline: none;
-        border: none;
-    }
-
-    & div div img{
-        @include respond(tab-port) {
-            width: 75%;
+        &:focus-visible  {
+            outline: none;
+            border: 1px solid black;
         }
-    }
 
-    & h1 {
-        line-height: 1;
-        font-family: $font-family-heading;
-        font-size: 4rem;
-        font-weight: 300;
-        padding-bottom: 2px;
-        color: inherit;
-        text-decoration: inherit;
+        &:target  {
+            outline: none;
+            border: none;
+        }
 
-        @include respond(tab-port) {
-            font-size: 3rem;
+        & div div img{
+            @include respond(tab-port) {
+                width: 75%;
+            }
+        }
+
+        & h1 {
+            line-height: 1;
+            font-family: $font-family-heading;
+            font-size: 4rem;
+            font-weight: 300;
+            padding-bottom: 2px;
+            color: inherit;
+            text-decoration: inherit;
+
+            @include respond(tab-port) {
+                font-size: 3rem;
+            }
         }
     }
 }

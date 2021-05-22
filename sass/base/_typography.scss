@@ -1,5 +1,8 @@
 @import url("https://use.typekit.net/qtm0ysq.css");
 
+
+
+// Default Styled ---------------------------------
 body {
     font-size: $font-size-default;
     font-family: $font-family-body;
@@ -12,6 +15,9 @@ body {
     }
 }
 
+
+
+// Paragraphs -------------------------------------
 .paragraph {
     &:not(:last-child) {
         margin-bottom: 2.5rem;
@@ -22,11 +28,17 @@ body {
     }
 }
 
+
+
+// Headline --------------------------------------
 .headline {
     font-family: $font-family-heading;
     line-height: 1;
 }
 
+
+
+// Logo ------------------------------------------
 .logo {
     &__h1 {
         font-family: $font-family-heading;

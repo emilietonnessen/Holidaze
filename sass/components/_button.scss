@@ -1,22 +1,32 @@
+.button{
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-radius: none;
+}
+
+
 .btn {
 
     // Standard for all buttons -----------------------------
     &,
-    & a,
-    & a:link,
-    & a:visited {
-        color: inherit;
+    &:link,
+    &:visited {
         text-decoration: none;
         border-radius: 0;
         border: 1px solid transparent;
         outline: none;
-        background-color: transparent;
-        font-family: inherit;
+        font-family: $font-family-body;
+        text-transform: lowercase;
         cursor: pointer;
         transition: all .3s;
         box-shadow: $boxshadow-default;
         display: inline-block;
         justify-self: flex-start;
+
+        animation-duration: 2s;
+        transform-origin: bottom;
     }
 
     &:hover {
@@ -24,15 +34,13 @@
         box-shadow: $boxshadow-hover;
     }
 
-    // Mouse Click focus
-    &:focus {
-        background-color: orange;
-    }
 
     // Keyboard focus
     &:focus-visible {
         outline: none;
         border: 1px solid $color-black;
+        animation-name: bounce;
+        animation-timing-function: ease;
     }
 
     &:active {
@@ -56,8 +64,8 @@
         &:active {
             background-color: $color-primary-light;
         }
-
     }
+
 
     &--light-grey {
         background-color: $color-grey-light-2;
@@ -70,6 +78,7 @@
         }
     }
 
+
     &--dark-grey {
         background-color: $color-grey-dark-1;
         color: $color-white;
@@ -77,9 +86,10 @@
 
         &:hover,
         &:focus {
-            background-color: lighten($color-grey-dark-1, 10);    
+            background-color: lighten($color-grey-dark-1, 15);    
         }
     }
+
 
     &--danger {
         background-color: $color-error;
@@ -113,6 +123,7 @@
         }
     } 
 
+
     &--lg {
         font-size: 2.5rem;
         font-weight: 300;
@@ -143,11 +154,13 @@
         }
     } 
 
+
     &--sm {
         font-size: 1.6rem;
         font-weight: 300;
         letter-spacing: 2px;
         padding: 1rem 1.5rem;
     } 
-    
 }
+
+

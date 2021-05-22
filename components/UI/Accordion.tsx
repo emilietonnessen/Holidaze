@@ -12,14 +12,15 @@ const Accordion: React.FC<AccordionProps> = ({ title, children, closed }) => {
 
     return (
         <div className="accordion">
-            <div className="accordion__header" onClick={toggleOpenCloseHandler}>
+            <button className="accordion__header" onClick={toggleOpenCloseHandler} tabIndex={0} >
                 <h2 className="accordion__title">
                     {title}
                 </h2>
-                <button className={closed ? !isActive ? "accordion__button" : "accordion__button accordion__button--open" : !isActive ? "accordion__button accordion__button--open" : "accordion__button " }>
+                <div className={closed ? !isActive ? "accordion__button" : "accordion__button accordion__button--open" : !isActive ? "accordion__button accordion__button--open" : "accordion__button " }>
                     <Chevron color="#141414" />
-                </button>
-            </div>
+                </div>
+
+            </button>
 
             <div className={closed ? !isActive ? "accordion__body accordion__close"  :"accordion__body accordion__open" : !isActive ? "accordion__body accordion__open" : "accordion__body accordion__close" }>
                 {children}

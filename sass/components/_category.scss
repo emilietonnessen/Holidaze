@@ -35,10 +35,23 @@
     }
 
     &__link {
+        border: 1px solid transparent;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
         text-decoration: none;
+        transition: all .3s;
+
         @include respond(tab-port) {
             width: 35rem;
             height: 35rem;
+        }
+
+        &:focus-visible {
+            border: 1px solid black;
+            border-top-left-radius: 3rem;
+            border-top-right-radius: 3rem;
+            outline: 0;
+            transform: scale(1.025);
         }
     }    
 

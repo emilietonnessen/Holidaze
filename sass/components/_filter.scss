@@ -49,11 +49,15 @@
         }
 
         &:hover,
-        &:active {
+        &:active,
+        &:focus-visible {
             background-color: $color-white;
             border: 1px solid  $color-primary;
             color:  $color-primary;
-            //00;
+        }
+
+        &:focus-visible {
+            transform: scale(1.05); 
         }
 
         &--active {
