@@ -42,5 +42,15 @@
         @include respond(mobile-lg) {
             font-size: 3rem;
         }
+
+        @include respond(mobile) {
+            font-size: 2.5rem;
+        }
+    }
+
+    & textarea {
+        @include respond(mobile) {
+            height: 15rem;
+        }
     }
 }

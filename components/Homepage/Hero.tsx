@@ -5,20 +5,25 @@ const Hero: React.FC = () => (
     <header className="hero">
         <div className="hero__banner"><div className="hero__banner-filter"></div></div>
     
-        <div className="hero__box">
-            <h1 className="hero__headline">
-                <span className="hero__bergen">Bergen</span> - where memories are made
+        <div className="hero__content">
+
+            {/* Headline */}
+            <h1 className="hero__headline hero__headline--primary">
+                <span className="hero__headline--bigger">Bergen</span> - where memories are made
             </h1>
-            <h2 className="hero__underline">
-                We help <span className="hero__underline--bold">you</span> with accommodations 
+
+            {/* Underline */}
+            <h2 className="hero__headline hero__headline--secondary">
+                We help <span className="hero__headline--bold">you</span> with accommodations 
             </h2>
+        
+            {/* Search */}
+            <div className="hero__search">
+                <Search theme="white" />
+            </div>
         </div>
             
-        <div className="hero__search">
-            
-            <Search theme="white" />
-        </div>
-            
+        {/* CTA Button */}
         <div className="hero__cta">
             <ButtonLink link="/establishments" theme="primary" size="cta">
                 explore
@@ -29,13 +34,3 @@ const Hero: React.FC = () => (
 );
 
 export default Hero;
-
-
-/*
-    Holidaze. Where memories last (are made)
-    The Gateway to the Fjords
-    The heart of Norway
-
-hvor minner blir til 
-
-*/

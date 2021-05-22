@@ -67,17 +67,21 @@
     }
 
     @include respond(mobile) {
-        width: 95vw;
+        //width: 95vw;
+        max-width: 100%;
         height: unset;
         position: relative;
         transform: translate(0, 0);
         top: 0;
         left: 0;
 
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         padding: 5rem 0;
-        row-gap: 5rem;
+       
+        & > *:not(:last-child) {
+            margin-bottom: 5rem;
+        }
     }
 }
 
@@ -122,9 +126,11 @@
         right: 0rem;
     }
     
-    @include respond(tab-land) {
+    @include respond(mobile-lg) {
         grid-column: 2 / 3;
         grid-row: 2 / 4;
+
+        max-width: 100%;
 
         position: relative;
         top: 0;

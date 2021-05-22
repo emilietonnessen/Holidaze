@@ -1,4 +1,5 @@
 import { NextRouter, useRouter } from "next/router";
+import { Button } from "../UI/Button";
 
 const AdminNavigation: React.FC = () => {
 
@@ -10,11 +11,11 @@ const AdminNavigation: React.FC = () => {
     }
 
     return (
-        <div className="navigation admin-navigation">
-            <button className="btn btn--dark-grey btn--sm" onClick={logoutHandler}>
+        <nav className="navigation admin-navigation">
+            <Button theme="dark-grey" size="sm" onClick={logoutHandler}>
                 logout
-            </button>
-        </div>
+            </Button>
+        </nav>
     );
 }
 

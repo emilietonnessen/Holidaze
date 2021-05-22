@@ -130,6 +130,11 @@
         grid-template-rows: 37rem max-content 90rem repeat(2, max-content);
         row-gap: 10rem;
     }
+
+    @include respond(mobile) {
+        grid-template-rows: 37rem max-content 70rem repeat(2, max-content);
+        row-gap: 10rem;
+    }
 }
 
 

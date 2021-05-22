@@ -16,7 +16,7 @@
         height: 100%;
 
         background-image: url('../../public/assets/banner-lg.jpg');
-        background-position: 100% 50%;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         transition: all 1s;
@@ -35,48 +35,111 @@
 
 
 
-    // Headline ---------------------------------------
-    &__box {
+    // Content ----------------------------------------
+    &__content {
+        // Position
         position: absolute;
         z-index: 999;
-        transform: translate(-50%, -50%) skewX(-20deg);
+        transform: translate(-50%, -50%) ;
         top: 34%;
         left: 50%;
+
         width: max-content;
-        padding: 1rem 4rem ;
-        
+        max-width: 100%;
+
+        // Flex
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
     }
 
-    &__bergen {
-        font-size: 6rem;
-    }
 
 
+    // Headline ---------------------------------------
     &__headline {
         color: $color-white;
         line-height: 1;
+        text-align: center;
+        font-weight: 400;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        &--primary {
+            font-family: $font-family-heading;
+            font-style: italic;
+            font-size: 5rem;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+
+            // Animation
+            animation-name: moveInLeft;
+
+            @include respond(tab-land) {
+                font-size: 4.5rem;
+            }
+
+            @include respond(tab-port) {
+                font-size: clamp(2.8rem, 4vw, 4rem);
+            }
+
+            @include respond(mobile-lg) {
+                letter-spacing: 2px;
+            }
+
+            @include respond(mobile) {
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+        }
         
 
-        text-align: center;
-        font-family: $font-family-heading;
-        font-weight: 400;
-        letter-spacing: 3px;
-        font-size: 5rem;
-        margin-bottom: 2rem;
-        transform: skewX(20deg);
-        
-        font-style: italic;
-    }
+        &--secondary {
+            font-family: $font-family-body;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            text-transform: lowercase;
+            margin-bottom: 4rem;
 
-    &__underline {
-        color: $color-white;
-        text-align: center;
-        text-transform: lowercase;
-        font-family: $font-family-body;
-        font-weight: 400;
-        letter-spacing: 5px;
-        font-size: 2rem;
-        transform: skewX(20deg);
+            // Animation
+            animation-name: moveInRight;
+
+            /* @include respond(tab-land) {
+                font-size: 1.8rem;
+            } */
+
+            @include respond(tab-port) {
+                font-size: 1.8rem;
+            }
+
+            @include respond(mobile-lg) {
+                font-size: 1.6rem;
+                letter-spacing: 4px;
+                margin-bottom: 3rem;
+            }
+
+            @include respond(mobile-lg) {
+                font-size: 1.4rem;
+                font-weight: 300;
+                letter-spacing: 0px;
+                margin-bottom: 3rem;
+            }
+        }
+
+
+        &--bigger {
+            font-size: 6rem;
+
+            @include respond(tab-land) {
+                font-size: 5.5rem;
+            }
+
+            @include respond(tab-port) {
+                font-size: clamp(3rem, 4vw, 5rem);
+            }
+
+            
+        }
+
 
         &--bold {
             font-weight: 700;
@@ -88,26 +151,18 @@
 
     // Search ------------------------------------------
     &__search {
-        //@include centerElement;
-
-        position: absolute;
-        transform: translate(-50%, -50%);
-        /* top: 10%;
-        left: 17%; */
-
-        top: 50%;
-        left: 50%; 
-
-
         z-index: 999;
         max-width: 55rem;
         min-width: 45rem;
 
         // Animation
-        display: block;
-        animation-name: moveInTopSearch;
+        animation-name: moveInBottom;
         animation-duration: 1s;
         animation-timing-function: ease-out;
+
+        /* @include respond(mobile-lg) {
+            max-width: 30rem;
+        } */
 
         @include respond(mobile) {
             min-width: unset;
@@ -132,7 +187,6 @@
             &:focus {
                 width: 100%;
                 margin: 0 0;
-                //transform: scale(1.025);
             }
         }
 
@@ -164,8 +218,8 @@
         transform: translate(-50%, -50%);
 
         // Animation
-        animation-name: moveInBottomCTA;
+        /* animation-name: moveInBottomCTA;
         animation-duration: 1s;
-        animation-timing-function: ease-out;
+        animation-timing-function: ease-out; */
     }
 }

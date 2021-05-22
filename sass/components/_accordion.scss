@@ -1,4 +1,5 @@
 .accordion {
+    max-width: 100%;
 
     // Header ------------------------
     &__header {
@@ -7,6 +8,10 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
+
+        @include respond(mobile) {
+            padding: .5rem 1.5rem;
+        }
     }
 
     &__title {
@@ -35,6 +40,10 @@
 
         @include respond(desk) {
             padding: 2.5rem;
+        }
+
+        @include respond(mobile) {
+            padding: 2rem 1.5rem;
         }
     }
 

@@ -69,9 +69,13 @@
         }
 
         @include respond(mobile) {
-            top: 55%;
-            right: 13%;
-            width: 55%;
+            transform: translate(0, -50%);
+            top: 50%;
+            right: 2rem;
+            width: 40%;
+            min-width: 20rem;
+
+            
         }
     }
 

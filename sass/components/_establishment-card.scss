@@ -63,6 +63,11 @@
             white-space: nowrap;
             transform: translate(-50%, -50%);
         }
+
+        @include respond(mobile) {
+            font-size: 1.6rem;
+            //padding: .5rem 1.5rem;
+        }
     }
 
     &__info {
@@ -102,10 +107,18 @@
         padding-left: .5rem;
         font-size: 1.2rem;
         align-self: flex-end;
+
+        @include respond(mobile) {
+            font-size: 1rem;
+        }
     }
 
     &__price-box {
         font-size: 1.2rem;
+
+        @include respond(mobile) {
+            font-size: 1rem;
+        }
     }
 
     &__price {
@@ -115,6 +128,11 @@
 
         @include respond(mobile-lg) {
             font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        @include respond(mobile) {
+            font-size: 1.5rem;
             font-weight: 600;
         }
     }
