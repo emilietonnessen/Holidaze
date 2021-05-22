@@ -21,16 +21,28 @@
         background-size: cover;
         transition: all 1s;
 
+        filter: brightness(75%) saturate(115%);
+        -webkit-filter: brightness(75%) saturate(115%);
+
+        @supports (backdrop-filter: brightness(75%) saturate(115%)) or (-webkit-backdrop-filter: brightness(75%) saturate(115%)) {
+            filter: unset;
+        }
+
         @include respond(mobile-lg) {
             background-image: url('../../public/assets/banner-md.jpg');
         }
+
+
     }
 
     &__banner-filter {
         width: 100%;
         height: 100%;
-        backdrop-filter: brightness(75%) saturate(115%);
-        transition: all .5s;
+
+        @supports (backdrop-filter: brightness(75%) saturate(115%)) or (-webkit-backdrop-filter: brightness(75%) saturate(115%)) {
+            backdrop-filter: brightness(75%) saturate(115%);
+            -webkit-backdrop-filter: brightness(75%) saturate(115%);
+        }
     }
 
 
