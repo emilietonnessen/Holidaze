@@ -1,12 +1,4 @@
-interface TextareaProps {
-    register: () => void;
-    name: string;
-    label: string;
-    placeholder: string; 
-    error: any;
-    defaultValue?: any;
-    cssClass?: string;
-}
+import { TextareaProps } from "../../../constants/interfaces";
 
 const Textarea: React.FC<TextareaProps> = ({ name, label, placeholder, register, error, defaultValue, cssClass }) => {
     let cssError = '';

@@ -2,11 +2,9 @@ import { NextRouter, useRouter } from "next/router";
 import { useContext, useEffect } from "react";
 
 import AdminDashboard from "../components/AdminDashboard";
-import AdminLayout from "../components/Layout/AdminLayout";
+import { AdminLayout } from "../components/Layout";
 import AuthContext from "../context/AuthContext";
 import { META_ADMIN, TITLE_ADMIN } from "../constants/meta";
-
-
 
 
 const admin: React.FC = () => {

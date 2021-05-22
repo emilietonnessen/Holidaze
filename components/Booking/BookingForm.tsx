@@ -6,7 +6,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 
 import Feedback from "../UI/Feedback";
-import useAxios from "../../hooks/useAxios.js";
 import Input from "../UI/Form/Input";
 import Select from "../UI/Form/Select";
 import Textarea from "../UI/Form/Textarea";
@@ -23,15 +22,18 @@ const schema = yup.object().shape(bookingFormSchema);
 
 
 const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
+
+    // State
     const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
-	const http = useAxios();
+
 
 
     // Putting React Hook Form and Yup validation together with a resolver
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
+
 
 
     // Handle the Submit
@@ -42,23 +44,17 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
         // Adds the current Establishment to the Enquiry Data
         data.establishment = establishmentName;
 		
-        console.log("[Data]", data);
-
 		try {
 			const response = await axios.post(ENQUIRY_URL, data);
-
-            // Console log the data saved in the api
-			console.log("[Response]", response.data);
-
-            // Close Booking Modal and open Feedback Modal
             window.location.href="#feedback-success";
 		} catch (error) {
-			console.log("[Error]", error);
 			setServerError(error.toString());
 		} finally {
 			setSubmitting(false);
 		}
     }
+
+
 
     return (
         <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
@@ -66,7 +62,6 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
             {/* Title: */}
             <h3 className="booking-form__title">Book now!</h3>
 
-            
 
             <fieldset className="form__fieldset booking-form__fieldset">
                 {/* Choose a room: */}

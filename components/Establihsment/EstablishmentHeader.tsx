@@ -58,14 +58,3 @@ const EstablishmentHeader: React.FC<EstablishmentHeaderProps> = ({name, stars, s
 }
 
 export default EstablishmentHeader;
-
-
-/*
-
-	TO DO LIST:
-
-	[X] - Swap the image to icon component 
-	[X] - if there are less than 5 stars show grey stars?
-	[X] - move the interface to interface.tsx
-
-*/

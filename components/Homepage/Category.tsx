@@ -5,24 +5,14 @@ import CategoryContext from '../../context/CategoryContext';
 
 const Category: React.FC = () => {
 
-    const [activeCategory, setActiveCategory]: any = useContext(CategoryContext)
-
-    console.log("[Homepage Category]", activeCategory);
+    const [, setActiveCategory]: any = useContext(CategoryContext)
 
 
-    
-    const hotelHandler = () => {
-        setActiveCategory("hotel")
-    }
-
-    const bnbHandler = () => {  
-        setActiveCategory("bedandbreakfast")
-    }
-
-    const guesthouseHandler = () => {   
-        setActiveCategory("guesthouse")
-    }   
-
+    // Set the Active Categories:
+    const hotelHandler = () => setActiveCategory("hotel");
+    const bnbHandler = () => setActiveCategory("bedandbreakfast");
+    const guesthouseHandler = () => setActiveCategory("guesthouse");
+     
 
     return (
         

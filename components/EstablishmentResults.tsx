@@ -1,20 +1,16 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { useContext, useEffect, useState } from 'react';
 
-import * as interfaces from '../constants/interfaces';
-import Layout from '../components/Layout';
+import { EstablishmentsProps, Establishment } from '../constants/interfaces';
 import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
 import Filter from '../components/Filter';
-import { GRAPHQL_URL } from "../constants/api";
-import { META_ESTABLISHMENTS, TITLE_ESTABLISHMENTS } from '../constants/meta';
-import CategoryContext, { CategoryProvider } from '../context/CategoryContext';
+import CategoryContext from '../context/CategoryContext';
 
 
-const EstablishmentResults: React.FC<interfaces.EstablishmentsProps> = ({est}) => {
+const EstablishmentResults: React.FC<EstablishmentsProps> = ({est}) => {
 
     // State
     const [activeCategory, setActiveCategory]: any = useContext(CategoryContext);
-    const [establishments, setEstablishments] = useState<interfaces.Establishment[]>([]);
+    const [establishments, setEstablishments] = useState<Establishment[]>([]);
 
     console.log(activeCategory);
 
@@ -27,7 +23,7 @@ const EstablishmentResults: React.FC<interfaces.EstablishmentsProps> = ({est}) =
     let activeBnBs: boolean = false;
     let activeGuesthouses: boolean = false;
     let activeExplore: boolean = false;
-    let filterEstablishments: interfaces.Establishment[] = establishments;
+    let filterEstablishments: Establishment[] = establishments;
 
     
 
@@ -95,9 +91,6 @@ const EstablishmentResults: React.FC<interfaces.EstablishmentsProps> = ({est}) =
 
     return (
         <>
-        
-            
-
             {/* Filter: */}
             <Filter 
                 activeHotels={activeHotels}
@@ -113,12 +106,8 @@ const EstablishmentResults: React.FC<interfaces.EstablishmentsProps> = ({est}) =
             <div className="establishment-results">
                 {filteredResult}
             </div>
-            
-       
         </>
     );
 }
 
 export default EstablishmentResults;
-
-

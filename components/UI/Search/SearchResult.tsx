@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import * as icons from '../Icons';
+import { Star } from '../Icons';
 import {SearchResultProps} from '../../../constants/interfaces';
 import { primary, greyLightThree } from "../../../constants/colors";
 
@@ -10,26 +10,26 @@ const SearchResult: React.FC<SearchResultProps> = ({ name, thumbnail, stars, slu
 
     // Calculate the amount of stars that shall be displayed
 	const amountOfStars: number = stars;
-    const calculatedStars: JSX.Element[] = [...Array(amountOfStars)].map((e, i) => <icons.Star key={i} color={primary} />);
+    const calculatedStars: JSX.Element[] = [...Array(amountOfStars)].map((e, i) => <Star key={i} color={primary} />);
 
-    const oneGreyStar = <icons.Star color={greyLightThree} />;
+    const oneGreyStar = <Star color={greyLightThree} />;
 
     const twoGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     const threeGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     const fourGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     return (

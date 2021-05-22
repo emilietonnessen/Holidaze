@@ -36,6 +36,16 @@ export interface ModalProps {
     classes: string;
 }
 
+export interface TextareaProps {
+    register: () => void;
+    name: string;
+    label: string;
+    placeholder: string; 
+    error: any;
+    defaultValue?: any;
+    cssClass?: string;
+}
+
 export interface FeedbackProps {
     children: React.ReactNode;
     theme: "error" | "success" | "warning";

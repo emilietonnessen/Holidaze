@@ -182,8 +182,10 @@
     &__box {
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
         justify-content: center;
-        row-gap: .2rem;
+        row-gap: .5rem;
+        align-self: center;
     }
 
     &__hotel-name {

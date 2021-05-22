@@ -1,6 +1,6 @@
 import Modal from '../UI/Modal';
 
-export const BookingFeedbackSuccess = () => (
+export const BookingFeedbackSuccess: React.FC = () => (
     <Modal link="#main" id="feedback-success" classes="booking-feedback">
         <div className="modal-feedback">
             <h3 className="modal-feedback__title">

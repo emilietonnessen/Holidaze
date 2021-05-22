@@ -20,8 +20,6 @@ import Error from "../components/UI/Form/Error";
 
 
 
-
-
 interface Schema extends Asserts<typeof schema> {}
 const schema = yup.object().shape(loginSchema);
 
@@ -37,7 +35,7 @@ const login: React.FC = () => {
 
     
 
-    const [auth, setAuth]: any = useContext(AuthContext);
+    const [, setAuth]: any = useContext(AuthContext);
 
     const onSubmit: (data: {}) => Promise<void>  = async (data) => {
         setSubmitting(true);
@@ -48,7 +46,6 @@ const login: React.FC = () => {
 			setAuth(response.data);
 			router.push("/admin");
 		} catch (error) {
-			//console.log("[onSubmit Error]", error);
 			setLoginError(error.toString());
 		} finally {
 			setSubmitting(false);

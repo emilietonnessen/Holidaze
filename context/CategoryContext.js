@@ -1,7 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 const CategoryContext = createContext();
-
 
 export const CategoryProvider = ({ children }) => {
     const [activeCategory, setActiveCategory] = useState("explore");

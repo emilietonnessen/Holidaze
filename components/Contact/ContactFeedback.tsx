@@ -1,6 +1,6 @@
 import Modal from '../UI/Modal';
 
- const ContactFeedback = () => (
+ const ContactFeedback: React.FC = () => (
     <Modal link="#contact" id="contact-feedback" classes="contact-feedback">
         <div className="modal-feedback">
             <h3 className="modal-feedback__title">

@@ -10,7 +10,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                 <Component {...pageProps} />
             </AuthProvider>
         </CategoryProvider>
-        
     );
 }
 

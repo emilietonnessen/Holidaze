@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
 
-import useAxios from "../../../hooks/useAxios.js";
-import Select from "../../UI/Form/Select";
-import Error from "../../UI/Form/Error";
+import useAxios from "../../hooks/useAxios.js";
+import Select from "../UI/Form/Select";
+import Error from "../UI/Form/Error";
 import AdvancedOptions from "./AdvancedOptions";
-import EstablishmentForm from "../EstablishmentForm";
-import Feedback from "../../UI/Feedback";
-import { ESTABLISHMENTS_URL } from "../../../constants/api";
-import { editEstablishmentSchema } from '../../../constants/schemas';
-import { Establishment } from '../../../constants/interfaces';
-import { Button } from "../../UI/Button";
+import EstablishmentForm from "./EstablishmentForm";
+import Feedback from "../UI/Feedback";
+import { ESTABLISHMENTS_URL } from "../../constants/api";
+import { editEstablishmentSchema } from '../../constants/schemas';
+import { Establishment } from '../../constants/interfaces';
+import { Button } from "../UI/Button";
 
 
 // yup validation
@@ -23,12 +23,14 @@ const schema = yup.object().shape(editEstablishmentSchema);
 
 
 
-const EditForm: React.FC = () => {
+const EditEstablishment: React.FC = () => {
 
     // Put together React Hook Form and Yup validation.
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
+
+
 
     // State
     const [establishments, setEstablishments] = useState<Establishment[] | undefined>();
@@ -197,6 +199,7 @@ const EditForm: React.FC = () => {
                         imageTwoValue={imageTwoValue}
                         imageTwoValueError={imageTwoValueError} />
                     
+
                     {/* Category: */}
                     <Select 
                         name="category" 
@@ -210,6 +213,7 @@ const EditForm: React.FC = () => {
                         <option value="BedAndBreakfast">Bed & Breakfast</option>
                         <option value="Guesthouse">Guesthouse</option>
                     </Select>
+
 
                     {/* Submit Button */}    
                     <Button theme="primary" size="sm" type="submit" classes="establishment-form__group--submit">
@@ -230,4 +234,4 @@ const EditForm: React.FC = () => {
     );
 }
 
-export default EditForm;
+export default EditEstablishment;

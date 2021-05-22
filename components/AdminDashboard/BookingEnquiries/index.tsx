@@ -8,9 +8,13 @@ import { Booking } from "../../../constants/interfaces";
 
 
 const BookingNotifications: React.FC = () => {
+
+    // State & Variables
     const [enquiries, setEnquiries] = useState<Booking[]>([]);
     const http: AxiosInstance = useAxios();
 
+
+    // Set the enquiries to state
     useEffect(() => {
         async function fetchData() {
             try {
@@ -23,6 +27,7 @@ const BookingNotifications: React.FC = () => {
     }, []);
 
 
+    // Sort and map through booking enquiries
     const bookingEnquiries: JSX.Element[]= enquiries.sort(value => value.read ? 1 : -1).map(enq =>  (
         <BookingCard
             key={enq.id}

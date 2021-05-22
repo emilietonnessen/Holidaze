@@ -7,4 +7,6 @@ export const greyLightThree: string = "#CCC";
 export const greyDarkOne: string = "#4A4A4A";
 export const greyDarkTwo: string = "#919191";
 
+export const black: string = "#000000"
+
 export const error: string = "#f10000"

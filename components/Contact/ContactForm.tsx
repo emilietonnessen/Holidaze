@@ -6,7 +6,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 
 import Feedback from "../UI/Feedback";
-import useAxios from "../../hooks/useAxios.js";
 import Input from "../UI/Form/Input";
 import Textarea from "../UI/Form/Textarea";
 import { Button } from "../UI/Button";
@@ -15,19 +14,28 @@ import { ContactMessage } from "../../constants/interfaces";
 import { CONTACT_URL } from "../../constants/api";
 
 
+// Yup validation and Schema
 interface Schema extends Asserts<typeof schema> {}
-
 const schema = yup.object().shape(contactFormSchema);
 
+
+
 const ContactForm: React.FC = () => {
+
+    // State
     const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
-	const http = useAxios();
 
+
+
+    // Putting together yup and react hook form with a resolver
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
 
+
+
+    // OnSubmit
     async function onSubmit(data: ContactMessage) {
         setSubmitting(true);
 		setServerError(null);
@@ -62,6 +70,7 @@ const ContactForm: React.FC = () => {
                     error={errors.name && <span className="form__error"><i className="fas fa-exclamation-circle"></i> {errors.name.message}</span>}
                     placeholder="Nora Nordmann" />
 
+
                 {/* Email: */}
                 <Input
                     register={register}
@@ -70,6 +79,7 @@ const ContactForm: React.FC = () => {
                     type="text"
                     error={errors.email && <span className="form__error"><i className="fas fa-exclamation-circle"></i> {errors.email.message}</span>}
                     placeholder="nora@nordmann.no" />
+
 
                 {/* Topic: */}
                 <Input
@@ -80,6 +90,7 @@ const ContactForm: React.FC = () => {
                     error={errors.topic && <span className="form__error"><i className="fas fa-exclamation-circle"></i> {errors.topic.message}</span>}
                     placeholder="My Message" />
 
+
                 {/* Message: */}
                 <Textarea
                     register={register}
@@ -87,6 +98,7 @@ const ContactForm: React.FC = () => {
                     label="Message"
                     error={errors.message && <span className="form__error"><i className="fas fa-exclamation-circle"></i> {errors.message.message}</span>}
                     placeholder="What can we help you with?" />
+
 
                 <Button theme="primary" size="md" type="submit">
                     {submitting ? "sending.." : "send"}

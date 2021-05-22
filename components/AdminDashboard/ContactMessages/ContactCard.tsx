@@ -29,9 +29,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
             try {
                 const response = await http.get(url);
                 const data = response.data;
-
                 data.read = true;
-
                 const updateResponse = await http.put(url, data);
                 setNewMessage(true);
             } 
@@ -53,10 +51,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
         if (confirmDelete) {
             try {
 				await http.delete(url);
-               
                 setDeleteSuccess(true);
-                //router.push("/admin");
-                window.location.reload(false);
 			} catch (error) {
 				setDeleteError(error.toString());
 			} finally {

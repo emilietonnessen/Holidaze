@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { NextRouter, useRouter } from "next/router";
 
-import useAxios from '../../../hooks/useAxios';
-import Accordion from '../../UI/Accordion';
-import Feedback from '../../UI/Feedback';
-import { Button } from '../../UI/Button';
-import { AdvancedOptionsProps } from "../../../constants/interfaces";
+import useAxios from '../../hooks/useAxios';
+import Accordion from '../UI/Accordion';
+import Feedback from '../UI/Feedback';
+import { Button } from '../UI/Button';
+import { AdvancedOptionsProps } from "../../constants/interfaces";
 
 
 const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url, name}) => {
@@ -44,14 +44,16 @@ const AdvancedOptions: React.FC<AdvancedOptionsProps> = ({url, name}) => {
 		} 
     }
 
-
     
     return (
         <div className="establishment-form__group--advanced">
             <Accordion title="Advanced Options" closed={true}>
+
+                {/* Feedback */}
                 {deleteError && <div><Feedback theme="error">{deleteError}</Feedback></div>} 
                 {deleteSuccess && <div><Feedback theme="success">{name} was successfully deleted!</Feedback></div>}
 
+                {/* Button */}
                 <Button theme="danger" size="sm" onClick={deleteEstablishment}>
                     {deleting ? "deleting.." : "delete"}
                 </Button>

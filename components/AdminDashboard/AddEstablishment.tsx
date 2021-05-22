@@ -3,15 +3,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 
-import { ESTABLISHMENTS_URL } from "../../../constants/api";
-import { Button } from "../../UI/Button";
-import {addEstablishmentSchema} from '../../../constants/schemas';
-import { Establishment } from "../../../constants/interfaces";
-import AuthContext from "../../../context/AuthContext";
-import EstablishmentForm from "../EstablishmentForm";
-import Select from "../../UI/Form/Select";
-import Error from "../../UI/Form/Error";
-import Feedback from "../../UI/Feedback";
+import { ESTABLISHMENTS_URL } from "../../constants/api";
+import { Button } from "../UI/Button";
+import {addEstablishmentSchema} from '../../constants/schemas';
+import { Establishment } from "../../constants/interfaces";
+import AuthContext from "../../context/AuthContext";
+import EstablishmentForm from "./EstablishmentForm";
+import Select from "../UI/Form/Select";
+import Error from "../UI/Form/Error";
+import Feedback from "../UI/Feedback";
 
 
 // Yup validation
@@ -157,6 +157,7 @@ const AddForm: React.FC = () => {
                     imageTwoValue={imageTwoValue}
                     imageTwoValueError={imageTwoValueError} />
 
+
                 {/* Category: */}
                 <Select 
                     name="category" 
@@ -170,11 +171,11 @@ const AddForm: React.FC = () => {
                     <option value="Guesthouse">Guesthouse</option>
                 </Select>
 
+
                 {/* Submit Button */}    
                 <Button theme="primary" size="sm" type="submit" classes="establishment-form__group--submit">
                     {submitting ? "adding..." : "add establishment"}
                 </Button>
-                
 
             </fieldset>
 

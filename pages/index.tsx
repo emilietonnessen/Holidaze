@@ -9,7 +9,6 @@ import Category from "../components/Homepage/Category";
 import Review from "../components/Homepage/Review";
 import Gallery from '../components/Homepage/Gallery';
 import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
-import { CategoryProvider } from '../context/CategoryContext';
 
 
 const home: React.FC<HomeProps> = ({establishments}) => {
@@ -19,7 +18,6 @@ const home: React.FC<HomeProps> = ({establishments}) => {
         JSON.stringify(esta.featured).match('true')
     ));
 
-    //console.log("[establishments]", establishments);
 
     // Creating the filtered establishments into cards
     const featuredEstablishments: JSX.Element[] = filteredEstablishments.map(esta => (
@@ -57,10 +55,6 @@ export default home;
 
 // API Call with GraphQL and Apollo Client
 export async function getServerSideProps() {
-
-    /* const { loading, error, data } = useQuery(GRAPHQL_URL, {
-        fetchPolicy: "network-only"
-    }); */
     
     // Creating a new Apollo Client with the GraphQL API
     const client = new ApolloClient({

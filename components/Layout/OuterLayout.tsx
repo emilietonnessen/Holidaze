@@ -1,4 +1,4 @@
-import NextHead from './NextHead';
+import NextHead from './Head';
 import { OuterLayoutProps } from '../../constants/interfaces';
 
 

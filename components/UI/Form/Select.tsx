@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import * as icons from '../Icons';
+import { Chevron } from '../Icons';
 import { SelectProps } from "../../../constants/interfaces";
 
 const Select: React.FC<SelectProps> = ({ name, children, label, register, error, onChange, defaultValue, cssClass }) => {
@@ -30,7 +30,7 @@ const Select: React.FC<SelectProps> = ({ name, children, label, register, error,
                     {children}
                 </select>
 
-                <icons.Chevron classes="form__select-icon" />
+                <Chevron classes="form__select-icon" />
             </div>
 
             {error}

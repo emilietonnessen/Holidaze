@@ -7,20 +7,7 @@ import { EstablishmentFormProps } from '../../constants/interfaces';
 
 
 
-const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
-    register, 
-    selectedEstablishment, 
-    radioID,
-    errors,
-    changeThumbnailValue, 
-    thumbnailValue, 
-    thumbnailValueError, 
-    changeImageOneValue, 
-    imageOneValue,
-    imageOneValueError,
-    changeImageTwoValue, 
-    imageTwoValue,
-    imageTwoValueError }) => (
+const EstablishmentForm: React.FC<EstablishmentFormProps> = ({register, selectedEstablishment, radioID, errors, changeThumbnailValue,  thumbnailValue,  thumbnailValueError,  changeImageOneValue,  imageOneValue, imageOneValueError, changeImageTwoValue,  imageTwoValue, imageTwoValueError }) => (
     <>
         {/* Thumbnail: */}
         <File 
@@ -45,6 +32,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             added={imageTwoValue ? imageTwoValue.name : selectedEstablishment ? selectedEstablishment.imageTwo.name : null}
             fileError={imageTwoValueError ? <Error>"Please use an .jpeg file"</Error> : null}/>
 
+
         {/* Hotel Name: */}
         <Input 
             register={register}
@@ -68,6 +56,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             error={errors.email && <Error>{errors.email.message}</Error>}
             placeholder="establishment@support.no"
             defaultValue={selectedEstablishment ? selectedEstablishment.email : ""} />
+
 
         {/* Phone */}
         <Input
@@ -115,6 +104,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             placeholder="City Name"
             defaultValue={selectedEstablishment ? selectedEstablishment.city : ""} />
 
+
         {/* Zip Code */}
         <Input
             register={register}
@@ -126,6 +116,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             placeholder="1234"
             defaultValue={selectedEstablishment ? selectedEstablishment.zipCode : ""} />
 
+
         {/* Average User Rating */}
         <Input
             register={register}
@@ -136,6 +127,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             error={errors.rating && <Error>{errors.rating.message}</Error>}
             placeholder="Ex: 7.9"
             defaultValue={selectedEstablishment ? selectedEstablishment.rating : ""} />
+
 
         {/* Stars */}
         <Input
@@ -160,6 +152,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             placeholder="499"
             defaultValue={selectedEstablishment ? selectedEstablishment.lowestPrice : ""} />
 
+
         {/* Reviews: */}
         <Input
             register={register}
@@ -170,6 +163,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             error={errors.reviews && <Error>{errors.reviews.message}</Error>}
             placeholder="456"
             defaultValue={selectedEstablishment ? selectedEstablishment.reviews : ""} />
+
 
         {/* Featured */}
         <RadioBoolean 
@@ -182,7 +176,6 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             defaultValue={selectedEstablishment ? selectedEstablishment.featured : undefined} />
 
 
-        { /* console.log("featured", featured) */}
         {/* Description */}
         <Textarea
             register={register}
@@ -192,6 +185,7 @@ const EstablishmentForm: React.FC<EstablishmentFormProps> = ({
             placeholder="Establishment Description"
             error={errors.description && <Error>{errors.description.message}</Error>}
             defaultValue={selectedEstablishment ? selectedEstablishment.description : ""} />
+
 
         {/* List of Amenities */}
         <Textarea

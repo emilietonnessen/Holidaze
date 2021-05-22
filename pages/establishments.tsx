@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-import * as interfaces from '../constants/interfaces';
+import { EstablishmentsProps } from '../constants/interfaces';
 import Layout from '../components/Layout';
 import EstablishmentResults from '../components/EstablishmentResults';
 import { GRAPHQL_URL } from "../constants/api";
@@ -9,7 +9,7 @@ import { META_ESTABLISHMENTS, TITLE_ESTABLISHMENTS } from '../constants/meta';
 
 
 
-const establishments: React.FC<interfaces.EstablishmentsProps> = ({est}) => (
+const establishments: React.FC<EstablishmentsProps> = ({est}) => (
     <Layout page="establishments" title={TITLE_ESTABLISHMENTS} description={META_ESTABLISHMENTS}>
         <EstablishmentResults est={est} />
     </Layout>

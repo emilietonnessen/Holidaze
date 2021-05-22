@@ -51,8 +51,6 @@ const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
         setSearchIcon(false);
     }
 
-    
-
 
     // Searching through matching results from the api 
     if (searchValue.length > 0 ) {

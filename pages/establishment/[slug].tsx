@@ -10,54 +10,52 @@ import EstablishmentGallery from '../../components/Establihsment/EstablishmentGa
 import EstablishmentHeader from '../../components/Establihsment/EstablishmentHeader';
 import EstablishmentInfo from '../../components/Establihsment/EstablishmentInfo';
 import EstablishmentCTA from '../../components/Establihsment/EstablishmentCTA';
-import * as interfaces from '../../constants/interfaces';
+import { EstablishmentDetailsProps } from '../../constants/interfaces';
 import { ESTABLISHMENTS_URL, GRAPHQL_URL } from "../../constants/api";
 
 
-const establishmentDetails: React.FC<interfaces.EstablishmentDetailsProps> = ({est}) => {
+const establishmentDetails: React.FC<EstablishmentDetailsProps> = ({est}) =>  (
+	<>
+		<Layout page="establishment" title={`${est.name} | Holidaze`} description={est.description}>
 
-    return (
-		<>
-			<Layout page="establishment" title={`${est.name} | Holidaze`} description={est.description}>
+			{/* Gallery: */}
+			<EstablishmentGallery thumbnail={est.thumbnail} imageOne={est.imageOne} imageTwo={est.imageTwo} /> 
 
-				{/* Gallery: */}
-				<EstablishmentGallery thumbnail={est.thumbnail} imageOne={est.imageOne} imageTwo={est.imageTwo} /> 
-
-				{/* Header: */}
-				 <EstablishmentHeader 
-					name={est.name}
-					street={est.street}
-					stars={est.stars}
-					reviews={est.reviews}
-					rating={est.rating} /> 
-
-				{/* Information: */}
-				 <EstablishmentInfo 
-				 	coordinates={est.coordinates} 
-					description={est.description} 
-					amenities={est.amenities}
-					lowestPrice={est.lowestPrice} />   
-
-				{/* Booking */}
-				<EstablishmentCTA />
-				
-			</Layout>
-
-
-			{/* Booking Enquiry Modal: */}
-			 <Booking
-				email={est.email}
-				phone={est.phone}
+			{/* Header: */}
+			 <EstablishmentHeader 
+				name={est.name}
 				street={est.street}
-				city={est.city}
-				zipCode={est.zipCode}
-				establishmentName={est.name} /> 
+				stars={est.stars}
+				reviews={est.reviews}
+				rating={est.rating} /> 
 
-			{/* Booking Feedback */}
-			<BookingFeedbackSuccess />
-		</>
-    );
-}
+			{/* Information: */}
+			 <EstablishmentInfo 
+			 	coordinates={est.coordinates} 
+				description={est.description} 
+				amenities={est.amenities}
+				lowestPrice={est.lowestPrice} />   
+
+			{/* Booking */}
+			<EstablishmentCTA />
+				
+		</Layout>
+
+
+		{/* Booking Enquiry Modal: */}
+		 <Booking
+			email={est.email}
+			phone={est.phone}
+			street={est.street}
+			city={est.city}
+			zipCode={est.zipCode}
+			establishmentName={est.name} /> 
+
+		{/* Booking Feedback */}
+		<BookingFeedbackSuccess />
+	</>
+);
+
 
 export default establishmentDetails;
 

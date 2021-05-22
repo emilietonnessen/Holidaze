@@ -17,5 +17,4 @@ const Filter: React.FC<interfaces.FilterProps> = ({activeHotels, activeBnBs, act
     </div>
 );
 
-
 export default Filter;

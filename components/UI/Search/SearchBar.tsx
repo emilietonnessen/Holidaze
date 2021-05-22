@@ -1,7 +1,8 @@
-import * as icons from '../Icons';
-import * as interfaces from '../../../constants/interfaces';
+import { Cross, Search} from '../Icons';
+import { SearchBarProps } from '../../../constants/interfaces';
+import { black } from '../../../constants/colors';
 
-const SearchBar: React.FC<interfaces.SearchBarProps> = ({theme, search, value, clearSearch, iconType}) => (
+const SearchBar: React.FC<SearchBarProps> = ({theme, search, value, clearSearch, iconType}) => (
     <div className="search__bar">
         <input 
             type="text" 
@@ -11,7 +12,7 @@ const SearchBar: React.FC<interfaces.SearchBarProps> = ({theme, search, value, c
             value={value} />
 
         <button className="search__button" onClick={clearSearch} >
-            {iconType ? <icons.Cross /> : <icons.Search />} 
+            {iconType ? <Cross color={black} /> : <Search color={black} />} 
         </button>
     </div>
 );

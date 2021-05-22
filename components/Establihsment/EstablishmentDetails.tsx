@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import * as icons from '../UI/Icons';
+import { Chevron } from '../UI/Icons';
 import { primary } from "../../constants/colors";
 import { EstablishmentInfoProps } from "../../constants/interfaces";
 
@@ -11,9 +11,10 @@ const EstablishmentDetails: React.FC<EstablishmentInfoProps> = ({description, co
     // Splitting the amenities by every line break into an array
     const splitAmenities: string[] = amenities.split('\n');
 
+    // Map through the recently made array into a list
     const finalAmenities: JSX.Element[] = splitAmenities.map(amenities => (
         <li  key={amenities}>
-            <icons.Chevron color={primary} />
+            <Chevron color={primary} />
             {amenities}
         </li>
     ));

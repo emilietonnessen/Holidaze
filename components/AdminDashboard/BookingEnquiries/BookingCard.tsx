@@ -1,10 +1,11 @@
 import { useState } from "react";
 
+import Feedback from "../../UI/Feedback";
 import useAxios from "../../../hooks/useAxios";
 import { ENQUIRY_URL } from "../../../constants/api";
 import { BookingCardProps } from "../../../constants/interfaces";
 import { Button } from "../../UI/Button";
-import Feedback from "../../UI/Feedback";
+
 
 
 const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id}) => {
@@ -27,9 +28,7 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
             try {
                 const response = await http.get(url);
                 const data = response.data;
-
                 data.read = true;
-
                 const updateResponse = await http.put(url, data);
                 setNewMessage(true);
             } 
@@ -53,8 +52,6 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
 				await http.delete(url);
                
                 setDeleteSuccess(true);
-                //router.push("/admin");
-                window.location.reload(false);
 			} catch (error) {
 				setDeleteError(error.toString());
 			} finally {

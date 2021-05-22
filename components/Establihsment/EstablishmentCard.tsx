@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link";
 
-import * as icons from '../UI/Icons';
+import { Star } from '../UI/Icons';
 import { greyDarkOne, greyLightThree } from "../../constants/colors";
 import { EstablishmentCardProps } from "../../constants/interfaces";
 
@@ -11,26 +11,26 @@ const EstablishmentCard: React.FC<EstablishmentCardProps> = ({thumbnail, name, r
 
     // Loop through the correct amount of stars
     const n: number = stars;
-    const calculatedStars: JSX.Element[] = [...Array(n)].map((e, i) => <icons.Star key={i} color={greyDarkOne} /> );
+    const calculatedStars: JSX.Element[] = [...Array(n)].map((e, i) => <Star key={i} color={greyDarkOne} /> );
 
-    const oneGreyStar = <icons.Star color={greyLightThree} />;
+    const oneGreyStar = <Star color={greyLightThree} />;
 
     const twoGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     const threeGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     const fourGreyStar = <>
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
-        <icons.Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
+        <Star color={greyLightThree} />
     </>;
 
     return (
