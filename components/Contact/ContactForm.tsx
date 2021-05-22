@@ -41,7 +41,7 @@ const ContactForm: React.FC = () => {
 		setServerError(null);
 		
 		try {
-			const response = await axios.post(CONTACT_URL, data);
+			await axios.post(CONTACT_URL, data);
 
             // Open Successful Feedback Modal
             window.location.href="#contact-feedback"

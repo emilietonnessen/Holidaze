@@ -30,11 +30,11 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
                 const response = await http.get(url);
                 const data = response.data;
                 data.read = true;
-                const updateResponse = await http.put(url, data);
+                await http.put(url, data);
                 setNewMessage(true);
             } 
             catch (error) {
-                console.log(error);
+                console.log(error); // <--- Burde jeg fjerne disse?
             } 
         }
     }

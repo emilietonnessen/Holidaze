@@ -4,6 +4,12 @@ export interface Establishments {
     length?: number;
 }
 
+export interface Image {
+    src: string;
+    alt: string;
+    id: number;
+}
+
 // Single object of a Establishment
 export interface Establishment {
     name: string;

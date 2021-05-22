@@ -45,7 +45,7 @@ const BookingForm: React.FC<BookingFormProps> = ({establishmentName}) => {
         data.establishment = establishmentName;
 		
 		try {
-			const response = await axios.post(ENQUIRY_URL, data);
+			await axios.post(ENQUIRY_URL, data);
             window.location.href="#feedback-success";
 		} catch (error) {
 			setServerError(error.toString());

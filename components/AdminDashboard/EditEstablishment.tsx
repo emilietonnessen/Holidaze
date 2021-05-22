@@ -143,8 +143,6 @@ const EditEstablishment: React.FC = () => {
         setUpdatingEstablishment(true);
 		setUpdateError(null);
 		setUpdated(false);
-		
-        console.log("[Data Sending]", data);
 
         const formData = new FormData()
         formData.append("data", JSON.stringify(data));
@@ -153,11 +151,9 @@ const EditEstablishment: React.FC = () => {
         formData.append("files.imageTwo", imageTwoValue); 
 
 		try {
-            const response = await http.put(url, formData);
-            console.log("[Response Data]", response.data);
+            await http.put(url, formData);
             setUpdated(true);
 		} catch (error) {
-			console.log("[OnSubmit Error]", error);
 			setUpdateError(error.toString());
 		} finally {
 			setUpdatingEstablishment(false);

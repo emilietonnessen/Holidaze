@@ -6,8 +6,9 @@
     width: 40rem;
 
     @include respond(mobile-lg) {
-        width: 35rem;
-        padding: 3rem;
+        width: 100%;
+        max-width: 35rem;
+        padding: 2rem;
         align-self: center;
     }
 

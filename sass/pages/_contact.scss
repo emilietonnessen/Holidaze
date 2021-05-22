@@ -72,6 +72,15 @@
         grid-template-rows: 1fr;
     }
 
+    @include respond(mobile-lg) {
+        grid-template-columns: max-content max-content;
+        margin:  0 auto;
+        column-gap: 2rem;
+        padding: 5rem 0;
+        //grid-column: 1 / 4;
+        width: max-content;
+    }
+
     @include respond(mobile) {
         //width: 95vw;
         max-width: 100%;
@@ -142,8 +151,6 @@
     @include respond(mobile-lg) {
         grid-column: 2 / 3;
         grid-row: 2 / 4;
-
-        max-width: 100%;
 
         position: relative;
         top: 0;

@@ -10,8 +10,8 @@ import { EstablishmentCardProps } from "../../constants/interfaces";
 const EstablishmentCard: React.FC<EstablishmentCardProps> = ({thumbnail, name, reviews, stars, lowestPrice, slug }) => {
 
     // Loop through the correct amount of stars
-    const n: number = stars;
-    const calculatedStars: JSX.Element[] = [...Array(n)].map((e, i) => <Star key={i} color={greyDarkOne} /> );
+    const numberOfStars: number = stars;
+    const calculatedStars: JSX.Element[] = [...Array(numberOfStars)].map((est, index) => <Star key={index} color={greyDarkOne} /> );
 
     const oneGreyStar = <Star color={greyLightThree} />;
 

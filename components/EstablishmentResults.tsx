@@ -12,8 +12,6 @@ const EstablishmentResults: React.FC<EstablishmentsProps> = ({est}) => {
     const [activeCategory, setActiveCategory]: any = useContext(CategoryContext);
     const [establishments, setEstablishments] = useState<Establishment[]>([]);
 
-    console.log(activeCategory);
-
     // Const Variables
     const hotel: string = 'hotel';
     const bnb: string = 'bedandbreakfast';
