@@ -27,7 +27,7 @@ const Search: React.FC<interfaces.SearchProps> = ({theme}) => {
                 const response = await axios.get(ESTABLISHMENTS_URL);
                 setEstablishments(response.data);
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }; fetchData(); 
     }, []);

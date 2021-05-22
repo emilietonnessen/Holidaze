@@ -34,7 +34,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
                 setNewMessage(true);
             } 
             catch (error) {
-                console.log(error); // <--- Burde jeg fjerne disse?
+                console.error(error);
             } 
         }
     }

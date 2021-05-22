@@ -21,7 +21,7 @@ const BookingNotifications: React.FC = () => {
                 const response = await http.get("enquiries");
 				setEnquiries(response.data);
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }; fetchData(); 
     }, []);

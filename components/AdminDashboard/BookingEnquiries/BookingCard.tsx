@@ -33,7 +33,7 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
                 setNewMessage(true);
             } 
             catch (error) {
-                console.log(error);
+                console.error(error);
             } 
         }
     }

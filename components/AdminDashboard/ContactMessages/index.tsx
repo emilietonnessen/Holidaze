@@ -21,7 +21,7 @@ const ContactNotifications: React.FC = () => {
                 const response = await http.get("contact-messages");
 				setContactMessages(response.data);
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }; fetchData(); 
     }, []);

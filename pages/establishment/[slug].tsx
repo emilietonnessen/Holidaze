@@ -79,7 +79,7 @@ export const getServerSidePaths: () => Promise<{ paths: { params: { slug: string
         };
 
 	} catch (error) {
-		console.log('[Error getStaticPaths]', error);
+		console.error('[Error getStaticPaths]', error);
 	}
 }
 

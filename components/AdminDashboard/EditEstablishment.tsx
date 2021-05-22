@@ -64,7 +64,7 @@ const EditEstablishment: React.FC = () => {
                 const response = await http.get("establishments");
 				setEstablishments(response.data);
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }; fetchData(); 
     }, []);
