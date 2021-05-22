@@ -170,5 +170,5 @@
 
 // Contact Page --------------------------------------------------
 .contact {
-    grid-template-rows: 1fr;
+    grid-template-rows: minmax(80rem, 1fr);
 }

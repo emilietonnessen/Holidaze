@@ -3,6 +3,8 @@
     background-color: transparent;
     position: relative;
 
+    
+
     @include respond(lap-lg) {
         min-height: 110vh;
     }
@@ -28,12 +30,19 @@
     clip-path: polygon(0 0, 100% 0, 100% 50%, 40% 100%, 0 100%);
 
     @include respond(lap-lg) {
-        grid-column: 1 / 4;
-        margin: 0;
-        height: 100%;
+        height: calc(100% - 6rem);
+        margin: 3rem 0;
     } 
 
+    @include respond(mobile-lg) {
+        grid-column: 2 / 3;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 30% 100%, 0 100%);
+    }
+
     @include respond(mobile) {
+        height: 100%;
+        grid-column: 1 / 4;
+        margin: 0;
         clip-path: unset;
     }
 }
@@ -59,13 +68,13 @@
     }
 
     @include respond(tab-land) {
-        width: 95vw;
+        width: 100%;
         height: unset;
         position: relative;
         transform: translate(0, 0);
         top: 0;
         left: 0;
-        padding: 3rem;
+        padding: 6rem 3rem;
 
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -144,8 +153,8 @@
     }
     
     @include respond(tab-land) {
-        bottom: 0rem;
-        right: 0rem;
+        bottom: 6rem;
+        right: 0;
     }
     
     @include respond(mobile-lg) {
