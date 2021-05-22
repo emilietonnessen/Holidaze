@@ -1,4 +1,6 @@
 .establishment-form {
+
+    // Fieldset --------------------------------------
     &__fieldset {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -22,6 +24,8 @@
         }
     }
 
+
+    // Group ---------------------------------------
     &__group {
 
         &--establishment {

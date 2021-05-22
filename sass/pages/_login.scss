@@ -4,7 +4,7 @@
     background-image: linear-gradient(-45deg, $color-black, $color-grey-dark-1);
 
 
-    // Box (container) ------------------------------
+    // Box (container) ----------------------------
     &__box {
         width: 32rem;
         height: max-content;
@@ -63,7 +63,7 @@
 
 
 
-    // Input Fields
+    // Input Fields -------------------------------
     &__fields {
         display: flex;
         flex-direction: column;
@@ -83,7 +83,7 @@
 
 
 
-    // Button
+    // Button --------------------------------------
     &__button {
         &:focus-visible {
             border: 1px solid white;

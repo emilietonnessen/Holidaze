@@ -103,10 +103,6 @@
             // Animation
             animation-name: moveInRight;
 
-            /* @include respond(tab-land) {
-                font-size: 1.8rem;
-            } */
-
             @include respond(tab-port) {
                 font-size: 1.8rem;
             }
@@ -214,10 +210,5 @@
         bottom: -5rem;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        // Animation
-        /* animation-name: moveInBottomCTA;
-        animation-duration: 1s;
-        animation-timing-function: ease-out; */
     }
 }

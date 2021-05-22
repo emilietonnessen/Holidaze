@@ -1,6 +1,7 @@
 .category {
-    &__scroll {
 
+    // Scroll Container -----------------------------
+    &__scroll {
 
         &::-webkit-scrollbar {
             display: none;
@@ -20,6 +21,8 @@
         }
     }
 
+
+    // Grid Container --------------------------------
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -34,6 +37,8 @@
         }
     }
 
+
+    // Link Container -----------------------------
     &__link {
         border: 1px solid transparent;
         border-top-left-radius: 3rem;
@@ -55,12 +60,12 @@
         }
     }    
 
+
+    // Category Container -------------------------
     &__box {
         transition: all .3s;
         position: relative;
         z-index: 100;
-
-        
 
         &:hover,
         &:focus {
@@ -85,6 +90,8 @@
         width: 100%; 
     }
 
+
+    // Category Title ---------------------------------
     &__title {
         font-size: 2rem;
         font-weight: 400;

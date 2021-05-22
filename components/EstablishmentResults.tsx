@@ -86,9 +86,6 @@ const EstablishmentResults: React.FC<EstablishmentsProps> = ({est}) => {
     if (activeCategory === explore) { activeExplore = true; } else { activeExplore = false; }
 
 
-    // Console Logs
-    console.log("[Results Category]", activeCategory);
-
     return (
         <>
             {/* Filter: */}

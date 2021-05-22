@@ -1,18 +1,29 @@
+// Hero ------------------------------------------
 .hero {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
+
+
+// Category --------------------------------------
 .category {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
 
+
+
+// Review ----------------------------------------
 .review {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
 }
 
+
+
+
+// Featured -------------------------------------
 .featured {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
@@ -35,6 +46,10 @@
     }
 }
 
+
+
+
+// Gallery ---------------------------------------
 .gallery {
     grid-column: 1 / 4;
     grid-row: 5 / 6;

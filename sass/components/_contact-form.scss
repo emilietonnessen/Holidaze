@@ -17,16 +17,18 @@
         align-self: center;
     }
 
+
+
+    // Fieldset ------------------------------
     &__fieldset {
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 2rem;
     }
 
-    & .btn {
-        align-self: flex-start;
-    }
+    
 
+    // Title ----------------------------------
     &__title {
         font-size: 4rem;
         font-family: $font-family-heading;
@@ -48,9 +50,19 @@
         }
     }
 
+
+
+    // Textarea ------------------------------
     & textarea {
         @include respond(mobile) {
             height: 15rem;
         }
+    }
+    
+    
+    
+    // Button ---------------------------------
+    & .btn {
+        align-self: flex-start;
     }
 }

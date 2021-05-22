@@ -34,13 +34,6 @@ const ContactInfo: React.FC = () => (
                     holidaze@support.no
                 </p>
             </div>
-            <div className="contact-info__arrow" />    
-        </div>
-            
-        <div className="contact-info__marker">
-            <div className="contact-info__marker--1"></div>
-            <div className="contact-info__marker--2"></div>
-            <div className="contact-info__marker--3"></div>
         </div>
     </div>
 );

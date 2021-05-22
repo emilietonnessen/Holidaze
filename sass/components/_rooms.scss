@@ -21,6 +21,9 @@
         padding: 1.5rem;
     }
 
+    
+
+    // Photo -----------------------------------
     &__photo {
         width: 80%;
 
@@ -30,6 +33,9 @@
         }
     }
 
+
+
+    // Price ---------------------------------
     &__price {
         justify-self: flex-end;
         font-size: 2.5rem;
@@ -42,11 +48,12 @@
         @include respond(mobile) {
             grid-column: 1 / 2;
             grid-row: 3 / 4;
-            /* justify-self: flex-start;
-            align-self: center; */
         }
     }
 
+
+
+    // Information about the rooms -------------
     &__info {
         
         grid-column: 1 / 3;

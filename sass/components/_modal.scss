@@ -55,38 +55,3 @@
         transform: translate(-50%, -50%) scale(1);
     }
 }
-
-.modal-success {
-    & > .modal__content {
-        padding: 5rem;
-    }
-}
-
-.modal-error {
-
-    & > .modal__content {
-        padding: 5rem;
-        min-height: 30rem;
-        max-width: 50rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__title{
-        font-family: $font-family-heading;
-        font-weight: 300;
-        font-style: italic;
-        font-size: 4rem;
-        color: $color-error;
-        line-height: 1;
-        margin-bottom: 3rem;
-    }
-
-    &__message {
-        text-align: center;
-    }
-    
-}

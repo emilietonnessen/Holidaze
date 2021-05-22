@@ -1,9 +1,13 @@
+// Admin <main> container ------------------------
 .admin {
     background-color: #eee;
     height: 100%;
     border-top: 1px solid $color-grey-light-2;
 }
 
+
+
+// Admin Navigation ------------------------------
 .admin-navigation {
     grid-template-columns: 1fr;
     justify-items: flex-end;
@@ -15,6 +19,9 @@
     }
 }
 
+
+
+// Dashboard --------------------------------------
 .admin-dashboard {
     grid-column: 2 / 3;
     grid-template-rows: 1 / 2;
@@ -73,6 +80,5 @@
             background-color: #fff;
             box-shadow: $boxshadow-default;
         }
-        
     }   
 }

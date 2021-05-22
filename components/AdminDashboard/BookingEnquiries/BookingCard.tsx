@@ -63,31 +63,31 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
 
 
     return (
-        <div className="booking-card" onClick={readMessageHandler} >
+        <div className="admin-card" onClick={readMessageHandler} >
             
-            <div className="booking-card__header">
-                <h3 className="booking-card__title">{establishment}</h3>
-                {!newMessage ? <span className="booking-card__new">New!</span> : null}
+            <div className="admin-card__header">
+                <h3 className="admin-card__title">{establishment}</h3>
+                {!newMessage ? <span className="admin-card__new">New!</span> : null}
             </div>
 
-            <div className="booking-card__details">
-                <p className="booking-card__constants">From:</p>
-                <p className="booking-card__values">{firstName} {lastName}</p>
+            <div className="admin-card__details">
+                <p className="admin-card__constants">From:</p>
+                <p className="admin-card__values">{firstName} {lastName}</p>
 
-                <p className="booking-card__constants">Email:</p>
-                <p className="booking-card__values">{email}</p>
+                <p className="admin-card__constants">Email:</p>
+                <p className="admin-card__values">{email}</p>
 
-                <p className="booking-card__constants">Phone:</p>
-                <p className="booking-card__values">{phone}</p>
+                <p className="admin-card__constants">Phone:</p>
+                <p className="admin-card__values">{phone}</p>
 
-                <p className="booking-card__constants">Date:</p>
-                <p className="booking-card__values">{startDate} - {endDate}</p>
+                <p className="admin-card__constants">Date:</p>
+                <p className="admin-card__values">{startDate} - {endDate}</p>
 
-                <p className="booking-card__constants">Room:</p>
-                <p className="booking-card__values">{room}</p>
+                <p className="admin-card__constants">Room:</p>
+                <p className="admin-card__values">{room}</p>
             </div>
 
-            <p className="booking-card__message">
+            <p className="admin-card__message">
                 {message}
             </p>
 

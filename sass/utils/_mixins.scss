@@ -1,3 +1,14 @@
+// Center Element
+@mixin centerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+
+
+// Breakpoints
 @mixin respond($breakpoint) {
     @if $breakpoint == mobile {
         @media only screen and (max-width: $mobile) { @content; }
@@ -27,10 +38,3 @@
         @media only screen and (max-width: $desk) { @content; }
     }
 }
-
-@mixin centerElement {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} 

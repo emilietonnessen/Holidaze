@@ -63,25 +63,25 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
     
 
     return (
-        <div className="booking-card" onClick={readMessageHandler}>
+        <div className="admin-card" onClick={readMessageHandler}>
 
-            <div className="booking-card__header">
-                <h3 className="booking-card__title">{topic}</h3>
-                {!newMessage ? <span className="booking-card__new">New!</span> : null}
+            <div className="admin-card__header">
+                <h3 className="admin-card__title">{topic}</h3>
+                {!newMessage ? <span className="admin-card__new">New!</span> : null}
             </div>
 
-            <div className="booking-card__details">
-                <p className="booking-card__constants">From:</p>
-                <p className="booking-card__values">{name}</p>
+            <div className="admin-card__details">
+                <p className="admin-card__constants">From:</p>
+                <p className="admin-card__values">{name}</p>
 
-                <p className="booking-card__constants">Topic:</p>
-                <p className="booking-card__values">{topic}</p>
+                <p className="admin-card__constants">Topic:</p>
+                <p className="admin-card__values">{topic}</p>
 
-                <p className="booking-card__constants">Email:</p>
-                <p className="booking-card__values">{email}</p>
+                <p className="admin-card__constants">Email:</p>
+                <p className="admin-card__values">{email}</p>
             </div>
 
-            <p className="booking-card__message">
+            <p className="admin-card__message">
                 {message}
             </p>
 

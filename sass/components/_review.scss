@@ -12,73 +12,8 @@
         grid-template-rows: max-content 1fr;
     }
 
-    &__gallery {
-        background-image: url('../../public/assets/review-lg.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: right;
-        position: relative;
 
-
-        
-        @include respond(tab-land) {
-            grid-row: 2 / 3;
-            background-image: url('../../public/assets/review-md.jpg');
-        }
-
-        @include respond(mobile-lg) {
-            background-image: url('../../public/assets/review-sm.jpg');
-        }
-    }
-
-    &__family-img{
-        position: absolute;
-        width: 30%;
-        top: 50%;
-        right: -25%;
-        z-index: 100;
-        transition: all .3s;
-        transform: translate(-50%, -50%);
-
-        @include respond(lap-lg) {
-            right: -20%;
-        }
-
-        @include respond(lap) {
-            top: 60%;
-            right: -10%;
-            width: 40%;
-        }
-
-        @include respond(tab-land) {
-            top: 0%;
-            right: -5%;
-            width: 30%;
-        }
-
-        @include respond(tab-port) {
-            top: -20%;
-            right: -8%;
-            width: 25%;
-        }
-
-        @include respond(mobile-lg) {
-            top: 28%;
-            right: -15%;
-            width: 40%;
-        }
-
-        @include respond(mobile) {
-            transform: translate(0, -50%);
-            top: 50%;
-            right: 2rem;
-            width: 40%;
-            min-width: 20rem;
-
-            
-        }
-    }
-
+    // Review Content -------------------------------
     &__content {
         background-color: $color-grey-light-1;
         position: relative;
@@ -159,6 +94,76 @@
 
         @include respond(mobile) {
             font-size: 1.4rem;
+        }
+    }
+    
+
+
+    // Gallery --------------------------------------
+    &__gallery {
+        background-image: url('../../public/assets/review-lg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        position: relative;
+
+
+        
+        @include respond(tab-land) {
+            grid-row: 2 / 3;
+            background-image: url('../../public/assets/review-md.jpg');
+        }
+
+        @include respond(mobile-lg) {
+            background-image: url('../../public/assets/review-sm.jpg');
+        }
+    }
+
+
+    // Family Image -----------------------------------
+    &__family-img{
+        position: absolute;
+        width: 30%;
+        top: 50%;
+        right: -25%;
+        z-index: 100;
+        transition: all .3s;
+        transform: translate(-50%, -50%);
+
+        @include respond(lap-lg) {
+            right: -20%;
+        }
+
+        @include respond(lap) {
+            top: 60%;
+            right: -10%;
+            width: 40%;
+        }
+
+        @include respond(tab-land) {
+            top: 0%;
+            right: -5%;
+            width: 30%;
+        }
+
+        @include respond(tab-port) {
+            top: -20%;
+            right: -8%;
+            width: 25%;
+        }
+
+        @include respond(mobile-lg) {
+            top: 28%;
+            right: -15%;
+            width: 40%;
+        }
+
+        @include respond(mobile) {
+            transform: translate(0, -50%);
+            top: 50%;
+            right: 2rem;
+            width: 40%;
+            min-width: 20rem;
         }
     }
 }
