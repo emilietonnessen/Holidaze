@@ -41,8 +41,8 @@
     // Link Container -----------------------------
     &__link {
         border: 1px solid transparent;
-        border-top-left-radius: 3rem;
-        border-top-right-radius: 3rem;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
         text-decoration: none;
         transition: all .3s;
 
@@ -53,8 +53,8 @@
 
         &:focus-visible {
             border: 1px solid black;
-            border-top-left-radius: 3rem;
-            border-top-right-radius: 3rem;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
             outline: 0;
             transform: scale(1.025);
         }
@@ -86,7 +86,7 @@
     }
 
     &__image {
-        border-radius: 3rem;
+        border-radius: .5rem;
         width: 100%; 
     }
 
