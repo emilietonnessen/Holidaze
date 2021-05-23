@@ -25,7 +25,9 @@
         cursor: pointer;
         border: 1px solid transparent;
 
-
+        & > svg {
+            width: 5rem;
+        }
 
         &:focus-visible  {
             outline: none;

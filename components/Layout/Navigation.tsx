@@ -1,10 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { NextRouter, useRouter } from "next/router";
 
 import Search from '../UI/Search';
 import { NavigationProps } from '../../constants/interfaces';
 import { Button } from "../UI/Button";
+import { Logo } from '../UI/Icons';
+import { primary } from '../../constants/colors';
 
 
 const Navigation: React.FC<NavigationProps> = ({active}) => (
@@ -14,7 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({active}) => (
         <div className="logo">
             <Link href="/">
                 <a>
-                    <Image src="/assets/logo.svg" alt="logo" width="54.18" height="50" />
+                    <Logo color={primary} />
                     <h1>Holidaze</h1>
                 </a>
             </Link>

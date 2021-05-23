@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 
 import { EstablishmentsProps, Establishment } from '../constants/interfaces';
-import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
+import EstablishmentCard from "./Establishment/EstablishmentCard";
 import Filter from '../components/Filter';
 import CategoryContext from '../context/CategoryContext';
 

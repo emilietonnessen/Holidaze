@@ -6,10 +6,10 @@ import { GetServerSideProps } from 'next';
 import Layout from '../../components/Layout';
 import Booking from '../../components/Booking';
 import BookingFeedbackSuccess from '../../components/Booking/BookingFeedback';
-import EstablishmentGallery from '../../components/Establihsment/EstablishmentGallery';
-import EstablishmentHeader from '../../components/Establihsment/EstablishmentHeader';
-import EstablishmentInfo from '../../components/Establihsment/EstablishmentInfo';
-import EstablishmentCTA from '../../components/Establihsment/EstablishmentCTA';
+import EstablishmentGallery from '../../components/Establishment/EstablishmentGallery';
+import EstablishmentHeader from '../../components/Establishment/EstablishmentHeader';
+import EstablishmentInfo from '../../components/Establishment/EstablishmentInfo';
+import EstablishmentCTA from '../../components/Establishment/EstablishmentCTA';
 import { EstablishmentDetailsProps } from '../../constants/interfaces';
 import { ESTABLISHMENTS_URL, GRAPHQL_URL } from "../../constants/api";
 

@@ -8,7 +8,7 @@ import Hero from "../components/Homepage/Hero";
 import Category from "../components/Homepage/Category";
 import Review from "../components/Homepage/Review";
 import Gallery from '../components/Homepage/Gallery';
-import EstablishmentCard from "../components/Establihsment/EstablishmentCard";
+import EstablishmentCard from "../components/Establishment/EstablishmentCard";
 
 
 const home: React.FC<HomeProps> = ({establishments}) => {
