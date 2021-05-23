@@ -2,12 +2,12 @@ import { Image } from "../../constants/interfaces";
 
 
 const Gallery: React.FC = () => (
-        <section className="gallery">
-            {images.map((img: Image) => (
-                <figure className={`gallery__item gallery__item--${img.id}`} key={img.id}>
-                    <img className="gallery__img" src={img.src} alt={img.alt} />   
-                </figure> 
-            ))}
+    <section className="gallery">
+        {images.map((img: Image) => (
+            <figure className={`gallery__item gallery__item--${img.id}`} key={img.id}>
+                <img className="gallery__img" src={img.src} alt={img.alt} />   
+            </figure> 
+        ))}
     </section>
 );
 

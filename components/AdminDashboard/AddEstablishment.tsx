@@ -12,6 +12,7 @@ import EstablishmentForm from "./EstablishmentForm";
 import Select from "../UI/Form/Select";
 import Error from "../UI/Form/Error";
 import Feedback from "../UI/Feedback";
+import useAxios from "../../hooks/useAxios";
 
 
 // Yup validation
@@ -31,7 +32,7 @@ const AddForm: React.FC = () => {
     
     // Variables
     const [auth] = useContext<any>(AuthContext);
-
+    const http = useAxios();
 
 
     // State
@@ -108,19 +109,8 @@ const AddForm: React.FC = () => {
         formData.append("files.imageTwo", imageTwoValue); 
 
         try {
-
             if (thumbnailValue != null && imageOneValue != null && imageTwoValue != null && auth != null) {
-                const response = await fetch (ESTABLISHMENTS_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${auth.jwt}`,
-                    },
-                    
-                    body: formData
-                });
-
-                const data = await response.json();
-
+                await http.post(ESTABLISHMENTS_URL, formData);
                 setAdded(true);
             } else {
                 setThumbnailValueError(true);

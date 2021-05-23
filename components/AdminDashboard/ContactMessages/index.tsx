@@ -28,15 +28,16 @@ const ContactNotifications: React.FC = () => {
 
 
     // Sort and Map through the contact messages and make cards out of them, display the new first
-    const ContactMessageCards: JSX.Element[]= contactMessages.sort(value => value.read ? 1 : -1).map(enq => (
+    const ContactMessageCards: JSX.Element[]= contactMessages.sort(value => value.read ? 1 : -1).map(contact => (
         <ContactCard
-            id={enq.id}
-            read={enq.read}
-            key={enq.id}
-            name={enq.name}
-            topic={enq.topic}
-            email={enq.email}
-            message={enq.message} />
+            id={contact.id}
+            read={contact.read}
+            key={contact.id}
+            name={contact.name}
+            topic={contact.topic}
+            email={contact.email}
+            message={contact.message}
+            data={contact} />
     ));
 
     return (

@@ -41,7 +41,8 @@ const BookingNotifications: React.FC = () => {
             startDate={enq.startDate}
             endDate={enq.endDate}
             room={enq.room}
-            message={enq.message} />
+            message={enq.message}
+            data={enq} />
     ));
 
     return (

@@ -8,7 +8,7 @@ import { Button } from "../../UI/Button";
 import Feedback from "../../UI/Feedback";
 
 
-const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, id, read}) => {
+const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, id, read, data}) => {
 
     // State
     const [newMessage, setNewMessage] = useState<boolean>(read);
@@ -17,27 +17,23 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
     const [deleteSuccess, setDeleteSuccess] = useState<boolean>(false);
 
 
+
     // Variables
     const router: NextRouter = useRouter();
     const http = useAxios();
     let url = `${CONTACT_URL}/${id}`;
     
 
+
     // "new" message handler
-    async function readMessageHandler() {
+    const readMessageHandler = () => {
         if (read === false) {
-            try {
-                const response = await http.get(url);
-                const data = response.data;
-                data.read = true;
-                await http.put(url, data);
-                setNewMessage(true);
-            } 
-            catch (error) {
-                console.error(error);
-            } 
+            data.read = true;
+            http.put(url, data);
+            setNewMessage(true);
         }
     }
+
 
 
     // Delete Handler
@@ -50,13 +46,17 @@ const ContactCard: React.FC<ContactCardProps> = ({ name, email, message, topic, 
 
         if (confirmDelete) {
             try {
+                setDeleting(true);
 				await http.delete(url);
                 setDeleteSuccess(true);
+                setTimeout(() => { window.location.reload() }, 1000);
 			} catch (error) {
 				setDeleteError(error.toString());
 			} finally {
                 setDeleting(false)
             }
+        } else {
+            setDeleting(false);
         }
     }
 

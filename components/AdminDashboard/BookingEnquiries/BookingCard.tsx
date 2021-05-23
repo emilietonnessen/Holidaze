@@ -8,7 +8,7 @@ import { Button } from "../../UI/Button";
 
 
 
-const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id}) => {
+const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, lastName, email, phone, startDate, endDate, room, message, read, id, data}) => {
 
     // State
     const [newMessage, setNewMessage] = useState<boolean>(read);
@@ -23,18 +23,11 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
 
 
     // Read new message handler
-    async function readMessageHandler() {
+    const readMessageHandler = () => {
         if (read === false) {
-            try {
-                const response = await http.get(url);
-                const data = response.data;
-                data.read = true;
-                const updateResponse = await http.put(url, data);
-                setNewMessage(true);
-            } 
-            catch (error) {
-                console.error(error);
-            } 
+            data.read = true;
+            http.put(url, data);
+            setNewMessage(true);
         }
     }
 
@@ -49,14 +42,17 @@ const BookingCard: React.FC<BookingCardProps> = ({establishment, firstName, last
 
         if (confirmDelete) {
             try {
+				setDeleting(true);
 				await http.delete(url);
-               
                 setDeleteSuccess(true);
+                setTimeout(() => { window.location.reload() }, 1000);
 			} catch (error) {
 				setDeleteError(error.toString());
 			} finally {
                 setDeleting(false)
             }
+        } else {
+            setDeleting(false);
         }
     }
     

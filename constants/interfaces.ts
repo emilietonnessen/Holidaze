@@ -333,6 +333,7 @@ export interface Booking {
     published_at: string;
     establishment: string;
     read: boolean;
+    
 }
 
 export interface BookingCardProps {
@@ -348,6 +349,7 @@ export interface BookingCardProps {
     read: boolean;
     id: number;
     onClick?: any;
+    data: Booking;
 }
 
 export interface ContactMessage {
@@ -366,6 +368,7 @@ export interface ContactCardProps {
     topic: string;
     id: number;
     read: boolean;
+    data: ContactMessage;
 }
 
 // ICONS: ------------------------------------------------
