@@ -1,5 +1,3 @@
-import { Provider } from "react-redux";
-
 import Footer from "./Footer"
 import Main from "./Main"
 import Navigation from "./Navigation"
