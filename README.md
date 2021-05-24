@@ -1,7 +1,7 @@
 # Holidaze 
 - **Date:** 05.04.2021 - 23.05.2021 <br />
 
-Holidaze is a fictional company which displays a number of different establishments in Bergen, Norway. The project is made to showcase my abilities during the Project Exam 2 and is the final exam of my education as a Frontend Developer at Noroff.
+Holidaze is a fictional company which displays a number of different establishments in Bergen, Norway. The project is created to showcase my abilities acquired during the past two years of my education, and is the assignment of my final exam as a Frontend Develop at Noroff. 
 
 ## How to use
 Download all the files and install by using the terminal
